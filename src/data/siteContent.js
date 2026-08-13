@@ -36,15 +36,34 @@ export const projects = [
         location: 'Vancouver, BC',
         short_description: 'Western Canada\'s largest hospital redevelopment project.',
         long_description: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.',
-            'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.',
-            'Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metuss. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.'
+            'The New St. Paul’s Hospital redevelopment is the largest healthcare infrastructure project in Western Canada. The project includes a 2.2-billion-dollar investment to construct a 1.7-million-square-foot facility with more than 600 beds. As Program Director, J in Motion manages a 450-million-dollar technology portfolio and oversees more than 50 concurrent projects, including command centers, security networks, and IT systems. We lead cross-functional teams, coordinate with government and construction partners, and integrate Indigenous design principles into the facility plan. We provide continuous executive reporting on project scope, schedule, budget, and risk to ensure opening in early 2027.'
         ],
         image: 'https://placehold.co/800x600/32231F/13629B?text=Project+1',
         heroColors: ['#F9D2BA', '#EEA2A5', '#7E3A65', '#13629B', '#10B981'],
         galleryImages: [
             'https://placehold.co/800x500/231815/10B981?text=Project+Detail+1',
             'https://placehold.co/800x500/2A1D1A/1882ce?text=Project+Detail+2'
+        ]
+    },
+    {
+        id: 'dawson-creek',
+        title: 'Dawson Creek & District Hospital',
+        category: 'Category 3',
+        year: '2023',
+        client: 'HH Angus + Northern Health Authority + Infrastructure BC',
+        location: 'Dawson Creek, BC',
+        short_description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        long_description: [
+            "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
+            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " + 
+            "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
+            "project deliverables."
+        ],
+        image: 'https://placehold.co/800x600/231815/10B981?text=Project+3',
+        heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
+        galleryImages: [
+            'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
+            'https://placehold.co/800x500/231815/10B981?text=Project+Detail+2'
         ]
     },
     {
@@ -65,26 +84,6 @@ export const projects = [
         galleryImages: [
             'https://placehold.co/800x500/231815/34D399?text=Project+Detail+1',
             'https://placehold.co/800x500/2A1D1A/10B981?text=Project+Detail+2'
-        ]
-    },
-    {
-        id: 'motion-identity',
-        title: 'Project Title 3',
-        category: 'Category 3',
-        year: '2023',
-        client: 'Client Name',
-        location: 'Location City',
-        short_description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        long_description: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.',
-            'Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
-            'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.'
-        ],
-        image: 'https://placehold.co/800x600/231815/10B981?text=Project+3',
-        heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
-        galleryImages: [
-            'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
-            'https://placehold.co/800x500/231815/10B981?text=Project+Detail+2'
         ]
     },
     {
@@ -122,7 +121,7 @@ export const homePage = {
         eyebrow: 'ABOUT US',
         heading: 'Building Tomorrow’s Critical Infrastructure',
         paragraphs: [
-            'We are a strategic advisory firm with a proven track record of managing over $40B+ in capital infrastructure and enterprise technology portfolios across Canada.',
+            'We are a strategic advisory firm with a proven track record of managing over $2.2B+ in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
         ],
         image: 'HOSPITAL1.jpg',
