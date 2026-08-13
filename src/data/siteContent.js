@@ -125,7 +125,7 @@ export const homePage = {
             'We are a strategic advisory firm with a proven track record of managing over $40B+ in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
         ],
-        image: 'https://placehold.co/600x400/32231F/10B981?text=Studio+Work',
+        image: 'HOSPITAL1.jpg',
         imageAlt: 'Studio Approach'
     },
     values: {
