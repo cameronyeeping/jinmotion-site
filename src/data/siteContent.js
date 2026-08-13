@@ -121,7 +121,7 @@ export const homePage = {
         eyebrow: 'ABOUT US',
         heading: 'Building Tomorrow’s Critical Infrastructure',
         paragraphs: [
-            'We are a strategic advisory firm with a proven track record of managing over $2.2B+ in capital infrastructure and enterprise technology portfolios across Canada.',
+            'We are a strategic advisory firm with a proven track record of managing over $40B in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
         ],
         image: 'HOSPITAL1.jpg',
