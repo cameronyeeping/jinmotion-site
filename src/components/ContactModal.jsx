@@ -193,7 +193,6 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <option value="">Select an area</option>
                   <option value="infrastructure">Capital Infrastructure & P3</option>
                   <option value="digital">Digital Transformation & IT</option>
-                  <option value="operational">Operational Readiness & Activation</option>
                   <option value="advisory">Strategic Advisory & Governance</option>
                   <option value="other">General Inquiry / Other</option>
                 </select>
