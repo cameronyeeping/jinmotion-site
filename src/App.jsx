@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ContactModal from './components/ContactModal'
-import DebugThemeToggle from './components/DebugThemeToggle'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProjectsPage from './pages/ProjectsPage'
@@ -33,7 +32,6 @@ function App() {
       </main>
       <Footer />
       <ContactModal isOpen={isContactOpen} onClose={closeContact} />
-      <DebugThemeToggle />
     </BrowserRouter>
   )
 }
