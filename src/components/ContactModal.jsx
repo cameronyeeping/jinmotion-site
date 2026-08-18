@@ -191,9 +191,9 @@ const ContactModal = ({ isOpen, onClose }) => {
                   className="form-select"
                 >
                   <option value="">Select an area</option>
-                  <option value="infrastructure">Capital Infrastructure & P3</option>
+                  <option value="infrastructure">Infrastructure</option>
                   <option value="digital">Digital Transformation & IT</option>
-                  <option value="advisory">Strategic Advisory & Governance</option>
+                  <option value="advisory">Strategic Advisory</option>
                   <option value="other">General Inquiry / Other</option>
                 </select>
               </div>
