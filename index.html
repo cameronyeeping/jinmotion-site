@@ -13,6 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Netlify Forms Detection Placeholder for Vite/React SPA -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="projectType">
+        <option value="infrastructure">Capital Infrastructure</option>
+        <option value="digital">Digital Transformation</option>
+        <option value="operational">Operational Readiness</option>
+        <option value="advisory">Strategic Advisory</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

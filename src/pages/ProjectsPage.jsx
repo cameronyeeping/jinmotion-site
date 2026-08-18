@@ -81,22 +81,24 @@ const ProjectCard = ({ project }) => {
 export default function ProjectsPage({ onContactClick }) {
     return (
         <div>
-            <section className="hero-wrapper" style={{ minHeight: '50vh', position: 'relative', display: 'flex', alignItems: 'center' }}>
-                <div className="hero-bg-media" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -2 }}>
+            <section className="hero-wrapper" style={{ minHeight: '50vh', position: 'relative', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
+                <div className="hero-bg-media" style={{ position: 'absolute', inset: 0, zIndex: -2 }}>
                     <img
                         src={projectsPage.hero.bgImage}
                         alt={projectsPage.hero.bgAlt}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
                 </div>
-                <div className="hero-overlay" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(35, 24, 21, 0.6)', zIndex: -1 }}></div>
-                <div className="container hero-content" style={{ zIndex: 1, padding: '4rem 2rem' }}>
-                    <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', color: '#FAF7F2', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1rem' }}>
-                        {projectsPage.hero.title}
-                    </h1>
-                    <p className="hero-subtitle" style={{ color: '#D8CFC8', fontSize: '1.2rem', maxWidth: '600px' }}>
-                        {projectsPage.hero.subtitle}
-                    </p>
+                <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(35, 24, 21, 0.8), rgba(35, 24, 21, 0.5))', zIndex: -1 }}></div>
+                <div className="container" style={{ position: 'relative', zIndex: 1, padding: '0 24px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+                    <div className="hero-content" style={{ maxWidth: '700px' }}>
+                        <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 5vw, 4.5rem)', color: 'var(--text-light-primary)', margin: '0 0 16px 0', lineHeight: 1.1 }}>
+                            {projectsPage.hero.title}
+                        </h1>
+                        <p className="hero-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-light-secondary)', margin: '0', lineHeight: 1.6 }}>
+                            {projectsPage.hero.subtitle}
+                        </p>
+                    </div>
                 </div>
             </section>
 
