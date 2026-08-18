@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CtaBanner from '../components/CtaBanner';
+import MethodologyGraphic from '../components/MethodologyGraphic';
 import { homePage } from '../data/siteContent';
 
 const HomePage = ({ onContactClick }) => {
@@ -55,37 +56,8 @@ const HomePage = ({ onContactClick }) => {
                 </div>
             </section>
 
-            {/* Values Section */}
-            <section style={{ backgroundColor: 'var(--accent-green)', padding: '80px 0' }}>
-                <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-light-primary)', margin: '0 0 16px 0' }}>{homePage.values.heading}</h2>
-                        <p style={{ color: '#FFFFFF', opacity: 0.85, fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>
-                            {homePage.values.subtitle}
-                        </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap' }}>
-                        <div style={{ backgroundColor: '#FFFFFF', borderRadius: 'var(--radius-md)', padding: '32px', flex: 1, minWidth: '280px' }}>
-                            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', color: 'var(--text-dark-primary)', margin: '0 0 16px 0' }}>{homePage.values.cards[0].title}</h3>
-                            <p style={{ color: 'var(--text-dark-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
-                                {homePage.values.cards[0].paragraphs[0]}
-                            </p>
-                            <p style={{ color: 'var(--text-dark-secondary)', lineHeight: 1.6, margin: 0 }}>
-                                {homePage.values.cards[0].paragraphs[1]}
-                            </p>
-                        </div>
-                        <div style={{ backgroundColor: '#FFFFFF', borderRadius: 'var(--radius-md)', padding: '32px', flex: 1, minWidth: '280px' }}>
-                            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', color: 'var(--text-dark-primary)', margin: '0 0 16px 0' }}>{homePage.values.cards[1].title}</h3>
-                            <p style={{ color: 'var(--text-dark-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
-                                {homePage.values.cards[1].paragraphs[0]}
-                            </p>
-                            <p style={{ color: 'var(--text-dark-secondary)', lineHeight: 1.6, margin: 0 }}>
-                                {homePage.values.cards[1].paragraphs[1]}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* The JiM Co Method Graphic Section */}
+            <MethodologyGraphic />
 
             {/* Portfolio Gallery Section */}
             <section className="section-light" style={{ backgroundColor: 'var(--bg-light-secondary)', padding: '80px 0' }}>

@@ -141,6 +141,81 @@ export const homePage = {
             }
         ]
     },
+    methodology: {
+        eyebrow: 'THE JiM CO METHOD',
+        heading: 'From vision to realization.',
+        subtitle: 'A clear, connected approach that turns complex ideas into meaningful outcomes.',
+        steps: [
+            {
+                number: '01',
+                title: 'Vision',
+                description: 'Define the destination and the reason for change.',
+                icon: 'target',
+                sectionLabel: 'TYPICAL ACTIVITIES',
+                items: [
+                    'Research and site visits',
+                    'Best-practice review',
+                    'Stakeholder input',
+                    'Project charter'
+                ]
+            },
+            {
+                number: '02',
+                title: 'Roadmap',
+                description: 'Translate the vision into an achievable path.',
+                icon: 'trending-up',
+                sectionLabel: 'TYPICAL DELIVERABLES',
+                items: [
+                    'Key deliverables',
+                    'Milestones and timeline',
+                    'Dependencies',
+                    'Decision points'
+                ]
+            },
+            {
+                number: '03',
+                title: 'Implement',
+                description: 'Build the structure required for successful delivery.',
+                icon: 'grid',
+                sectionLabel: 'TYPICAL DELIVERABLES',
+                items: [
+                    'Project plan',
+                    'Governance and resources',
+                    'Budget and risk approach',
+                    'Reporting framework'
+                ]
+            },
+            {
+                number: '04',
+                title: 'Realize',
+                description: 'Lead execution and turn plans into outcomes.',
+                icon: 'arrow-right',
+                sectionLabel: 'TYPICAL ACTIVITIES',
+                items: [
+                    'Project leadership',
+                    'Issue resolution',
+                    'Decision support',
+                    'Execution'
+                ]
+            },
+            {
+                number: '05',
+                title: 'Celebrate',
+                description: 'Close well and make the value visible.',
+                icon: 'star',
+                isHighlighted: true,
+                sectionLabel: 'TYPICAL ACTIVITIES',
+                items: [
+                    'Project closeout',
+                    'Outcome measurement',
+                    'Lessons learned',
+                    'Recognition and thanks'
+                ]
+            }
+        ],
+        footerSummary: 'Vision → Roadmap → Implement → Realize → Celebrate',
+        footerTagline: 'CLARITY. MOMENTUM. OUTCOMES.'
+    },
     portfolio: {
         eyebrow: 'OUR WORK',
         heading: 'Selected Projects',

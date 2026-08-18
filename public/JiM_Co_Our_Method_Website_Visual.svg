@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">The JiM Co Method</title>
+  <desc id="desc">Five connected phases: Vision, Roadmap, Implement, Realize and Celebrate, with each phase's purpose and typical activities.</desc>
+  <defs>
+    <style>
+      .sans { font-family: Inter, Arial, Helvetica, sans-serif; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 3px; fill: #1F5A45; }
+      .title { font-size: 54px; font-weight: 500; letter-spacing: -1.5px; fill: #171412; }
+      .subtitle { font-size: 23px; font-weight: 400; fill: #665B55; }
+      .step { font-size: 15px; font-weight: 700; letter-spacing: 2px; fill: #1F5A45; }
+      .phase { font-size: 29px; font-weight: 650; fill: #5A382B; }
+      .purpose { font-size: 19px; font-weight: 500; fill: #171412; }
+      .label { font-size: 13px; font-weight: 750; letter-spacing: 1.6px; fill: #1F5A45; }
+      .detail { font-size: 16px; font-weight: 400; fill: #554B46; }
+      .icon { fill: none; stroke: #5A382B; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .connector { fill: none; stroke: #1F5A45; stroke-width: 3; stroke-linecap: round; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#1F5A45" stroke-width="2"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#2B1914" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="980" fill="#FAF8F5"/>
+  <rect x="38" y="38" width="1524" height="904" rx="6" fill="#FFFFFF" stroke="#171412" stroke-width="2"/>
+
+  <text x="100" y="115" class="sans eyebrow">THE JiM CO METHOD</text>
+  <text x="100" y="180" class="sans title">From vision to realization.</text>
+  <text x="100" y="225" class="sans subtitle">A clear, connected approach that turns complex ideas into meaningful outcomes.</text>
+
+  <!-- forward path -->
+  <line x1="218" y1="340" x2="1380" y2="340" class="connector" marker-end="url(#arrow)" opacity="0.9"/>
+
+  <!-- Card 1 -->
+  <g transform="translate(100,285)">
+    <rect x="0" y="0" width="268" height="555" rx="10" fill="#FFFFFF" stroke="#E8E0DA" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="134" cy="55" r="42" fill="#FAF8F5" stroke="#5A382B" stroke-width="2"/>
+    <g transform="translate(111,32)" class="icon">
+      <circle cx="23" cy="23" r="16"/>
+      <circle cx="23" cy="23" r="4" fill="#5A382B" stroke="none"/>
+      <path d="M23 0v7M23 39v7M0 23h7M39 23h7"/>
+    </g>
+    <text x="24" y="126" class="sans step">01</text>
+    <text x="24" y="166" class="sans phase">Vision</text>
+    <text x="24" y="207" class="sans purpose">
+      <tspan x="24" dy="0">Define the destination</tspan>
+      <tspan x="24" dy="27">and the reason for</tspan>
+      <tspan x="24" dy="27">change.</tspan>
+    </text>
+    <line x1="24" y1="300" x2="244" y2="300" stroke="#D9CEC7"/>
+    <text x="24" y="335" class="sans label">TYPICAL ACTIVITIES</text>
+    <text x="24" y="372" class="sans detail">
+      <tspan x="24" dy="0">Research and site visits</tspan>
+      <tspan x="24" dy="29">Best-practice review</tspan>
+      <tspan x="24" dy="29">Stakeholder input</tspan>
+      <tspan x="24" dy="29">Project charter</tspan>
+    </text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(383,285)">
+    <rect x="0" y="0" width="268" height="555" rx="10" fill="#FFFFFF" stroke="#E8E0DA" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="134" cy="55" r="42" fill="#FAF8F5" stroke="#5A382B" stroke-width="2"/>
+    <g transform="translate(108,31)" class="icon">
+      <path d="M3 39c10-2 8-16 19-17s10-14 25-17"/>
+      <circle cx="3" cy="39" r="3" fill="#5A382B" stroke="none"/>
+      <path d="M38 2l9 3-5 8"/>
+    </g>
+    <text x="24" y="126" class="sans step">02</text>
+    <text x="24" y="166" class="sans phase">Roadmap</text>
+    <text x="24" y="207" class="sans purpose">
+      <tspan x="24" dy="0">Translate the vision</tspan>
+      <tspan x="24" dy="27">into an achievable</tspan>
+      <tspan x="24" dy="27">path.</tspan>
+    </text>
+    <line x1="24" y1="300" x2="244" y2="300" stroke="#D9CEC7"/>
+    <text x="24" y="335" class="sans label">TYPICAL DELIVERABLES</text>
+    <text x="24" y="372" class="sans detail">
+      <tspan x="24" dy="0">Key deliverables</tspan>
+      <tspan x="24" dy="29">Milestones and timeline</tspan>
+      <tspan x="24" dy="29">Dependencies</tspan>
+      <tspan x="24" dy="29">Decision points</tspan>
+    </text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(666,285)">
+    <rect x="0" y="0" width="268" height="555" rx="10" fill="#FFFFFF" stroke="#E8E0DA" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="134" cy="55" r="42" fill="#FAF8F5" stroke="#5A382B" stroke-width="2"/>
+    <g transform="translate(110,31)" class="icon">
+      <rect x="1" y="1" width="18" height="18"/>
+      <rect x="27" y="1" width="18" height="18"/>
+      <rect x="1" y="27" width="18" height="18"/>
+      <rect x="27" y="27" width="18" height="18"/>
+    </g>
+    <text x="24" y="126" class="sans step">03</text>
+    <text x="24" y="166" class="sans phase">Implement</text>
+    <text x="24" y="207" class="sans purpose">
+      <tspan x="24" dy="0">Build the structure</tspan>
+      <tspan x="24" dy="27">required for successful</tspan>
+      <tspan x="24" dy="27">delivery.</tspan>
+    </text>
+    <line x1="24" y1="300" x2="244" y2="300" stroke="#D9CEC7"/>
+    <text x="24" y="335" class="sans label">TYPICAL DELIVERABLES</text>
+    <text x="24" y="372" class="sans detail">
+      <tspan x="24" dy="0">Project plan</tspan>
+      <tspan x="24" dy="29">Governance and resources</tspan>
+      <tspan x="24" dy="29">Budget and risk approach</tspan>
+      <tspan x="24" dy="29">Reporting framework</tspan>
+    </text>
+  </g>
+
+  <!-- Card 4 -->
+  <g transform="translate(949,285)">
+    <rect x="0" y="0" width="268" height="555" rx="10" fill="#FFFFFF" stroke="#E8E0DA" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="134" cy="55" r="42" fill="#FAF8F5" stroke="#5A382B" stroke-width="2"/>
+    <g transform="translate(109,34)" class="icon">
+      <path d="M1 21h39"/>
+      <path d="M30 10l11 11-11 11"/>
+      <path d="M9 8v26" opacity="0.65"/>
+    </g>
+    <text x="24" y="126" class="sans step">04</text>
+    <text x="24" y="166" class="sans phase">Realize</text>
+    <text x="24" y="207" class="sans purpose">
+      <tspan x="24" dy="0">Lead execution and</tspan>
+      <tspan x="24" dy="27">turn plans into</tspan>
+      <tspan x="24" dy="27">outcomes.</tspan>
+    </text>
+    <line x1="24" y1="300" x2="244" y2="300" stroke="#D9CEC7"/>
+    <text x="24" y="335" class="sans label">TYPICAL ACTIVITIES</text>
+    <text x="24" y="372" class="sans detail">
+      <tspan x="24" dy="0">Project leadership</tspan>
+      <tspan x="24" dy="29">Issue resolution</tspan>
+      <tspan x="24" dy="29">Decision support</tspan>
+      <tspan x="24" dy="29">Execution</tspan>
+    </text>
+  </g>
+
+  <!-- Card 5 -->
+  <g transform="translate(1232,285)">
+    <rect x="0" y="0" width="268" height="555" rx="10" fill="#1F5A45" stroke="#1F5A45" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="134" cy="55" r="42" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2"/>
+    <g transform="translate(111,32)" class="icon">
+      <path d="M23 1l6.4 14 15.6 1.8-11.5 10.6 3.1 15.1L23 34.8 9.4 42.5l3.1-15.1L1 16.8 16.6 15z"/>
+    </g>
+    <text x="24" y="126" class="sans step" style="fill:#E4ECE7">05</text>
+    <text x="24" y="166" class="sans phase" style="fill:#FFFFFF">Celebrate</text>
+    <text x="24" y="207" class="sans purpose" style="fill:#FFFFFF">
+      <tspan x="24" dy="0">Close well and make</tspan>
+      <tspan x="24" dy="27">the value visible.</tspan>
+    </text>
+    <line x1="24" y1="300" x2="244" y2="300" stroke="#A8C3B7"/>
+    <text x="24" y="335" class="sans label" style="fill:#E4ECE7">TYPICAL ACTIVITIES</text>
+    <text x="24" y="372" class="sans detail" style="fill:#FFFFFF">
+      <tspan x="24" dy="0">Project closeout</tspan>
+      <tspan x="24" dy="29">Outcome measurement</tspan>
+      <tspan x="24" dy="29">Lessons learned</tspan>
+      <tspan x="24" dy="29">Recognition and thanks</tspan>
+    </text>
+  </g>
+
+  <text x="100" y="895" class="sans subtitle" font-size="18">Vision  →  Roadmap  →  Implement  →  Realize  →  Celebrate</text>
+  <text x="1500" y="895" text-anchor="end" class="sans eyebrow" font-size="14">CLARITY. MOMENTUM. OUTCOMES.</text>
+</svg>

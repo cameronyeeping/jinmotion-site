@@ -91,10 +91,10 @@ const ContactModal = ({ isOpen, onClose }) => {
             }}>
               <CheckCircle2 size={36} color="var(--accent-green, #2D5A3D)" />
             </div>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', margin: '0 0 12px 0', color: 'var(--text-dark-primary)' }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', margin: '0 0 12px 0', color: 'var(--text-light-primary)' }}>
               Message Received
             </h2>
-            <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto 28px auto' }}>
+            <p style={{ color: 'var(--text-light-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto 28px auto' }}>
               Thank you for reaching out. A senior member of our team will review your inquiry and get back to you promptly.
             </p>
             <button
