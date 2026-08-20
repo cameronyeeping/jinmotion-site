@@ -71,23 +71,18 @@ export default function MethodologyGraphic() {
             <div className="methodology-grid">
               {methodology.steps.map((step) => {
                 const IconComponent = iconComponents[step.icon] || Target;
-                const isHighlight = step.isHighlighted;
 
                 return (
                   <div
                     key={step.number}
                     style={{
-                      backgroundColor: isHighlight ? 'var(--accent-green-dark, #1B4332)' : '#FFFFFF',
+                      backgroundColor: '#FFFFFF',
                       borderRadius: 'var(--radius-md, 14px)',
-                      border: isHighlight
-                        ? '1px solid var(--accent-green-dark, #1B4332)'
-                        : '1px solid var(--border-light, rgba(35, 24, 21, 0.12))',
+                      border: '1px solid var(--border-light, rgba(35, 24, 21, 0.12))',
                       padding: '24px 20px',
                       display: 'flex',
                       flexDirection: 'column',
-                      boxShadow: isHighlight
-                        ? '0 12px 28px rgba(27, 67, 50, 0.25)'
-                        : '0 4px 14px rgba(0, 0, 0, 0.03)',
+                      boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
                       transition: 'transform 0.3s ease, box-shadow 0.3s ease'
                     }}
                   >
@@ -96,10 +91,8 @@ export default function MethodologyGraphic() {
                       width: '68px',
                       height: '68px',
                       borderRadius: '50%',
-                      backgroundColor: isHighlight ? '#FFFFFF' : '#FFFFFF',
-                      border: isHighlight
-                        ? '2px solid rgba(255, 255, 255, 0.8)'
-                        : '1px solid rgba(35, 24, 21, 0.15)',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid rgba(35, 24, 21, 0.15)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -109,7 +102,7 @@ export default function MethodologyGraphic() {
                     }}>
                       <IconComponent
                         size={26}
-                        color={isHighlight ? '#32231F' : '#32231F'}
+                        color={'#32231F'}
                         strokeWidth={1.75}
                       />
                     </div>
@@ -118,7 +111,7 @@ export default function MethodologyGraphic() {
                     <div style={{
                       fontSize: '0.85rem',
                       fontWeight: 700,
-                      color: isHighlight ? 'rgba(255, 255, 255, 0.75)' : 'var(--accent-green, #2D6A4F)',
+                      color:'var(--accent-green, #2D6A4F)',
                       marginBottom: '4px'
                     }}>
                       {step.number}
@@ -129,7 +122,7 @@ export default function MethodologyGraphic() {
                       fontFamily: 'var(--font-heading)',
                       fontSize: '1.45rem',
                       fontWeight: 700,
-                      color: isHighlight ? '#FFFFFF' : 'var(--text-dark-primary, #1F1513)',
+                      color: 'var(--text-dark-primary, #1F1513)',
                       margin: '0 0 10px 0',
                       lineHeight: 1.2
                     }}>
@@ -140,7 +133,7 @@ export default function MethodologyGraphic() {
                     <p style={{
                       fontSize: '0.875rem',
                       lineHeight: 1.5,
-                      color: isHighlight ? 'rgba(255, 255, 255, 0.85)' : 'var(--text-dark-primary, #1F1513)',
+                      color: 'var(--text-dark-primary, #1F1513)',
                       margin: '0 0 20px 0',
                       minHeight: '42px'
                     }}>
@@ -150,7 +143,7 @@ export default function MethodologyGraphic() {
                     {/* Divider Line */}
                     <div style={{
                       height: '1px',
-                      backgroundColor: isHighlight ? 'rgba(255, 255, 255, 0.2)' : 'var(--border-light, rgba(35, 24, 21, 0.1))',
+                      backgroundColor: 'var(--border-light, rgba(35, 24, 21, 0.1))',
                       margin: '0 0 18px 0'
                     }} />
 
@@ -160,7 +153,7 @@ export default function MethodologyGraphic() {
                       fontWeight: 700,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: isHighlight ? 'rgba(255, 255, 255, 0.75)' : 'var(--accent-green, #2D6A4F)',
+                      color: 'var(--accent-green, #2D6A4F)',
                       marginBottom: '12px'
                     }}>
                       {step.sectionLabel}
@@ -176,7 +169,7 @@ export default function MethodologyGraphic() {
                       gap: '8px',
                       fontSize: '0.85rem',
                       lineHeight: 1.45,
-                      color: isHighlight ? 'rgba(255, 255, 255, 0.9)' : 'var(--text-dark-secondary, #5C4E47)'
+                      color: 'var(--text-dark-secondary, #5C4E47)'
                     }}>
                       {step.items.map((item, idx) => (
                         <li key={idx} style={{ margin: 0 }}>

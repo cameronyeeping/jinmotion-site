@@ -19,7 +19,7 @@ export const navLinks = [
 
 export const connectLinks = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jeannie-gandham-52856142/', external: true }, // TODO: Create a company LinkedIn (Low prio)
-    { label: 'Email', href: 'mailto:jeannie.gandham@jinmotion.com', external: false }, // TODO: Replace with shared mailbox when active
+    { label: 'Email', href: 'mailto:jim@jinmotion.com', external: false }, // TODO: Replace with shared mailbox when active
 ];
 
 export const ctaBanner = {
@@ -39,11 +39,11 @@ export const projects = [
         long_description: [
             'The New St. Paul’s Hospital redevelopment is the largest healthcare infrastructure project in Western Canada. The project includes a 2.2-billion-dollar investment to construct a 1.7-million-square-foot facility with more than 600 beds. As Program Director, J in Motion manages a 450-million-dollar technology portfolio and oversees more than 50 concurrent projects, including command centers, security networks, and IT systems. We lead cross-functional teams, coordinate with government and construction partners, and integrate Indigenous design principles into the facility plan. We provide continuous executive reporting on project scope, schedule, budget, and risk to ensure opening in early 2027.'
         ],
-        image: '/nsph.jpeg',
+        image: '/nsph/nsph.jpeg',
         heroColors: ['#F9D2BA', '#EEA2A5', '#7E3A65', '#13629B', '#10B981'],
         galleryImages: [
-            '/nsph-1.avif',
-            '/nsph-2.jpg'
+            '/nsph/nsph-1.avif',
+            '/nsph/nsph-2.jpg'
         ]
     },
     {
@@ -60,11 +60,11 @@ export const projects = [
             "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
             "project deliverables."
         ],
-        image: '/dawson-creek.jpg',
+        image: '/dawson/dawson-creek.jpg',
         heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
         galleryImages: [
-            'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
-            'https://placehold.co/800x500/231815/10B981?text=Project+Detail+2'
+            'dawson/dawson-2.jpg',
+            'dawson/dawson-3.jpeg'
         ]
     },
     {
@@ -72,17 +72,17 @@ export const projects = [
         title: 'BC Children\'s + Women\'s Hospital Redevelopment',
         category: 'Infrastructure + Advisory',
         year: '2017',
-        client: 'Client Name',
+        client: 'Provincial Health Services Authority',
         location: 'Vancouver, BC',
         short_description: 'A 675-million-dollar, 640,000-square-foot pediatric critical care hospital built under a Public-Private Partnership model in Vancouver.',
         long_description: [
             'The Children’s and Women’s Redevelopment was a 675-million-dollar healthcare project completed in October 2017 under a Public-Private Partnership model. The eight-story, 640,000-square-foot critical care hospital provides 350 inpatient rooms in Vancouver. Reporting to the Executive Director and Chief Project Officer, J in Motion developed and applied a collaborative plan for the health authority, building consortium, and subcontractors. We synchronized owner-side projects with the main construction schedule. We also managed review processes, project budgets, and stakeholder communication frameworks to ensure clear project execution.'
         ],
-        image: '/bc-childrens.jpg',
+        image: '/bc-childrens/bc-childrens.jpg',
         heroColors: ['#D8B4E2', '#AE759F', '#6B3074', '#13629B', '#10B981'],
         galleryImages: [
-            'https://placehold.co/800x500/231815/10B981?text=Project+Detail+1',
-            'https://placehold.co/800x500/32231F/34D399?text=Project+Detail+2'
+            '/bc-childrens/bc-childrens-2.jpeg',
+            '/bc-childrens/bc-childrens-3.jpg'
         ]
     },
     {
@@ -96,20 +96,56 @@ export const projects = [
         long_description: [
             'The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
         ],
-        image: '/stanton-territorial.jpg',
+        image: '/stanton/stanton-territorial.jpg',
         heroColors: ['#E8A0BF', '#C38D9E', '#85586F', '#13629B', '#34D399'],
         galleryImages: [
-            'https://placehold.co/800x500/231815/34D399?text=Project+Detail+1',
-            'https://placehold.co/800x500/2A1D1A/10B981?text=Project+Detail+2'
+            'stanton/stanton-1.avif',
+            'stanton/stanton-2.jpg'
+        ]
+    },
+    {
+        id: 'bc-cancer',
+        title: 'BC Cancer Redevelopments',
+        category: 'Advisory',
+        year: '2024',
+        client: 'Provincial Health Services Authority',
+        location: 'Vancouver, BC',
+        short_description: '$440 million investment into cancer centres across British Columbia',
+        long_description: [
+            'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
+        ],
+        image: 'bc-cancer/cloverdale-2.avif',
+        galleryImages:[
+            'bc-cancer/cloverdale.webp',
+            'bc-cancer/cloverdale-1.jpeg'
+        ]
+    },
+    {
+        id: 'surrey',
+        title: 'Surrey Memorial Hospital',
+        category: 'Advisory',
+        year: '2013',
+        client: 'Fraser Health Authority',
+        location: 'Surrey, BC',
+        short_description: 'A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services',
+        long_description: [
+            'SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).'
+        ],
+        image: '/surrey/surrey.jpg',
+        galleryImages:[
+            'surrey-1.webp',
+            'surrey-2.jpg'
         ]
     }
+
+    //'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
 ];
 
 export const homePage = {
     hero: {
-        title: 'Building Tomorrow\'s Critical Infrastructure',
-        subtitle: 'Strategic advisory, operational excellence, and digital transformation for Canada’s most critical infrastructure initiatives.',
-        btnPrimary: 'View Projects',
+        title: 'Where vision becomes momentum.',
+        subtitle: 'We turn ambitious direction into practical roadmaps, disciplined execution and outcomes people can see.',
+        btnPrimary: 'Our Work',
         btnSecondary: 'About Us',
         bgImage: '/NSPH-rendering.jpg',
         bgAlt: 'Hero Background'
@@ -254,7 +290,7 @@ export const aboutPage = {
                 id: 'jeannie-gandham',
                 name: 'Jeannie Gandham',
                 title: 'Principal',
-                image: 'https://placehold.co/500x350/231815/13629B?text=Jeannie+Gandham',
+                image: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
                 bio: [
                     'Jeannie Gandham is the Principal of J in Motion, bringing over 20 years of executive leadership in major healthcare, capital infrastructure, and technology transformation initiatives across Canada.',
