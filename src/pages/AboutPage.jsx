@@ -120,15 +120,19 @@ const AboutPage = ({ onContactClick }) => {
                             {aboutPage.content.heading}
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                            <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.125rem', lineHeight: 1.7, margin: 0 }}>
-                                {aboutPage.content.paragraphs[0]}
-                            </p>
-                            <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.125rem', lineHeight: 1.7, margin: 0 }}>
-                                {aboutPage.content.paragraphs[1]}
-                            </p>
-                            <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.125rem', lineHeight: 1.7, margin: 0 }}>
-                                {aboutPage.content.paragraphs[2]}
-                            </p>
+                            {aboutPage.content.paragraphs.map((paragraph, index) => (
+                                <p 
+                                    key={index} 
+                                    style={{ 
+                                        color: 'var(--text-dark-secondary)', 
+                                        fontSize: '1.125rem', 
+                                        lineHeight: 1.7, 
+                                        margin: 0 
+                                    }}
+                                >
+                                    {paragraph}
+                                </p>
+                            ))}
                         </div>
                     </div>
 

@@ -66,7 +66,7 @@ const HomePage = ({ onContactClick }) => {
                     <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 40px 0' }}>{homePage.portfolio.heading}</h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '40px' }}>
-                        {homePage.portfolio.projects.slice(0, 4).map((project) => (
+                        {homePage.portfolio.projects.map((project) => (
                             <Link
                                 key={project.id}
                                 to={`/projects/${project.id}`}
@@ -82,7 +82,7 @@ const HomePage = ({ onContactClick }) => {
                             >
                                 <div style={{ overflow: 'hidden' }}>
                                     <img
-                                        src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/${project.image}`}
+                                        src={project.image}
                                         alt={project.title}
                                         style={{
                                             width: '100%',
@@ -100,27 +100,6 @@ const HomePage = ({ onContactClick }) => {
                                 </div>
                             </Link>
                         ))}
-                    </div>
-
-                    <div style={{ textAlign: 'center', marginTop: '48px' }}>
-                        <Link
-                            to="/projects"
-                            className="btn-primary"
-                            style={{
-                                backgroundColor: 'var(--accent-green)',
-                                color: 'var(--text-light-primary)',
-                                padding: '14px 28px',
-                                borderRadius: 'var(--radius-pill)',
-                                textDecoration: 'none',
-                                fontWeight: 600,
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                transition: 'background var(--transition-fast)'
-                            }}
-                        >
-                            View All Projects
-                        </Link>
                     </div>
                 </div>
             </section>

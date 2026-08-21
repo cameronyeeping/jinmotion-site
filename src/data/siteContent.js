@@ -267,12 +267,18 @@ export const aboutPage = {
         bgAlt: 'About Background'
     },
     content: {
-        heading: 'Advisory & Execution Excellence Across Canada',
+        heading: 'Driving Momentum Across Canada',
         paragraphs: [
-            'J in Motion is a Canadian strategic advisory and project delivery firm. We lead large-scale capital infrastructure, technology integration, and operational readiness projects. With more than 20 years of experience, we direct complex public-sector portfolios from initial planning to final facility commissioning. Our track record includes executive leadership on multi-billion-dollar developments across Canada and project portfolios that exceed 40 billion dollars.',
-            'Our core capabilities include capital infrastructure delivery for complex Public-Private Partnership (P3) and Design-Build-Finance projects. We control project schedules, budgets, risk, and regulatory compliance throughout the project lifecycle. In addition, we direct technology and systems integration, which includes the procurement and deployment of enterprise information systems, command centers, and digital networks.',
+
+            'J in Motion brings vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
+            'We lead large-scale capital infrastructure, technology integration, and operational readiness projects. With more than 20 years of experience, we direct complex public-sector portfolios from initial planning to final facility commissioning. Our track record includes executive leadership on multi-billion-dollar developments across Canada and project portfolios that exceed 40 billion dollars.',
+            // 'Our core capabilities include capital infrastructure delivery for complex Public-Private Partnership (P3) and Design-Build-Finance projects. We control project schedules, budgets, risk, and regulatory compliance throughout the project lifecycle. In addition, we direct technology and systems integration, which includes the procurement and deployment of enterprise information systems, command centers, and digital networks.',
             'We also prepare organizations for opening day through operational readiness planning and clinical workflow design. We lead structured stakeholder engagement and consult directly with Indigenous Nations, healthcare boards, and government ministries. Through this collaborative approach, we integrate community priorities and build resilient physical and digital environments for public institutions across Canada.'
 
+            // 'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. This experience spans healthcare redevelopment, digital modernization, operational readiness and the integrated enterprise systems required to bring new futuristic infrastructure and innovation safely into operation within defined scope, budget and timeline.',
+            // 'JiM Co works alongside health authorities, provincial governments, municipalities and leadership teams from executives to front line, throughout the project lifecycle. Specializing in early engagement visioning art of the possible, planning and business-case development through procurement, design, implementation, activation and stabilization.',
+            // 'The firm is known for stepping into complex environments and moving the work forward with confidence and customization of approach to align with organizational guiding principles and culture. That means establishing clear direction through governance, documenting decisions, aligning people and priorities, resolving issues and maintaining momentum when the pressure is high. The approach is collaborative and grounded in the discipline required to deliver.',
+            // 'JiM Co does more than provide advice. The firm works alongside clients embedded in their teams, takes ownership of the path forward and does "whatever it takes" to turn plans into action. Challenges are addressed directly, teams are supported and progress remains visible from vision through realization.'
 
         ]
     },
@@ -291,13 +297,66 @@ export const aboutPage = {
                 name: 'Jeannie Gandham',
                 title: 'Principal',
                 image: '/profiles/jeannie_headshot.jpeg',
+                portrait: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
+                headline: 'Strategic Advisory & Project Delivery Leadership',
                 bio: [
                     'Jeannie Gandham is the Principal of J in Motion, bringing over 20 years of executive leadership in major healthcare, capital infrastructure, and technology transformation initiatives across Canada.',
                     'With a proven track record directing multi-billion-dollar public-sector portfolios, Jeannie specializes in strategic advisory, P3 capital delivery, operational readiness, and stakeholder alignment across government ministries, health authorities, and Indigenous communities.'
-                ]
-            },
-            {
+                ],
+                credibility: [
+                    { value: '20+', label: 'Years of Leadership' },
+                    { value: '$40B+', label: 'Portfolio Directed' },
+                    { value: '50+', label: 'Projects Delivered' },
+                    { value: '$450M', label: 'Technology Portfolio' }
+                ],
+                profile: [
+                    'Jeannie Gandham is an executive project and program leader with more than 20years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
+                    'She works with executive teams from early strategy and business-case development through delivery, activation, go-live and stabilization. Her strength is turning ambitious direction into executable roadmaps, aligning diverse stakeholders and maintaining focus on the decisions that create forward movement.',
+                    'Jeannie is known for an inclusive, direct and outcomes-focused leadership style—and for building the governance, capability and confidence organizations need to sustain results.'
+                ],
+                expertise: [
+                    'Complex program leadership',
+                    'Executive advisory & governance',
+                    'Hospital redevelopment',
+                    'Stakeholder engagement',
+                    'Digital-health strategy',
+                    'Clinical service design',
+                    'Operational readiness & activation',
+                    'Change & capability building'
+                ],
+                experience: [
+                    {
+                        project: 'New St. Paul\'s Hospital',
+                        role: 'Program Director',
+                        description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent technology initiatives.'
+                    },
+                    {
+                        project: 'Provincial Radiology Image Repository',
+                        role: 'Program Director',
+                        description: 'Led recovery and delivery across health regions, clinical leadership and vendors.'
+                    },
+                    {
+                        project: 'BC Children\'s & Women\'s Redevelopment',
+                        role: 'Senior Consultant',
+                        description: 'Activation, first-patient-day planning, command centre and closeout.'
+                    },
+                    {
+                        project: 'Stanton Territorial Hospital Renewal',
+                        role: 'Program Director',
+                        description: 'Led a $41M clinical, operational and technology portfolio.'
+                    }
+                ],
+                credentials: [
+                    'B.Sc., UBC',
+                    'Project Management Certificate, UBC Sauder',
+                    'Prosci Change Management',
+                    'Value-Based Health Care Training, UT Austin'
+                ],
+                profilePdf: '/profiles/jeannie-gandham-profile.pdf'
+            }
+            /* Cameron Yee-Ping
+            ,{
                 id: 'cameron-yee-ping',
                 name: 'Cameron Yee-Ping',
                 title: 'Project Leader',
@@ -308,6 +367,7 @@ export const aboutPage = {
                     'Working alongside project leadership, Cameron focuses on digital roadmaps, operational planning, and seamless project execution.'
                 ]
             }
+            */
         ]
     }
 };
