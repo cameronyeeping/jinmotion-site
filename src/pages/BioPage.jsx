@@ -217,6 +217,60 @@ export default function BioPage({ onContactClick }) {
       )}
 
       {/* ───────────────────────────────────────────────
+          7. CONFERENCE HIGHLIGHTS
+      ──────────────────────────────────────────────── */}
+      {Array.isArray(member.conferences) && member.conferences.length > 0 && (
+        <section style={{ padding: '24px 0', backgroundColor: 'var(--bg-light)' }}>
+          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '1.5rem',
+              color: 'var(--text-dark-primary)',
+              margin: '0 0 8px 0',
+              fontWeight: 700
+            }}>
+              Conference Highlights
+            </h2>
+            <div style={{ height: '3px', width: '100%', backgroundColor: 'var(--accent-green)', marginBottom: '20px' }} />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {member.conferences.map((conf, idx) => (
+                <div key={idx}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px' }}>
+                    <h3 style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '1.05rem',
+                      color: 'var(--text-dark-primary)',
+                      margin: 0,
+                      fontWeight: 700
+                    }}>
+                      {conf.event}
+                    </h3>
+                    <span style={{
+                      fontSize: '0.9rem',
+                      color: 'var(--text-dark-secondary)',
+                      fontWeight: 600,
+                      flexShrink: 0
+                    }}>
+                      {conf.date}
+                    </span>
+                  </div>
+                  <p style={{
+                    margin: '4px 0 0 0',
+                    color: 'var(--text-dark-secondary)',
+                    fontSize: '1.05rem',
+                    lineHeight: 1.7,
+                    fontStyle: 'italic'
+                  }}>
+                    {conf.topic}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      {/* ───────────────────────────────────────────────
           6. CREDENTIALS — single inline line
       ──────────────────────────────────────────────── */}
       {hasCredentials && (
@@ -245,8 +299,9 @@ export default function BioPage({ onContactClick }) {
         </section>
       )}
 
+
       {/* ───────────────────────────────────────────────
-          7. DOWNLOADABLE ONE-PAGE PROFILE CTA
+          8. DOWNLOADABLE ONE-PAGE PROFILE CTA
       ──────────────────────────────────────────────── */}
       {member.profilePdf && (
         <section style={{

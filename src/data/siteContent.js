@@ -353,6 +353,23 @@ export const aboutPage = {
                     'Prosci Change Management',
                     'Value-Based Health Care Training, UT Austin'
                 ],
+                conferences: [
+                    {
+                        event: 'Healthcare Infrastructure East',
+                        date: 'October 2022',
+                        topic: 'Future Proofing Hospitals'
+                    },
+                    {
+                        event: 'Canadian Healthcare Innovation Summit',
+                        date: 'October 2023',
+                        topic: 'Digital Innovation & Marginalized Populations'
+                    },
+                    {
+                        event: 'Healthcare Infrastructure East',
+                        date: 'November 2023',
+                        topic: 'Delivering Care in the Future Hospital'
+                    }
+                ],
                 profilePdf: '/profiles/jeannie-gandham-profile.pdf'
             }
             /* Cameron Yee-Ping
