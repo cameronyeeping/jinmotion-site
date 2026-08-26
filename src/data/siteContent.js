@@ -178,7 +178,7 @@ export const homePage = {
         ]
     },
     methodology: {
-        eyebrow: 'THE JiM CO METHOD',
+        eyebrow: 'THE J IN MOTION METHOD',
         heading: 'From vision to realization.',
         subtitle: 'A clear, connected approach that turns complex ideas into meaningful outcomes.',
         steps: [
@@ -327,24 +327,25 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'New St. Paul\'s Hospital',
+                        project: 'Providence Healthcare - New St. Paul\'s Hospital',
                         role: 'Program Director',
-                        description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent technology initiatives.'
+                        description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
                     {
-                        project: 'Provincial Radiology Image Repository',
-                        role: 'Program Director',
-                        description: 'Led recovery and delivery across health regions, clinical leadership and vendors.'
+                        
+                        project: 'HH Angus + Northern Health Authority - Dawson Creek & District Hospital',
+                        role: 'Advisor',
+                        description: 'Advised both HH Angus and Northern Health Authority senior project leadership in their roadmap to opening day including creation of detailed project deliverables.'
                     },
                     {
-                        project: 'BC Children\'s & Women\'s Redevelopment',
+                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
                         role: 'Senior Consultant',
-                        description: 'Activation, first-patient-day planning, command centre and closeout.'
+                        description: 'Created and led approach for collaboration with the Private Public Partnership (P3) construction partner and health authority.'
                     },
                     {
                         project: 'Stanton Territorial Hospital Renewal',
                         role: 'Program Director',
-                        description: 'Led a $41M clinical, operational and technology portfolio.'
+                        description: 'Led a $41M clinical, operational and technology portfolio to operationalize the new Stanton Territorial Hospital'
                     }
                 ],
                 credentials: [
