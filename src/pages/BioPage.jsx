@@ -37,7 +37,7 @@ export default function BioPage({ onContactClick }) {
         const response = await fetch(fileUrl);
         if (response.ok) {
           const blob = await response.blob();
-          const fileName = `${member.name.replace(/[^a-zA-Z0-9]/g, '_')}_Profile.pdf`;
+          const fileName = member.profilePdf;
           const file = new File([blob], fileName, { type: 'application/pdf' });
 
           if (navigator.canShare && navigator.canShare({ files: [file] })) {
