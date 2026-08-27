@@ -23,6 +23,47 @@ export default function BioPage({ onContactClick }) {
   const hasCredentials = Array.isArray(member.credentials) && member.credentials.length > 0;
   const hasCredibility = Array.isArray(member.credibility) && member.credibility.length > 0;
 
+  const handleDownloadClick = async (e) => {
+    const fileUrl = getImageUrl(member.profilePdf);
+    if (!fileUrl) return;
+
+    const fullUrl = fileUrl.startsWith('http') ? fileUrl : `${window.location.origin}${fileUrl}`;
+    const isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                     (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 1 && window.innerWidth <= 1024);
+
+    if (isMobile && typeof navigator !== 'undefined' && navigator.share) {
+      e.preventDefault();
+      try {
+        const response = await fetch(fileUrl);
+        if (response.ok) {
+          const blob = await response.blob();
+          const fileName = `${member.name.replace(/[^a-zA-Z0-9]/g, '_')}_Profile.pdf`;
+          const file = new File([blob], fileName, { type: 'application/pdf' });
+
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              files: [file],
+              title: `${member.name} - Profile`,
+              text: `Executive profile for ${member.name}`
+            });
+            return;
+          }
+        }
+
+        // Fallback to sharing URL via native share sheet
+        await navigator.share({
+          title: `${member.name} - Profile`,
+          url: fullUrl
+        });
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          // If share fails, open in a new tab
+          window.open(fileUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+    }
+  };
+
   return (
     <div style={{ backgroundColor: 'var(--bg-light)', minHeight: '100vh' }}>
 
@@ -336,6 +377,7 @@ export default function BioPage({ onContactClick }) {
               href={getImageUrl(member.profilePdf)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleDownloadClick}
               className="btn-primary"
               style={{
                 display: 'inline-flex',
@@ -348,6 +390,7 @@ export default function BioPage({ onContactClick }) {
                 textDecoration: 'none',
                 fontWeight: 600,
                 fontSize: '0.95rem',
+                cursor: 'pointer',
                 transition: 'background var(--transition-fast)'
               }}
             >

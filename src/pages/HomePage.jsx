@@ -31,6 +31,7 @@ const HomePage = ({ onContactClick }) => {
                 </div>
             </section>
 
+
             {/* Content Section */}
             <section className="section-light" style={{ padding: '80px 0', backgroundColor: 'var(--bg-light)' }}>
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
@@ -104,6 +105,85 @@ const HomePage = ({ onContactClick }) => {
                 </div>
             </section>
 
+            {/* Our Clients Section */}
+            {homePage.clients && (
+                <section
+                    className="clients-section"
+                    style={{
+                        padding: '48px 0',
+                        backgroundColor: 'var(--bg-light-secondary)',
+                        borderTop: '1px solid var(--border-light)',
+                        borderBottom: '1px solid var(--border-light)'
+                    }}
+                >
+                    <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+                        <span
+                            style={{
+                                fontFamily: 'var(--font-heading)',
+                                fontSize: '2.5rem',
+                                color: 'var(--text-dark-primary)',
+                                margin: '0 0 24px 0',
+                                fontWeight: 700,
+                                display: 'block',
+                                marginBottom: '28px'
+                            }}
+                        >
+                            {homePage.clients.heading}
+                        </span>
+                        <div
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexWrap: 'wrap',
+                                gap: '24px 40px'
+                            }}
+                        >
+                            {homePage.clients.items.map((client, idx) => (
+                                <div
+                                    key={idx}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        padding: '14px 28px',
+                                        backgroundColor: '#FFFFFF',
+                                        borderRadius: 'var(--radius-sm, 8px)',
+                                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                                        border: '1px solid var(--border-light)',
+                                        height: '72px',
+                                        width: '200px',
+                                        boxSizing: 'border-box',
+                                        transition: 'transform var(--transition-fast), box-shadow var(--transition-fast)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.08)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
+                                    }}
+                                >
+                                    <img
+                                        src={client.logo}
+                                        alt={client.name}
+                                        title={client.name}
+                                        style={{
+                                            maxHeight: '44px',
+                                            maxWidth: '150px',
+                                            width: 'auto',
+                                            height: 'auto',
+                                            objectFit: 'contain',
+                                            display: 'block'
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
             {/* CTA Section */}
             <CtaBanner onContactClick={onContactClick} />
         </div>

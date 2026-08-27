@@ -150,6 +150,27 @@ export const homePage = {
         bgImage: '/NSPH-rendering.jpg',
         bgAlt: 'Hero Background'
     },
+    clients: {
+        heading: 'Our clients',
+        items: [
+            {
+                name: 'Fraser Health Authority',
+                logo: '/client-logos/Fraser-Health-Authority.png'
+            },
+            {
+                name: 'BC Cancer',
+                logo: '/client-logos/bc-cancer-logo.webp'
+            },
+            {
+                name: 'Provincial Health Services Authority',
+                logo: '/client-logos/phsa-logo.png'
+            },
+            {
+                name: 'Providence Health Care',
+                logo: '/client-logos/providence-logo.png'
+            }
+        ]
+    },
     approach: {
         eyebrow: 'ABOUT US',
         heading: 'Building Tomorrow’s Critical Infrastructure',
@@ -371,7 +392,7 @@ export const aboutPage = {
                         topic: 'Delivering Care in the Future Hospital'
                     }
                 ],
-                profilePdf: '/profiles/jeannie-gandham-profile.pdf'
+                profilePdf: '/resumes/jeannie-resume.pdf'
             }
             /* Cameron Yee-Ping
             ,{
