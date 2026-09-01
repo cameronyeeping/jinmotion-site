@@ -111,8 +111,9 @@ export default function MethodologyGraphic() {
                     <div style={{
                       fontSize: '0.85rem',
                       fontWeight: 700,
-                      color:'var(--accent-green, #2D6A4F)',
-                      marginBottom: '4px'
+                      color: 'var(--accent-green, #2D6A4F)',
+                      marginBottom: '4px',
+                      textAlign: 'center'
                     }}>
                       {step.number}
                     </div>
@@ -124,21 +125,26 @@ export default function MethodologyGraphic() {
                       fontWeight: 700,
                       color: 'var(--text-dark-primary, #1F1513)',
                       margin: '0 0 10px 0',
-                      lineHeight: 1.2
+                      lineHeight: 1.2,
+                      textAlign: 'center'
                     }}>
                       {step.title}
                     </h3>
 
-                    {/* Step Description */}
+                    {/* 
+
                     <p style={{
                       fontSize: '0.875rem',
                       lineHeight: 1.5,
                       color: 'var(--text-dark-primary, #1F1513)',
                       margin: '0 0 20px 0',
-                      minHeight: '42px'
+                      minHeight: '42px',
+                    //   textAlign: 'center'
                     }}>
                       {step.description}
                     </p>
+                    */}
+                    {/* Step Description */}
 
                     {/* Divider Line */}
                     <div style={{
@@ -183,33 +189,6 @@ export default function MethodologyGraphic() {
             </div>
           </div>
 
-          {/* Bottom Summary Bar */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '16px',
-            paddingTop: '20px',
-            borderTop: '1px solid var(--border-light, rgba(35, 24, 21, 0.1))'
-          }}>
-            <div style={{
-              fontSize: '0.95rem',
-              fontWeight: 600,
-              color: 'var(--text-dark-secondary, #5C4E47)'
-            }}>
-              {methodology.footerSummary}
-            </div>
-            <div style={{
-              fontSize: '0.85rem',
-              fontWeight: 800,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--accent-green, #2D6A4F)'
-            }}>
-              {methodology.footerTagline}
-            </div>
-          </div>
         </div>
 
       </div>

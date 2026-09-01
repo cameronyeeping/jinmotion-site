@@ -18,7 +18,7 @@ const TeamMemberCard = ({ member }) => {
                 padding: '28px',
                 flex: 1,
                 minWidth: '280px',
-                maxWidth: '400px',
+                maxWidth: '360px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '20px',
@@ -34,7 +34,7 @@ const TeamMemberCard = ({ member }) => {
                 borderRadius: 'var(--radius-sm)',
                 overflow: 'hidden',
                 width: '100%',
-                aspectRatio: '4/3',
+                aspectRatio: '4/5',
                 backgroundColor: '#EDE8E3',
                 position: 'relative'
             }}>

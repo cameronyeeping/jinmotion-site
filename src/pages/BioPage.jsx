@@ -226,7 +226,7 @@ export default function BioPage({ onContactClick }) {
               margin: '0 0 8px 0',
               fontWeight: 700
             }}>
-              Selected Leadership Experience
+              Notable Highlights
             </h2>
             <div style={{ height: '3px', width: '100%', backgroundColor: 'var(--accent-green)', marginBottom: '20px' }} />
 

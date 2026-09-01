@@ -110,33 +110,55 @@ const HomePage = ({ onContactClick }) => {
                 <section
                     className="clients-section"
                     style={{
-                        padding: '48px 0',
-                        backgroundColor: 'var(--bg-light-secondary)',
-                        borderTop: '1px solid var(--border-light)',
-                        borderBottom: '1px solid var(--border-light)'
+                        padding: '72px 0',
+                        backgroundColor: '#FFFFFF',
+                        borderTop: '1px solid var(--border-light)'
                     }}
                 >
                     <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
                         <span
                             style={{
+                                color: 'var(--accent-green)',
+                                fontWeight: 700,
+                                fontSize: '0.85rem',
+                                letterSpacing: '0.14em',
+                                textTransform: 'uppercase',
+                                display: 'block',
+                                marginBottom: '10px'
+                            }}
+                        >
+                            Trusted Partnerships
+                        </span>
+                        <h2
+                            style={{
                                 fontFamily: 'var(--font-heading)',
                                 fontSize: '2.5rem',
                                 color: 'var(--text-dark-primary)',
-                                margin: '0 0 24px 0',
+                                margin: '0 0 12px 0',
                                 fontWeight: 700,
-                                display: 'block',
-                                marginBottom: '28px'
+                                lineHeight: 1.2
                             }}
                         >
-                            {homePage.clients.heading}
-                        </span>
+                            Our Clients
+                        </h2>
+                        <p
+                            style={{
+                                color: 'var(--text-dark-secondary)',
+                                fontSize: '1.05rem',
+                                lineHeight: 1.6,
+                                margin: '0 auto 48px auto',
+                                maxWidth: '620px'
+                            }}
+                        >
+                            Proud to lead critical capital, digital, and operational readiness programs for British Columbia's premier health authorities.
+                        </p>
                         <div
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 flexWrap: 'wrap',
-                                gap: '24px 40px'
+                                gap: '40px 64px'
                             }}
                         >
                             {homePage.clients.items.map((client, idx) => (
@@ -146,23 +168,28 @@ const HomePage = ({ onContactClick }) => {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        padding: '14px 28px',
-                                        backgroundColor: '#FFFFFF',
-                                        borderRadius: 'var(--radius-sm, 8px)',
-                                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
-                                        border: '1px solid var(--border-light)',
-                                        height: '72px',
-                                        width: '200px',
-                                        boxSizing: 'border-box',
-                                        transition: 'transform var(--transition-fast), box-shadow var(--transition-fast)'
+                                        padding: '12px 20px',
+                                        height: '70px',
+                                        minWidth: '170px',
+                                        maxWidth: '240px',
+                                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                                        cursor: 'default'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'translateY(-2px)';
-                                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.08)';
+                                        e.currentTarget.style.transform = 'translateY(-4px)';
+                                        const img = e.currentTarget.querySelector('img');
+                                        if (img) {
+                                            img.style.filter = 'grayscale(0%) opacity(1)';
+                                            img.style.transform = 'scale(1.05)';
+                                        }
                                     }}
                                     onMouseLeave={(e) => {
                                         e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
+                                        const img = e.currentTarget.querySelector('img');
+                                        if (img) {
+                                            img.style.filter = 'grayscale(25%) opacity(0.85)';
+                                            img.style.transform = 'scale(1)';
+                                        }
                                     }}
                                 >
                                     <img
@@ -170,12 +197,14 @@ const HomePage = ({ onContactClick }) => {
                                         alt={client.name}
                                         title={client.name}
                                         style={{
-                                            maxHeight: '44px',
-                                            maxWidth: '150px',
+                                            maxHeight: '52px',
+                                            maxWidth: '200px',
                                             width: 'auto',
                                             height: 'auto',
                                             objectFit: 'contain',
-                                            display: 'block'
+                                            display: 'block',
+                                            filter: 'grayscale(25%) opacity(0.85)',
+                                            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
                                         }}
                                     />
                                 </div>

@@ -9,6 +9,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import ServicesPage from './pages/ServicesPage'
 import BioPage from './pages/BioPage'
+import CommunityPage from './pages/CommunityPage'
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false)
@@ -28,6 +29,7 @@ function App() {
           <Route path="/services" element={<ServicesPage onContactClick={openContact} />} />
           <Route path="/projects" element={<ProjectsPage onContactClick={openContact} />} />
           <Route path="/projects/:id" element={<ProjectDetailPage onContactClick={openContact} />} />
+          <Route path="/community" element={<CommunityPage onContactClick={openContact} />} />
         </Routes>
       </main>
       <Footer />

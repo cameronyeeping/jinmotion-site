@@ -15,6 +15,7 @@ export const navLinks = [
     { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
     { to: '/projects', label: 'Projects' },
+    { to: '/community', label: 'Community' },
 ];
 
 export const connectLinks = [
@@ -173,7 +174,7 @@ export const homePage = {
     },
     approach: {
         eyebrow: 'ABOUT US',
-        heading: 'Building Tomorrow’s Critical Infrastructure',
+        heading: 'Driving Momentum Across Complex Projects',
         paragraphs: [
             'We are a strategic advisory firm with a proven track record of managing over $40B in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
@@ -208,7 +209,7 @@ export const homePage = {
                 title: 'Vision',
                 description: 'Define the destination and the reason for change.',
                 icon: 'target',
-                sectionLabel: 'TYPICAL ACTIVITIES',
+                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Research and site visits',
                     'Best-practice review',
@@ -221,7 +222,7 @@ export const homePage = {
                 title: 'Roadmap',
                 description: 'Translate the vision into an achievable path.',
                 icon: 'trending-up',
-                sectionLabel: 'TYPICAL DELIVERABLES',
+                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Key deliverables',
                     'Milestones and timeline',
@@ -234,7 +235,7 @@ export const homePage = {
                 title: 'Implement',
                 description: 'Build the structure required for successful delivery.',
                 icon: 'grid',
-                sectionLabel: 'TYPICAL DELIVERABLES',
+                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project plan',
                     'Governance and resources',
@@ -247,7 +248,7 @@ export const homePage = {
                 title: 'Realize',
                 description: 'Lead execution and turn plans into outcomes.',
                 icon: 'arrow-right',
-                sectionLabel: 'TYPICAL ACTIVITIES',
+                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project leadership',
                     'Issue resolution',
@@ -261,7 +262,7 @@ export const homePage = {
                 description: 'Close well and make the value visible.',
                 icon: 'star',
                 isHighlighted: true,
-                sectionLabel: 'TYPICAL ACTIVITIES',
+                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project closeout',
                     'Outcome measurement',
@@ -529,3 +530,121 @@ export const servicesPage = {
         }
     ]
 };
+
+export const communityPage = {
+    hero: {
+        title: 'Community & Impact',
+        subtitle: 'Investing in the health, people, and future of the communities where we live and work.',
+        bgImage: '/vancouver.webp',
+        bgAlt: 'Community Impact Hero'
+    },
+    intro: {
+        eyebrow: 'OUR PURPOSE',
+        heading: 'Community-First Infrastructure',
+        summary: 'True progress extends beyond capital delivery. We partner with healthcare foundations, regional charities, and youth initiatives to leave a lasting, positive footprint in every community we touch.',
+        featuredImage: '/HOSPITAL1.jpg',
+        featuredImageAlt: 'Community healthcare in action'
+    },
+    stats: [
+        { value: '15+', label: 'Charities Supported' },
+        { value: '500+', label: 'Annual Volunteer Hours' },
+        { value: '100%', label: 'Regional Focus' }
+    ],
+    pillars: [
+        {
+            id: 'healthcare-foundations',
+            title: 'Healthcare & Patient Care',
+            icon: 'heart',
+            image: '/HOSPITAL1.jpg',
+            description: 'Direct support for hospital foundations, specialized pediatric care, and frontline clinical comfort.'
+        },
+        {
+            id: 'indigenous-partnerships',
+            title: 'Indigenous Partnerships',
+            icon: 'users',
+            image: '/vancouver.webp',
+            description: 'Collaborating with First Nations to embed cultural wellness, sacred spaces, and health equity.'
+        },
+        {
+            id: 'youth-mentorship',
+            title: 'Youth & STEM Mentorship',
+            icon: 'graduation-cap',
+            image: '/bc-childrens/bc-childrens-2.jpeg',
+            description: 'Mentoring next-generation leaders through project management outreach and educational pathways.'
+        },
+        {
+            id: 'social-equity',
+            title: 'Regional Relief & Wellness',
+            icon: 'building-2',
+            image: '/stanton/stanton-territorial.jpg',
+            description: 'Supporting local food security, family relief programs, and grassroots community health.'
+        }
+    ],
+    charities: [
+        {
+            name: 'St. Paul’s Foundation',
+            category: 'Hospital Innovation',
+            image: '/nsph/nsph.jpeg',
+            description: 'Fueling medical research and compassionate patient care at the New St. Paul’s Hospital.',
+            link: 'https://helpstpauls.com/'
+        },
+        {
+            name: 'BC Children’s Hospital Foundation',
+            category: 'Pediatric Care',
+            image: '/bc-childrens/bc-childrens.jpg',
+            description: 'Supporting specialized care, pediatric research, and support for families across BC and Yukon.',
+            link: 'https://www.bcchf.ca/'
+        },
+        {
+            name: 'BC Cancer Foundation',
+            category: 'Cancer Research',
+            image: '/bc-cancer/cloverdale.webp',
+            description: 'Advancing breakthrough oncology research and expanding access to world-class treatment.',
+            link: 'https://bccancerfoundation.com/'
+        },
+        {
+            name: 'Stanton Territorial Hospital Foundation',
+            category: 'Northern Health',
+            image: '/stanton/stanton-territorial.jpg',
+            description: 'Enhancing patient care and medical technology for communities across the Northwest Territories.',
+            link: 'https://www.stantonfoundation.ca/'
+        },
+        {
+            name: 'Fraser Health Foundations',
+            category: 'Community Hospitals',
+            image: '/surrey/surrey.jpg',
+            description: 'Empowering regional healthcare teams and clinical equipment across the Fraser Valley.',
+            link: 'https://www.fraserhealth.ca/'
+        },
+        {
+            name: 'Regional Food & Relief Programs',
+            category: 'Community Aid',
+            image: '/dawson/dawson-creek.jpg',
+            description: 'Backing local food drives, family relief funds, and emergency community wellness initiatives.',
+            link: ''
+        }
+    ],
+    gallery: [
+        {
+            image: '/bc-childrens/bc-childrens-3.jpg',
+            title: 'Pediatric & Child Health',
+            caption: 'Fostering nurturing, world-class clinical environments for children.'
+        },
+        {
+            image: '/nsph/nsph-birdseye-toppedout-scaled.jpg',
+            title: 'Major Healthcare Redevelopment',
+            caption: 'Transforming health infrastructure for generations to come.'
+        },
+        {
+            image: '/stanton/stanton-1.avif',
+            title: 'Northern Community Care',
+            caption: 'Strengthening regional healthcare access across the North.'
+        },
+        {
+            image: '/bc-cancer/cloverdale-1.jpeg',
+            title: 'Innovative Cancer Facilities',
+            caption: 'Expanding specialized regional care and supportive therapies.'
+        }
+    ]
+};
+
