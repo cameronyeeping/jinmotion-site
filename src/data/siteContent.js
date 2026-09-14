@@ -15,6 +15,7 @@ export const navLinks = [
     { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
     { to: '/projects', label: 'Projects' },
+    { to: '/team', label: 'Team' },
     { to: '/community', label: 'Community' },
 ];
 
@@ -52,7 +53,7 @@ export const projects = [
         title: 'Dawson Creek & District Hospital',
         category: 'Infrastructure',
         year: '2026',
-        client: 'HH Angus + Northern Health Authority + Infrastructure BC',
+        client: 'Northern Health Authority + Infrastructure BC',
         location: 'Dawson Creek, BC',
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
         long_description: [
@@ -61,7 +62,7 @@ export const projects = [
             "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
             "project deliverables."
         ],
-        image: '/dawson/dawson-creek.jpg',
+        image: '/dawson/dawson-creek-render.jpg',
         heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
         galleryImages: [
             'dawson/dawson-2.jpg',
@@ -144,8 +145,8 @@ export const projects = [
 
 export const homePage = {
     hero: {
-        title: 'Where vision becomes momentum.',
-        subtitle: 'We turn ambitious direction into practical roadmaps, disciplined execution and outcomes people can see.',
+        title: 'Vision in motion.',
+        subtitle: 'Ambitious direction driven forward through practical roadmaps, disciplined execution and outcomes people can see.',
         btnPrimary: 'Our Work',
         btnSecondary: 'About Us',
         bgImage: '/NSPH-rendering.jpg',
@@ -291,9 +292,9 @@ export const aboutPage = {
     content: {
         heading: 'Driving Momentum Across Canada',
         paragraphs: [
-
-            'J in Motion brings vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
-            'We lead large-scale capital infrastructure, technology integration, and operational readiness projects. With more than 20 years of experience, we direct complex public-sector portfolios from initial planning to final facility commissioning. Our track record includes executive leadership on multi-billion-dollar developments across Canada and project portfolios that exceed 40 billion dollars.',
+            'J in Motion delivers infrastructure, enterprise technology, and organizational transformation projects through clear roadmaps, focused execution, and measurable results.',
+            // 'J in Motion brings vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
+            'With over than 20 years of leadership experience, we have contributed to major public programs that represent more than 40 billion dollars in capital investment across Canada. This experience includes healthcare facility construction, digital modernization, operational readiness, and enterprise system integration. We ensure that organizations put new infrastructure and technology into operation safely within approved scope, budget, and schedule limits.',
             // 'Our core capabilities include capital infrastructure delivery for complex Public-Private Partnership (P3) and Design-Build-Finance projects. We control project schedules, budgets, risk, and regulatory compliance throughout the project lifecycle. In addition, we direct technology and systems integration, which includes the procurement and deployment of enterprise information systems, command centers, and digital networks.',
             'We also prepare organizations for opening day through operational readiness planning and clinical workflow design. We lead structured stakeholder engagement and consult directly with Indigenous Nations, healthcare boards, and government ministries. Through this collaborative approach, we integrate community priorities and build resilient physical and digital environments for public institutions across Canada.'
 
@@ -310,6 +311,24 @@ export const aboutPage = {
         { value: '$40B', label: 'Portfolio Value Delivered' },
         { value: '$450M', label: 'Technology Portfolio Led' }
     ],
+    guidingPrinciples: {
+        heading: 'Guiding Principles',
+        principles: [
+            {
+                title: 'Respect.',
+                description: 'Listen carefully, value every contribution and build relationships grounded in trust, honesty and accountability.'
+            },
+            {
+                title: 'Whatever It Takes.',
+                description: 'Stay committed, solve problems and step forward wherever leadership is needed to move the work ahead.'
+            },
+            {
+                title: 'Have Fun.',
+                description: 'Bring energy, humanity and celebration to demanding work. Strong teams achieve more when people feel connected, valued and proud of what they accomplish together.'
+            }
+        ],
+        closing: 'The result is more than a completed project. It is infrastructure that works, technology that enables people, teams that are ready and lasting value that organizations and communities can see.'
+    },
     team: {
         heading: 'Meet the Team',
         subtitle: 'The people behind J in Motion',
@@ -325,12 +344,6 @@ export const aboutPage = {
                 bio: [
                     'Jeannie Gandham is the Principal of J in Motion, bringing over 20 years of executive leadership in major healthcare, capital infrastructure, and technology transformation initiatives across Canada.',
                     'With a proven track record directing multi-billion-dollar public-sector portfolios, Jeannie specializes in strategic advisory, P3 capital delivery, operational readiness, and stakeholder alignment across government ministries, health authorities, and Indigenous communities.'
-                ],
-                credibility: [
-                    { value: '20+', label: 'Years of Leadership' },
-                    { value: '$40B+', label: 'Portfolio Directed' },
-                    { value: '50+', label: 'Projects Delivered' },
-                    { value: '$450M', label: 'Technology Portfolio' }
                 ],
                 profile: [
                     'Jeannie Gandham is an executive project and program leader with more than 20years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
@@ -394,6 +407,59 @@ export const aboutPage = {
                     }
                 ],
                 profilePdf: '/resumes/jeannie-resume.pdf'
+            }
+            /*
+             * Gina Pisoni
+             */
+            ,{
+                id: 'gina-pisoni',
+                name: 'Gina Pisoni',
+                title: 'Digital Solutions Lead',
+                image: '/profiles/gina_headshot.jpg',
+                portrait: '/profiles/gina_headshot.jpg',
+                alt: 'Gina Pisoni',
+                bio: [
+                    'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',
+                    'Throughout her career, Gina has partnered with executive leaders, clinicians, facilities, teams, and technology professionals to translate complex challenges into practical, strategic solutions. She\'s known for building high-performing teams, fostering trusted relationships, and improving healthcare delivery.'
+                ],
+
+                expertise: [
+                    'Executive leadership & governance',
+                    'IMIT strategy & capital planning',
+                    'Healthcare infrastructure redevelopment',
+                    'Operational readiness',
+                    'Clinical technology',
+                    'Operational readiness & activation',
+                    'Multidisciplinary program delivery',
+                ],
+                experience: [
+                    {
+                        project: 'Provincial Health Services Authority - BC Cancer Redevelopment Projects',
+                        role: 'Senior Director, Delivery Solutions, Capital Projects',
+                        description: 'Digital leadership and governance for four concurrent cancer centre redevelopments across the province, owning a $140M IM/IT capital budget and directing a multidisciplinary Technology Solutions and PMO team. Set digital strategy and capital planning direction while ensuring program-wide risk management and stakeholder alignment across health authority and construction partners. '
+                    },
+                    {
+                        
+                        project: 'Provincial Health Services Authority - New St. Paul\'s Hospital',
+                        role: 'Director, Facilities and Capital Projects',
+                        description: 'Led Design-Build contract management, and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
+                    },
+                    {
+                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
+                        role: 'Director, IMIT',
+                        description: 'Owned IMIT strategy and a $33M capital budget for the redevelopment\'s technology scope and led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
+                    },
+                    {
+                        project: 'Provincial Health Services Authority - Children\'s and Women\'s Redevelopment',
+                        role: 'Senior Manager, Clinical Alignment',
+                        description: 'Led P3 (Public-Private Partnership) IM/IT contract execution, serving as the bridge between clinical leadership and construction/technology teams to align clinical requirements with facility design — supporting clinical technology planning and workflow readiness for the new care environment.'
+                    }
+                ],
+                credentials: [
+                    'Computer Information Systems Diploma, Langara College',
+                    'Healthcare Facilities Planning and Design: Focus on Leadership Certificate, Cornell University',
+                ],
+                profilePdf: '/resumes/gina-resume.pdf'
             }
             /* Cameron Yee-Ping
             ,{

@@ -125,7 +125,7 @@ export default function BioPage({ onContactClick }) {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {member.profile.map((para, idx) => (
+              {(member.profile || member.bio || []).map((para, idx) => (
                 <p key={idx} style={{
                   margin: 0,
                   color: 'var(--text-dark-secondary)',
@@ -226,7 +226,7 @@ export default function BioPage({ onContactClick }) {
               margin: '0 0 8px 0',
               fontWeight: 700
             }}>
-              Notable Highlights
+              Selected Leadership Experience
             </h2>
             <div style={{ height: '3px', width: '100%', backgroundColor: 'var(--accent-green)', marginBottom: '20px' }} />
 

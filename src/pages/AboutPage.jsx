@@ -1,93 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
 import { aboutPage } from '../data/siteContent';
-
-const TeamMemberCard = ({ member }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <Link
-            to={`/team/${member.id}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-md)',
-                padding: '28px',
-                flex: 1,
-                minWidth: '280px',
-                maxWidth: '360px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '20px',
-                textDecoration: 'none',
-                color: 'inherit',
-                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
-                boxShadow: isHovered ? '0 16px 32px rgba(0, 0, 0, 0.15)' : '0 4px 12px rgba(0, 0, 0, 0.05)',
-                cursor: 'pointer'
-            }}
-        >
-            <div style={{
-                borderRadius: 'var(--radius-sm)',
-                overflow: 'hidden',
-                width: '100%',
-                aspectRatio: '4/5',
-                backgroundColor: '#EDE8E3',
-                position: 'relative'
-            }}>
-                <img
-                    src={member.image}
-                    alt={member.alt || member.name}
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                        transition: 'transform 0.5s ease',
-                        transform: isHovered ? 'scale(1.03)' : 'scale(1)'
-                    }}
-                />
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                <div>
-                    <h3 style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: '1.5rem',
-                        color: 'var(--text-dark-primary)',
-                        margin: '0 0 6px 0',
-                        fontWeight: 700
-                    }}>
-                        {member.name}
-                    </h3>
-                    <div style={{
-                        fontWeight: 600,
-                        color: 'var(--accent-green, #2D5A3D)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        fontSize: '0.85rem'
-                    }}>
-                        {member.title}
-                    </div>
-                </div>
-                <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    color: 'var(--accent-green, #2D5A3D)',
-                    fontWeight: 600,
-                    fontSize: '0.9rem',
-                    transition: 'transform 0.2s ease',
-                    transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
-                }}>
-                    View Bio <ArrowRight size={16} />
-                </div>
-            </div>
-        </Link>
-    );
-};
 
 const AboutPage = ({ onContactClick }) => {
     return (
@@ -104,7 +19,7 @@ const AboutPage = ({ onContactClick }) => {
                 <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(35, 24, 21, 0.8), rgba(35, 24, 21, 0.5))', zIndex: -1 }}></div>
                 <div className="container" style={{ position: 'relative', zIndex: 1, padding: '0 24px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
                     <div className="hero-content" style={{ maxWidth: '700px' }}>
-                        <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 5vw, 4.5rem)', color: 'var(--text-light-primary)', margin: '0 0 16px 0', lineHeight: 1.1,  }}>{aboutPage.hero.title}</h1>
+                        <h1 className="hero-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(3rem, 5vw, 4.5rem)', color: 'var(--text-light-primary)', margin: '0 0 16px 0', lineHeight: 1.1 }}>{aboutPage.hero.title}</h1>
                         <p className="hero-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-light-secondary)', margin: '0', lineHeight: 1.6 }}>
                             {aboutPage.hero.subtitle}
                         </p>
@@ -148,19 +63,132 @@ const AboutPage = ({ onContactClick }) => {
                 </div>
             </section>
 
-            {/* Team Section */}
+            {/* Guiding Principles Section */}
+            {aboutPage.guidingPrinciples && (
+                <section style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
+                    <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
+                        <div style={{ marginBottom: '48px' }}>
+                            <span style={{
+                                color: 'var(--accent-green)',
+                                fontWeight: 700,
+                                fontSize: '0.85rem',
+                                letterSpacing: '0.12em',
+                                textTransform: 'uppercase',
+                                display: 'block',
+                                marginBottom: '12px'
+                            }}>
+                                How We Work
+                            </span>
+                            <h2 style={{
+                                fontFamily: 'var(--font-heading)',
+                                fontSize: '2.5rem',
+                                color: 'var(--text-dark-primary)',
+                                margin: '0',
+                                lineHeight: 1.3
+                            }}>
+                                {aboutPage.guidingPrinciples.heading}
+                            </h2>
+                        </div>
+
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '28px',
+                            marginBottom: '48px'
+                        }}>
+                            {aboutPage.guidingPrinciples.principles.map((principle, idx) => (
+                                <div key={idx} style={{
+                                    backgroundColor: '#FFFFFF',
+                                    borderRadius: 'var(--radius-lg, 16px)',
+                                    padding: '40px 36px',
+                                    border: '1px solid var(--border-light)',
+                                    boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)',
+                                    display: 'flex',
+                                    flexDirection: 'column'
+                                }}>
+                                    <h3 style={{
+                                        fontFamily: 'var(--font-heading)',
+                                        fontSize: '1.35rem',
+                                        color: 'var(--accent-green)',
+                                        margin: '0 0 12px 0',
+                                        fontWeight: 700
+                                    }}>
+                                        {principle.title}
+                                    </h3>
+                                    <p style={{
+                                        color: 'var(--text-dark-secondary)',
+                                        fontSize: '1rem',
+                                        lineHeight: 1.7,
+                                        margin: 0
+                                    }}>
+                                        {principle.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Closing Statement */}
+                        <div style={{
+                            maxWidth: '800px',
+                            margin: '0 auto',
+                            textAlign: 'center',
+                            padding: '32px 36px',
+                            backgroundColor: '#FFFFFF',
+                            borderRadius: 'var(--radius-lg, 16px)',
+                            border: '1px solid var(--border-light)',
+                            boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)'
+                        }}>
+                            <p style={{
+                                color: 'var(--text-dark-primary)',
+                                fontSize: '1.1rem',
+                                lineHeight: 1.7,
+                                fontWeight: 500,
+                                margin: 0
+                            }}>
+                                {aboutPage.guidingPrinciples.closing}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Meet the Team Section */}
             <section style={{ backgroundColor: 'var(--accent-green)', padding: '80px 0' }}>
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: '#FFFFFF', margin: '0 0 16px 0' }}>{aboutPage.team.heading}</h2>
-                        <p style={{ color: '#FFFFFF', opacity: 0.85, fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center' }}>
+                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: '#FFFFFF', margin: '0 0 16px 0' }}>
+                            {aboutPage.team.heading}
+                        </h2>
+                        <p style={{ color: '#FFFFFF', opacity: 0.85, fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto 36px auto', lineHeight: 1.6 }}>
                             {aboutPage.team.subtitle}
                         </p>
-                    </div>
-                    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        {aboutPage.team.members.map((member) => (
-                            <TeamMemberCard key={member.id} member={member} />
-                        ))}
+                        <Link
+                            to="/team"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                backgroundColor: '#FFFFFF',
+                                color: 'var(--accent-green)',
+                                padding: '14px 32px',
+                                borderRadius: '8px',
+                                fontFamily: 'var(--font-heading)',
+                                fontWeight: 700,
+                                fontSize: '1rem',
+                                textDecoration: 'none',
+                                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.2)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                            }}
+                        >
+                            Meet Our Team <ArrowRight size={18} />
+                        </Link>
                     </div>
                 </div>
             </section>

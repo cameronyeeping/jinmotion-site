@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import ContactModal from './components/ContactModal'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import TeamPage from './pages/TeamPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import ServicesPage from './pages/ServicesPage'
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage onContactClick={openContact} />} />
           <Route path="/about" element={<AboutPage onContactClick={openContact} />} />
+          <Route path="/team" element={<TeamPage onContactClick={openContact} />} />
           <Route path="/team/:id" element={<BioPage onContactClick={openContact} />} />
           <Route path="/bio/:id" element={<BioPage onContactClick={openContact} />} />
           <Route path="/services" element={<ServicesPage onContactClick={openContact} />} />

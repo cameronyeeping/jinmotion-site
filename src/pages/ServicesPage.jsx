@@ -31,38 +31,39 @@ const ServiceCategoryCard = ({ category }) => {
                 height: '100%'
             }}
         >
-            {/* Icon & Title */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{
-                    width: '52px',
-                    height: '52px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(45, 90, 61, 0.1)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
-                }}>
-                    <IconComponent size={28} color="var(--accent-green, #2D5A3D)" />
-                </div>
-                <h3 style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '1.75rem',
-                    color: 'var(--text-dark-primary)',
-                    margin: 0,
-                    fontWeight: 700
-                }}>
-                    {category.title}
-                </h3>
+            {/* Icon */}
+            <div style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '14px',
+                backgroundColor: 'rgba(45, 106, 79, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '20px',
+                margin: '0 auto 20px auto'
+            }}>
+                <IconComponent size={28} color="var(--accent-green, #2D6A4F)" />
             </div>
+
+            {/* Title */}
+            <h3 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '1.75rem',
+                color: 'var(--text-dark-primary)',
+                margin: '0 0 16px 0',
+                fontWeight: 700,
+                textAlign: 'center'
+            }}>
+                {category.title}
+            </h3>
 
             {/* Description */}
             <p style={{
                 color: 'var(--text-dark-secondary)',
-                fontSize: '1.025rem',
-                lineHeight: 1.7,
-                margin: '0 0 28px 0',
-                flexGrow: 0
+                fontSize: '1rem',
+                lineHeight: 1.65,
+                margin: '0 0 28px 0'
             }}>
                 {category.description}
             </p>
@@ -71,29 +72,29 @@ const ServiceCategoryCard = ({ category }) => {
             <div style={{
                 height: '1px',
                 backgroundColor: 'var(--border-light)',
-                margin: '0 0 24px 0'
+                margin: '0 0 20px 0'
             }} />
 
-            {/* Services List Label */}
-            <h4 style={{
-                fontSize: '0.85rem',
+            {/* Services Include Label */}
+            <div style={{
+                fontSize: '0.8rem',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: 'var(--accent-green, #2D5A3D)',
-                margin: '0 0 16px 0'
+                color: 'var(--accent-green, #2D6A4F)',
+                marginBottom: '16px'
             }}>
                 {category.servicesIncludeLabel}
-            </h4>
+            </div>
 
-            {/* Service Items List */}
+            {/* Items List */}
             <ul style={{
                 listStyle: 'none',
                 padding: 0,
                 margin: 0,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '12px',
+                gap: '10px',
                 flexGrow: 1
             }}>
                 {category.items.map((item, idx) => (
@@ -102,16 +103,16 @@ const ServiceCategoryCard = ({ category }) => {
                         style={{
                             display: 'flex',
                             alignItems: 'flex-start',
-                            gap: '12px',
+                            gap: '10px',
                             color: 'var(--text-dark-primary)',
-                            fontSize: '0.975rem',
+                            fontSize: '0.95rem',
                             lineHeight: 1.5
                         }}
                     >
                         <CheckCircle2
-                            size={18}
-                            color="var(--accent-green, #2D5A3D)"
-                            style={{ flexShrink: 0, marginTop: '2px' }}
+                            size={16}
+                            color="var(--accent-green, #2D6A4F)"
+                            style={{ flexShrink: 0, marginTop: '3px' }}
                         />
                         <span>{item}</span>
                     </li>
@@ -146,11 +147,10 @@ export default function ServicesPage({ onContactClick }) {
                 </div>
             </section>
 
-            {/* Main Services Categories Section */}
-            <section style={{ padding: '80px 0 100px 0', backgroundColor: 'var(--bg-light)' }}>
+
+            {/* Detailed Service Cards */}
+            <section style={{ padding: '80px 0', backgroundColor: 'var(--bg-light)' }}>
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
-                    
-                    {/* Services Categories Grid */}
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
