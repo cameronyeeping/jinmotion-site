@@ -210,12 +210,11 @@ export const homePage = {
                 title: 'Vision',
                 description: 'Define the destination and the reason for change.',
                 icon: 'target',
-                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Research and site visits',
                     'Best-practice review',
-                    'Stakeholder input',
-                    'Project charter'
+                    'Industry Leadership Insights',
+                    'Executive Brief'
                 ]
             },
             {
@@ -223,11 +222,10 @@ export const homePage = {
                 title: 'Roadmap',
                 description: 'Translate the vision into an achievable path.',
                 icon: 'trending-up',
-                sectionLabel: 'DELIVERABLES',
                 items: [
-                    'Key deliverables',
-                    'Milestones and timeline',
-                    'Dependencies',
+                    'Timeline',
+                    'Milestones',
+                    'Critical Path',
                     'Decision points'
                 ]
             },
@@ -236,7 +234,6 @@ export const homePage = {
                 title: 'Implement',
                 description: 'Build the structure required for successful delivery.',
                 icon: 'grid',
-                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project plan',
                     'Governance and resources',
@@ -249,7 +246,6 @@ export const homePage = {
                 title: 'Realize',
                 description: 'Lead execution and turn plans into outcomes.',
                 icon: 'arrow-right',
-                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project leadership',
                     'Issue resolution',
@@ -262,8 +258,6 @@ export const homePage = {
                 title: 'Celebrate',
                 description: 'Close well and make the value visible.',
                 icon: 'star',
-                isHighlighted: true,
-                sectionLabel: 'DELIVERABLES',
                 items: [
                     'Project closeout',
                     'Outcome measurement',
@@ -414,9 +408,9 @@ export const aboutPage = {
             ,{
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
-                title: 'Digital Solutions Lead',
-                image: '/profiles/gina_headshot.jpg',
-                portrait: '/profiles/gina_headshot.jpg',
+                title: 'Digital Solutions Lead`',
+                image: '/profiles/gina_headshot_bg_change.jpg',
+                portrait: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
                     'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',

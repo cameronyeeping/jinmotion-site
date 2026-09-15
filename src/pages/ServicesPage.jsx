@@ -26,44 +26,49 @@ const ServiceCategoryCard = ({ category }) => {
                 transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                 transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
                 boxShadow: isHovered ? '0 16px 32px rgba(35, 24, 21, 0.08)' : '0 2px 8px rgba(35, 24, 21, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%'
+                display: 'grid',
+                gridTemplateRows: 'subgrid',
+                gridRow: 'span 4'
             }}
         >
-            {/* Icon */}
+            {/* Icon & Title */}
             <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '14px',
-                backgroundColor: 'rgba(45, 106, 79, 0.1)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '20px',
-                margin: '0 auto 20px auto'
+                gap: '14px',
+                marginBottom: '16px'
             }}>
-                <IconComponent size={28} color="var(--accent-green, #2D6A4F)" />
+                <div style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(45, 106, 79, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                }}>
+                    <IconComponent size={24} color="var(--accent-green, #2D6A4F)" />
+                </div>
+                <h3 style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '1.75rem',
+                    color: 'var(--text-dark-primary)',
+                    margin: 0,
+                    fontWeight: 700
+                }}>
+                    {category.title}
+                </h3>
             </div>
-
-            {/* Title */}
-            <h3 style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1.75rem',
-                color: 'var(--text-dark-primary)',
-                margin: '0 0 16px 0',
-                fontWeight: 700,
-                textAlign: 'center'
-            }}>
-                {category.title}
-            </h3>
 
             {/* Description */}
             <p style={{
                 color: 'var(--text-dark-secondary)',
                 fontSize: '1rem',
                 lineHeight: 1.65,
-                margin: '0 0 28px 0'
+                margin: 0,
+                alignSelf: 'start'
             }}>
                 {category.description}
             </p>
@@ -72,20 +77,9 @@ const ServiceCategoryCard = ({ category }) => {
             <div style={{
                 height: '1px',
                 backgroundColor: 'var(--border-light)',
-                margin: '0 0 20px 0'
+                alignSelf: 'end',
+                marginBottom: '20px'
             }} />
-
-            {/* Services Include Label */}
-            <div style={{
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--accent-green, #2D6A4F)',
-                marginBottom: '16px'
-            }}>
-                {category.servicesIncludeLabel}
-            </div>
 
             {/* Items List */}
             <ul style={{
@@ -95,7 +89,7 @@ const ServiceCategoryCard = ({ category }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '10px',
-                flexGrow: 1
+                alignSelf: 'start'
             }}>
                 {category.items.map((item, idx) => (
                     <li
@@ -154,6 +148,7 @@ export default function ServicesPage({ onContactClick }) {
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                        gridTemplateRows: 'auto auto auto auto',
                         gap: '32px',
                         alignItems: 'stretch'
                     }}>

@@ -153,17 +153,6 @@ export default function MethodologyGraphic() {
                       margin: '0 0 18px 0'
                     }} />
 
-                    {/* Section Label */}
-                    <div style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      color: 'var(--accent-green, #2D6A4F)',
-                      marginBottom: '12px'
-                    }}>
-                      {step.sectionLabel}
-                    </div>
 
                     {/* Items List */}
                     <ul style={{
