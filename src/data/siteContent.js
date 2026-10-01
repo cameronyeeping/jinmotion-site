@@ -16,7 +16,7 @@ export const navLinks = [
     { to: '/services', label: 'Services' },
     { to: '/projects', label: 'Projects' },
     { to: '/team', label: 'Team' },
-    { to: '/community', label: 'Community' },
+    // { to: '/community', label: 'Community' },
 ];
 
 export const connectLinks = [
