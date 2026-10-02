@@ -80,9 +80,9 @@ export default function ProjectDetailPage({ onContactClick }) {
         </div>
       </div>
 
-      {/* Main Content Section on Light Cream Background (Figma Screen 4 layout) */}
+      {/* Main Content Section */}
       <section className="section-light" style={{ padding: '60px 0 100px 0', backgroundColor: 'var(--bg-light)' }}>
-        <div className="container" style={{ maxWidth: '850px', margin: '0 auto', padding: '0 24px' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           
           {/* Breadcrumb Navigation */}
           <div style={{ marginBottom: '32px' }}>
@@ -103,142 +103,211 @@ export default function ProjectDetailPage({ onContactClick }) {
             </Link>
           </div>
 
-          {/* Project Header */}
-          <div style={{ marginBottom: '40px' }}>
-            <h1
-              style={{
-                fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
-                fontWeight: 800,
-                fontFamily: 'var(--font-heading)',
-                marginBottom: '12px',
-                color: 'var(--text-dark-primary)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em'
-              }}
-            >
-              {project.title}
-            </h1>
+          {/* Two-column layout: content + at a glance sidebar */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 280px',
+            gap: '48px',
+            alignItems: 'start'
+          }}>
 
-            {/* Subtitle / Category Badge */}
-            <div
-              style={{
-                fontStyle: 'italic',
-                color: 'var(--accent-green)',
-                fontWeight: 700,
-                fontSize: '1rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                marginBottom: '24px'
-              }}
-            >
-              {project.category}
-            </div>
-
-            {/* Metadata Bar */}
-            <div
-              style={{
-                display: 'flex',
-                gap: '24px',
-                padding: '16px 24px',
-                backgroundColor: 'var(--bg-light-secondary)',
-                borderRadius: 'var(--radius-sm)',
-                border: '1px solid var(--border-light)',
-                flexWrap: 'wrap',
-                fontSize: '0.9rem'
-              }}
-            >
-              <div>
-                <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Year</span>
-                <strong style={{ color: 'var(--text-dark-primary)' }}>{project.year}</strong>
-              </div>
-              <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
-              <div>
-                <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Client</span>
-                <strong style={{ color: 'var(--text-dark-primary)' }}>{project.client}</strong>
-              </div>
-              <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
-              <div>
-                <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Location</span>
-                <strong style={{ color: 'var(--text-dark-primary)' }}>{project.location}</strong>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Summary Lead */}
-          <div
-            style={{
-              fontSize: '1.25rem',
-              lineHeight: 1.6,
-              fontWeight: 500,
-              color: 'var(--text-dark-primary)',
-              marginBottom: '36px',
-              borderLeft: '4px solid var(--accent-green)',
-              paddingLeft: '20px'
-            }}
-          >
-            {project.short_description || project.description}
-          </div>
-
-          {/* Long Description Body */}
-          <div className="project-content" style={{ marginBottom: '56px' }}>
-            {Array.isArray(project.long_description || project.longDescription) ? (
-              (project.long_description || project.longDescription).map((paragraph, index) => (
-                <p
-                  key={index}
+            {/* Main content column */}
+            <div>
+              {/* Project Header */}
+              <div style={{ marginBottom: '40px' }}>
+                <h1
                   style={{
-                    color: 'var(--text-dark-secondary)',
-                    fontSize: '1.1rem',
-                    lineHeight: 1.8,
+                    fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
+                    fontWeight: 800,
+                    fontFamily: 'var(--font-heading)',
+                    marginBottom: '12px',
+                    color: 'var(--text-dark-primary)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.02em'
+                  }}
+                >
+                  {project.title}
+                </h1>
+
+                {/* Subtitle / Category Badge */}
+                <div
+                  style={{
+                    fontStyle: 'italic',
+                    color: 'var(--accent-green)',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
                     marginBottom: '24px'
                   }}
                 >
-                  {paragraph}
-                </p>
-              ))
-            ) : (
-              <p
-                style={{
-                  color: 'var(--text-dark-secondary)',
-                  fontSize: '1.1rem',
-                  lineHeight: 1.8,
-                  marginBottom: '24px'
-                }}
-              >
-                {project.long_description || project.longDescription}
-              </p>
-            )}
-          </div>
+                  {project.category}
+                </div>
 
-          {/* Gallery Images */}
-          {project.galleryImages && project.galleryImages.length > 0 && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '40px' }}>
-              {project.galleryImages.map((imgUrl, idx) => (
+                {/* Metadata Bar */}
                 <div
-                  key={idx}
                   style={{
-                    borderRadius: 'var(--radius-md)',
-                    overflow: 'hidden',
+                    display: 'flex',
+                    gap: '24px',
+                    padding: '16px 24px',
+                    backgroundColor: 'var(--bg-light-secondary)',
+                    borderRadius: 'var(--radius-sm)',
                     border: '1px solid var(--border-light)',
-                    backgroundColor: 'var(--bg-light-secondary, #EDE8E3)',
-                    aspectRatio: '16/10',
-                    position: 'relative'
+                    flexWrap: 'wrap',
+                    fontSize: '0.9rem'
                   }}
                 >
-                  <img
-                    src={getImageUrl(imgUrl)}
-                    alt={`${project.title} detail ${idx + 1}`}
+                  <div>
+                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Year</span>
+                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.year}</strong>
+                  </div>
+                  <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
+                  <div>
+                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Client</span>
+                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.client}</strong>
+                  </div>
+                  <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
+                  <div>
+                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Location</span>
+                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.location}</strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project Summary Lead */}
+              <div
+                style={{
+                  fontSize: '1.25rem',
+                  lineHeight: 1.6,
+                  fontWeight: 500,
+                  color: 'var(--text-dark-primary)',
+                  marginBottom: '36px',
+                  borderLeft: '4px solid var(--accent-green)',
+                  paddingLeft: '20px'
+                }}
+              >
+                {project.short_description || project.description}
+              </div>
+
+              {/* Long Description Body */}
+              <div className="project-content" style={{ marginBottom: '56px' }}>
+                {Array.isArray(project.long_description || project.longDescription) ? (
+                  (project.long_description || project.longDescription).map((paragraph, index) => (
+                    <p
+                      key={index}
+                      style={{
+                        color: 'var(--text-dark-secondary)',
+                        fontSize: '1.1rem',
+                        lineHeight: 1.8,
+                        marginBottom: '24px'
+                      }}
+                    >
+                      {paragraph}
+                    </p>
+                  ))
+                ) : (
+                  <p
                     style={{
-                      width: '100%',
-                      height: '100%',
-                      display: 'block',
-                      objectFit: 'cover'
+                      color: 'var(--text-dark-secondary)',
+                      fontSize: '1.1rem',
+                      lineHeight: 1.8,
+                      marginBottom: '24px'
                     }}
-                  />
+                  >
+                    {project.long_description || project.longDescription}
+                  </p>
+                )}
+              </div>
+
+              {/* Gallery Images */}
+              {project.galleryImages && project.galleryImages.length > 0 && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '40px' }}>
+                  {project.galleryImages.map((imgUrl, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        borderRadius: 'var(--radius-md)',
+                        overflow: 'hidden',
+                        border: '1px solid var(--border-light)',
+                        backgroundColor: 'var(--bg-light-secondary, #EDE8E3)',
+                        aspectRatio: '16/10',
+                        position: 'relative'
+                      }}
+                    >
+                      <img
+                        src={getImageUrl(imgUrl)}
+                        alt={`${project.title} detail ${idx + 1}`}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          display: 'block',
+                          objectFit: 'cover'
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* At a Glance sidebar */}
+            <div style={{
+              position: 'sticky',
+              top: '100px',
+              backgroundColor: '#FFFFFF',
+              borderRadius: 'var(--radius-lg, 16px)',
+              border: '1px solid var(--border-light)',
+              boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)',
+              padding: '28px 24px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0'
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '1.25rem',
+                fontWeight: 700,
+                color: 'var(--text-dark-primary)',
+                margin: '0 0 20px 0'
+              }}>
+                At a Glance
+              </h3>
+
+              {(project.atAGlance || [
+                { value: '$000M', label: 'Project Fact 1' },
+                { value: '000', label: 'Project Fact 2' },
+                { value: '00', label: 'Project Fact 3' },
+                { value: '0000', label: 'Project Fact 4' }
+              ]).map((fact, idx, arr) => (
+                <div key={idx} style={{
+                  padding: '16px 0',
+                  borderTop: idx === 0 ? '1px solid var(--border-light)' : 'none',
+                  borderBottom: '1px solid var(--border-light)'
+                }}>
+                  <div style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '2rem',
+                    fontWeight: 800,
+                    color: 'var(--accent-green)',
+                    lineHeight: 1.1,
+                    marginBottom: '4px'
+                  }}>
+                    {fact.value}
+                  </div>
+                  <div style={{
+                    fontSize: '0.825rem',
+                    fontWeight: 600,
+                    color: 'var(--text-dark-muted)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em'
+                  }}>
+                    {fact.label}
+                  </div>
                 </div>
               ))}
             </div>
-          )}
 
+          </div>
         </div>
       </section>
 
