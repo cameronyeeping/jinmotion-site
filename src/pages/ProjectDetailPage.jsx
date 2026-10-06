@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
@@ -8,6 +8,8 @@ import { projectDatabase, getProjectData } from '../data/siteContent';
 export default function ProjectDetailPage({ onContactClick }) {
   const { id } = useParams();
   const project = getProjectData(id);
+
+  useEffect(() => { document.title = project?.title ? `${project.title} | JIM Co.` : 'Project | JIM Co.'; }, [project]);
 
   const getImageUrl = (url) => {
     if (!url) return '';
@@ -120,7 +122,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                     fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
                     fontWeight: 800,
                     fontFamily: 'var(--font-heading)',
-                    marginBottom: '12px',
+                    marginBottom: '0',
                     color: 'var(--text-dark-primary)',
                     lineHeight: 1.1,
                     letterSpacing: '-0.02em'
@@ -128,50 +130,6 @@ export default function ProjectDetailPage({ onContactClick }) {
                 >
                   {project.title}
                 </h1>
-
-                {/* Subtitle / Category Badge */}
-                <div
-                  style={{
-                    fontStyle: 'italic',
-                    color: 'var(--accent-green)',
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    marginBottom: '24px'
-                  }}
-                >
-                  {project.category}
-                </div>
-
-                {/* Metadata Bar */}
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: '24px',
-                    padding: '16px 24px',
-                    backgroundColor: 'var(--bg-light-secondary)',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-light)',
-                    flexWrap: 'wrap',
-                    fontSize: '0.9rem'
-                  }}
-                >
-                  <div>
-                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Year</span>
-                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.year}</strong>
-                  </div>
-                  <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
-                  <div>
-                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Client</span>
-                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.client}</strong>
-                  </div>
-                  <div style={{ width: '1px', backgroundColor: 'var(--border-light)' }}></div>
-                  <div>
-                    <span style={{ color: 'var(--text-dark-muted)', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600 }}>Location</span>
-                    <strong style={{ color: 'var(--text-dark-primary)' }}>{project.location}</strong>
-                  </div>
-                </div>
               </div>
 
               {/* Project Summary Lead */}
@@ -250,61 +208,117 @@ export default function ProjectDetailPage({ onContactClick }) {
               )}
             </div>
 
-            {/* At a Glance sidebar */}
+            {/* Project Summary sidebar */}
             <div style={{
               position: 'sticky',
               top: '100px',
-              backgroundColor: '#FFFFFF',
-              borderRadius: 'var(--radius-lg, 16px)',
-              border: '1px solid var(--border-light)',
-              boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)',
-              padding: '28px 24px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '0'
+              gap: '24px'
             }}>
-              <h3 style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1.25rem',
-                fontWeight: 700,
-                color: 'var(--text-dark-primary)',
-                margin: '0 0 20px 0'
-              }}>
-                At a Glance
-              </h3>
 
-              {(project.atAGlance || [
-                { value: '$000M', label: 'Project Fact 1' },
-                { value: '000', label: 'Project Fact 2' },
-                { value: '00', label: 'Project Fact 3' },
-                { value: '0000', label: 'Project Fact 4' }
-              ]).map((fact, idx, arr) => (
-                <div key={idx} style={{
-                  padding: '16px 0',
-                  borderTop: idx === 0 ? '1px solid var(--border-light)' : 'none',
-                  borderBottom: '1px solid var(--border-light)'
+              {/* Category */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
                 }}>
-                  <div style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '2rem',
-                    fontWeight: 800,
-                    color: 'var(--accent-green)',
-                    lineHeight: 1.1,
-                    marginBottom: '4px'
-                  }}>
-                    {fact.value}
-                  </div>
-                  <div style={{
-                    fontSize: '0.825rem',
-                    fontWeight: 600,
-                    color: 'var(--text-dark-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.04em'
-                  }}>
-                    {fact.label}
-                  </div>
+                  Category
                 </div>
-              ))}
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.category}
+                </div>
+              </div>
+
+              {/* Client */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
+                }}>
+                  Client
+                </div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.client}
+                </div>
+              </div>
+
+              {/* Location */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
+                }}>
+                  Location
+                </div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.location}
+                </div>
+              </div>
+
+              {/* Year */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
+                }}>
+                  Opening Year
+                </div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.year}
+                </div>
+              </div>
+
+              {/* Project Features */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
+                }}>
+                  Project Features
+                </div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.features.join(' | ') || 'Project feature 1 | Project feature 2 | Project feature 3'}
+                </div>
+              </div>
+
+              {/* Key Scope Elements */}
+              <div>
+                <div style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: 'var(--text-dark-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '6px'
+                }}>
+                  Key Scope Elements
+                </div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
+                  {project.scopeElements.join(' | ') || 'Scope element 1 | Scope element 2 | Scope element 3'}
+                </div>
+              </div>
+
             </div>
 
           </div>

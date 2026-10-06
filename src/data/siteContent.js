@@ -6,7 +6,7 @@
 export const siteMeta = {
     brandName: 'J in Motion',
     logoText: 'JiM',
-    tagline: 'Tech and Infrastructure Consulting',
+    tagline: 'Infrastructure | Enterprise Technology | Organizational Transformation',
     copyright: '© 2026 J in Motion. All rights reserved.',
 };
 
@@ -33,19 +33,35 @@ export const projects = [
     {
         id: 'st-pauls',
         title: 'New St. Paul\'s Hospital',
-        category: 'Infrastructure + Digital',
-        year: '2026',
+        category: 'Infrastructure | Digital',
+        year: '2027',
         client: 'Providence Health Care',
         location: 'Vancouver, BC',
         short_description: 'Western Canada\'s largest hospital redevelopment project.',
         long_description: [
-            'The New St. Paul’s Hospital redevelopment is the largest healthcare infrastructure project in Western Canada. The project includes a 2.2-billion-dollar investment to construct a 1.7-million-square-foot facility with more than 600 beds. As Program Director, J in Motion manages a 450-million-dollar technology portfolio and oversees more than 50 concurrent projects, including command centers, security networks, and IT systems. We lead cross-functional teams, coordinate with government and construction partners, and integrate Indigenous design principles into the facility plan. We provide continuous executive reporting on project scope, schedule, budget, and risk to ensure opening in early 2027.'
+            'The New St. Paul\'s Hospital is the largest healthcare infrastructure project under construction in Western Canada. This $2.2 billion investment will deliver a 1.7-million-square-foot facility with more than 600 beds, scheduled to open in early 2027.',
+            'J in Motion serves as Program Director for the project\'s $450 million technology portfolio, overseeing more than 50 concurrent projects that include command centres, security networks, and enterprise IT systems. We lead cross-functional teams, coordinate closely with government and construction partners, and help integrate Indigenous design principles into the facility plan. Through ongoing executive reporting on scope, schedule, budget, and risk, we give leadership the visibility needed to keep the program on track for opening.'
         ],
+
         image: '/nsph/nsph.jpeg',
         heroColors: ['#F9D2BA', '#EEA2A5', '#7E3A65', '#13629B', '#10B981'],
         galleryImages: [
             '/nsph/nsph-1.avif',
             '/nsph/nsph-2.jpg'
+        ],
+        features: [
+            '1.7 million ft2',
+            '$2.2B budget',
+            '558 inpatient beds',
+            'Single patient rooms',
+            'Command centre',
+            'Opening 2027'
+
+        ],
+        scopeElements: [
+            'Command centre',
+            'Security networks',
+            'IT systems'
         ]
     },
     {
@@ -177,8 +193,8 @@ export const homePage = {
         eyebrow: 'ABOUT US',
         heading: 'Driving Momentum Across Complex Projects',
         paragraphs: [
-            'We are a strategic advisory firm with a proven track record of managing over $40B in capital infrastructure and enterprise technology portfolios across Canada.',
-            'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
+            'We are an infrastructure and technology advising firm with a proven track record, contributing to major public-sector programs representing more than $40B in capital infrastructure and enterprise technology portfolios across Canada.',
+            'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to infrastructure, enterprise technology, and organizational transformation landscapes.',
         ],
         image: '/HOSPITAL1.jpg',
         imageAlt: 'Studio Approach'
@@ -286,23 +302,15 @@ export const aboutPage = {
     content: {
         heading: 'Driving Momentum Across Canada',
         paragraphs: [
-            'J in Motion delivers infrastructure, enterprise technology, and organizational transformation projects through clear roadmaps, focused execution, and measurable results.',
-            // 'J in Motion brings vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
-            'With over than 20 years of leadership experience, we have contributed to major public programs that represent more than 40 billion dollars in capital investment across Canada. This experience includes healthcare facility construction, digital modernization, operational readiness, and enterprise system integration. We ensure that organizations put new infrastructure and technology into operation safely within approved scope, budget, and schedule limits.',
-            // 'Our core capabilities include capital infrastructure delivery for complex Public-Private Partnership (P3) and Design-Build-Finance projects. We control project schedules, budgets, risk, and regulatory compliance throughout the project lifecycle. In addition, we direct technology and systems integration, which includes the procurement and deployment of enterprise information systems, command centers, and digital networks.',
-            'We also prepare organizations for opening day through operational readiness planning and clinical workflow design. We lead structured stakeholder engagement and consult directly with Indigenous Nations, healthcare boards, and government ministries. Through this collaborative approach, we integrate community priorities and build resilient physical and digital environments for public institutions across Canada.'
-
-            // 'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. This experience spans healthcare redevelopment, digital modernization, operational readiness and the integrated enterprise systems required to bring new futuristic infrastructure and innovation safely into operation within defined scope, budget and timeline.',
-            // 'JiM Co works alongside health authorities, provincial governments, municipalities and leadership teams from executives to front line, throughout the project lifecycle. Specializing in early engagement visioning art of the possible, planning and business-case development through procurement, design, implementation, activation and stabilization.',
-            // 'The firm is known for stepping into complex environments and moving the work forward with confidence and customization of approach to align with organizational guiding principles and culture. That means establishing clear direction through governance, documenting decisions, aligning people and priorities, resolving issues and maintaining momentum when the pressure is high. The approach is collaborative and grounded in the discipline required to deliver.',
-            // 'JiM Co does more than provide advice. The firm works alongside clients embedded in their teams, takes ownership of the path forward and does "whatever it takes" to turn plans into action. Challenges are addressed directly, teams are supported and progress remains visible from vision through realization.'
-
+        'We bring vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
+        'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. The firm works alongside health authorities, governments and leadership teams to advance complex initiatives from early vision and planning through implementation, activation and stabilization.',
+        'Known for stepping into complex environments and moving the work forward, we establish clear direction, strengthen governance, align people and priorities, resolve issues and maintain momentum when the pressure is high.',
         ]
     },
     stats: [
-        { value: '20+', label: 'Years of Experience' },
-        { value: '50+', label: 'Concurrent Projects Directed' },
-        { value: '$40B', label: 'Portfolio Value Delivered' },
+        { value: '20+', label: 'Years of Leadership Experience' },
+        { value: '50+', label: 'Concurrent Projects Led within One Integrated Portfolio' },
+        { value: '$40B+', label: 'in Major Programs Contributed To' },
         { value: '$450M', label: 'Technology Portfolio Led' }
     ],
     guidingPrinciples: {
@@ -340,7 +348,7 @@ export const aboutPage = {
                     'With a proven track record directing multi-billion-dollar public-sector portfolios, Jeannie specializes in strategic advisory, P3 capital delivery, operational readiness, and stakeholder alignment across government ministries, health authorities, and Indigenous communities.'
                 ],
                 profile: [
-                    'Jeannie Gandham is an executive project and program leader with more than 20years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
+                    'Jeannie Gandham is an executive project and program leader with more than 20 years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
                     'She works with executive teams from early strategy and business-case development through delivery, activation, go-live and stabilization. Her strength is turning ambitious direction into executable roadmaps, aligning diverse stakeholders and maintaining focus on the decisions that create forward movement.',
                     'Jeannie is known for an inclusive, direct and outcomes-focused leadership style—and for building the governance, capability and confidence organizations need to sustain results.'
                 ],
@@ -356,7 +364,7 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Providence Healthcare - New St. Paul\'s Hospital',
+                        project: 'Providence Health Care - New St. Paul\'s Hospital',
                         role: 'Program Director',
                         description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
@@ -364,12 +372,12 @@ export const aboutPage = {
                         
                         project: 'HH Angus + Northern Health Authority - Dawson Creek & District Hospital',
                         role: 'Advisor',
-                        description: 'Advised both HH Angus and Northern Health Authority senior project leadership in their roadmap to opening day including creation of detailed project deliverables.'
+                        description: 'Advised senior project leaders from HH Angus and Northern Health on the roadmap to opening'
                     },
                     {
                         project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
                         role: 'Senior Consultant',
-                        description: 'Created and led approach for collaboration with the Private Public Partnership (P3) construction partner and health authority.'
+                        description: 'Created and led approach for collaboration with the Public-Private Partnership (P3) construction partner and health authority.'
                     },
                     {
                         project: 'Stanton Territorial Hospital Renewal',
@@ -408,13 +416,13 @@ export const aboutPage = {
             ,{
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
-                title: 'Digital Solutions Lead`',
+                title: 'Digital Solutions Lead',
                 image: '/profiles/gina_headshot_bg_change.jpg',
                 portrait: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
                     'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',
-                    'Throughout her career, Gina has partnered with executive leaders, clinicians, facilities, teams, and technology professionals to translate complex challenges into practical, strategic solutions. She\'s known for building high-performing teams, fostering trusted relationships, and improving healthcare delivery.'
+                    'Throughout her career, Gina has partnered with executive leaders, clinicians, facilities teams, and technology professionals to translate complex challenges into practical solutions. She\'s known for building high-performing teams, fostering trusted relationships, and improving healthcare delivery.'
                 ],
 
                 expertise: [
@@ -434,9 +442,9 @@ export const aboutPage = {
                     },
                     {
                         
-                        project: 'Provincial Health Services Authority - New St. Paul\'s Hospital',
+                        project: 'Providence Health Care- New St. Paul\'s Hospital',
                         role: 'Director, Facilities and Capital Projects',
-                        description: 'Led Design-Build contract management, and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
+                        description: 'Led Design-Build contract management and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
                     },
                     {
                         project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
@@ -444,7 +452,7 @@ export const aboutPage = {
                         description: 'Owned IMIT strategy and a $33M capital budget for the redevelopment\'s technology scope and led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
                     },
                     {
-                        project: 'Provincial Health Services Authority - Children\'s and Women\'s Redevelopment',
+                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
                         role: 'Senior Manager, Clinical Alignment',
                         description: 'Led P3 (Public-Private Partnership) IM/IT contract execution, serving as the bridge between clinical leadership and construction/technology teams to align clinical requirements with facility design — supporting clinical technology planning and workflow readiness for the new care environment.'
                     }
@@ -529,7 +537,7 @@ export const getProjectData = (id) => {
 export const servicesPage = {
     hero: {
         title: 'Our Services',
-        subtitle: 'Comprehensive strategic consulting and delivery leadership for complex capital, digital, and advisory initiatives.',
+        subtitle: 'Embedded leadership that moves complex infrastructure, enterprise technology and organizational transformation initiatives from vision through delivery.',
         bgImage: '/vancouver.webp',
         bgAlt: 'Services Background'
     },
@@ -542,13 +550,13 @@ export const servicesPage = {
             id: 'infrastructure',
             title: 'Infrastructure',
             icon: 'building',
-            description: 'We provide strategic leadership for complex capital and infrastructure projects, from early planning and design through construction, operational readiness, activation and opening. We bring together the people, plans and decisions required to move a project forward with clarity and confidence.',
+            description: 'We lead complex capital and infrastructure initiatives from early vision and planning through design, implementation, operational readiness, activation and stabilization. Our work connects people, decisions and delivery requirements to maintain momentum across the complete project lifecycle.',
             servicesIncludeLabel: 'Our infrastructure services include:',
             items: [
-                'Strategic and master planning',
+                'Visioning and master planning',
                 'Project definition and business cases',
                 'Governance and integrated project planning',
-                'Design and construction coordination',
+                'Design, construction and operational integration',
                 'Clinical and operational planning',
                 'Operational readiness, activation and transition',
                 'Opening, stabilization and project closeout'
@@ -558,7 +566,7 @@ export const servicesPage = {
             id: 'digital',
             title: 'Digital',
             icon: 'cpu',
-            description: 'We help organizations plan and deliver digital transformation that is connected to infrastructure, operations and the people who will use it. Our approach considers technology as part of the complete environment, ensuring systems are practical, integrated and ready for implementation.',
+            description: 'We lead enterprise technology and digital modernization programs that connect infrastructure, operations and the people who rely on them. Systems, workflows, equipment and readiness activities are integrated into one executable path toward implementation and go-live.',
             servicesIncludeLabel: 'Our digital services include:',
             items: [
                 'Digital and technology strategy',
@@ -575,11 +583,11 @@ export const servicesPage = {
             id: 'advisory',
             title: 'Advisory',
             icon: 'compass',
-            description: 'We provide senior guidance to organizations navigating complex decisions, major transformation or critical stages of project delivery. We help leaders define the vision, understand the challenges and establish a practical path from strategy to implementation.',
+            description: 'We provide experience at critical moments, defining the vision, mobilizing delivery, resolving complexity and recovering initiatives that have lost momentum. We help leaders define the vision, understand the challenges and establish a practical path from strategy to implementation.',
             servicesIncludeLabel: 'Our advisory services include:',
             items: [
-                'Executive and project advisory',
-                'Visioning and strategic planning',
+                'Executive, program and project planning',
+                'Visioning and organizational planning',
                 'Research and best-practice review',
                 'Program roadmaps and mobilization',
                 'Governance and delivery models',

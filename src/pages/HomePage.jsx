@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CtaBanner from '../components/CtaBanner';
 import MethodologyGraphic from '../components/MethodologyGraphic';
 import { homePage } from '../data/siteContent';
 
 const HomePage = ({ onContactClick }) => {
+    useEffect(() => { document.title = 'JIM Co.'; }, []);
+
     return (
         <div className="home-page">
             {/* Hero Section */}
@@ -53,6 +55,22 @@ const HomePage = ({ onContactClick }) => {
                                 style={{ width: '100%', borderRadius: 'var(--radius-md)', display: 'block', objectFit: 'cover' }}
                             />
                         </div>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', marginTop: '32px' }}>
+                        <Link 
+                            to="/about" 
+                            className="btn-primary" 
+                            style={{ 
+                                backgroundColor: 'var(--accent-green)', 
+                                color: 'var(--text-light-primary)',
+                                padding: '16px 32px', 
+                                borderRadius: 'var(--radius-pill)', 
+                                textDecoration: 'none', 
+                                fontWeight: 600, 
+                                transition: 'background var(--transition-fast)' 
+                                }}
+                        >Learn more</Link>
                     </div>
                 </div>
             </section>

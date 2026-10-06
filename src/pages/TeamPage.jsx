@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
@@ -90,6 +90,8 @@ const TeamMemberCard = ({ member }) => {
 };
 
 const TeamPage = ({ onContactClick }) => {
+    useEffect(() => { document.title = 'Team | JIM Co.'; }, []);
+
     return (
         <div className="team-page">
             {/* Hero Section */}

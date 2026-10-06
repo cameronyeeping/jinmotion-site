@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CtaBanner from '../components/CtaBanner';
 import { projectsPage } from '../data/siteContent';
@@ -79,6 +79,8 @@ const ProjectCard = ({ project }) => {
 };
 
 export default function ProjectsPage({ onContactClick }) {
+    useEffect(() => { document.title = 'Projects | JIM Co.'; }, []);
+
     return (
         <div>
             <section className="hero-wrapper" style={{ minHeight: '50vh', position: 'relative', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>

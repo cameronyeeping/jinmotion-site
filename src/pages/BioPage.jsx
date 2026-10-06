@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
@@ -7,6 +7,8 @@ import { getTeamMember } from '../data/siteContent';
 export default function BioPage({ onContactClick }) {
   const { id } = useParams();
   const member = getTeamMember(id);
+
+  useEffect(() => { document.title = member?.name ? `${member.name} | JIM Co.` : 'Team Member | JIM Co.'; }, [member]);
 
   const getImageUrl = (url) => {
     if (!url) return '';
@@ -363,7 +365,7 @@ export default function BioPage({ onContactClick }) {
               color: 'var(--text-dark-primary)',
               margin: '0 0 6px 0'
             }}>
-              Download resume
+              Download Executive Profile
             </h3>
             <p style={{
               color: 'var(--text-dark-secondary)',
@@ -371,7 +373,7 @@ export default function BioPage({ onContactClick }) {
               margin: '0 0 20px 0',
               lineHeight: 1.6
             }}>
-              Download {member.name.split(' ')[0]}'s background, expertise, and selected project experience.
+                See {`${member.name.split(' ')[0]}'s`} background, expertise, and selected project experience.
             </p>
             <a
               href={getImageUrl(member.profilePdf)}
