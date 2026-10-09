@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import CtaBanner from '../components/CtaBanner';
 import { servicesPage } from '../data/siteContent';
 import { Building2, Cpu, Compass, CheckCircle2 } from 'lucide-react';

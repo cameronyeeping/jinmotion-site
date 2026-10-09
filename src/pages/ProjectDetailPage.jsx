@@ -1,30 +1,30 @@
-import React, { useEffect } from 'react';
+import { getAssetUrl } from '../utils/assets';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
-import { projectDatabase, getProjectData } from '../data/siteContent';
+import MethodologyGraphic from '../components/MethodologyGraphic';
+import NotFoundPage from './NotFoundPage';
+import { getProjectData } from '../data/siteContent';
 
 
 export default function ProjectDetailPage({ onContactClick }) {
   const { id } = useParams();
   const project = getProjectData(id);
 
-  useEffect(() => { document.title = project?.title ? `${project.title} | JIM Co.` : 'Project | JIM Co.'; }, [project]);
+  useEffect(() => { document.title = project?.title ? `${project.title} | JIM Co.` : 'Project not found | JIM Co.'; }, [project]);
 
-  const getImageUrl = (url) => {
-    if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
-      return url;
-    }
-    return `/${url}`;
-  };
+  if (!project) return <NotFoundPage title="Project not found" to="/projects" label="Back to Projects" />;
+
+  const features = Array.isArray(project.features) ? project.features : [];
+  const scopeElements = Array.isArray(project.scopeElements) ? project.scopeElements : [];
 
   return (
     <div style={{ backgroundColor: 'var(--bg-light)', minHeight: '100vh' }}>
       {/* Project Hero Section */}
       <div style={{ position: 'relative', width: '100%', height: '55vh', minHeight: '380px', overflow: 'hidden', backgroundColor: '#231815' }}>
         <img
-          src={getImageUrl(project.image)}
+          src={getAssetUrl(project.image)}
           alt={project.title}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
@@ -106,12 +106,7 @@ export default function ProjectDetailPage({ onContactClick }) {
           </div>
 
           {/* Two-column layout: content + at a glance sidebar */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 280px',
-            gap: '48px',
-            alignItems: 'start'
-          }}>
+          <div className="project-detail-layout">
 
             {/* Main content column */}
             <div>
@@ -178,8 +173,8 @@ export default function ProjectDetailPage({ onContactClick }) {
               </div>
 
               {/* Gallery Images */}
-              {project.galleryImages && project.galleryImages.length > 0 && (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '40px' }}>
+              {Array.isArray(project.galleryImages) && project.galleryImages.length > 0 && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px', marginBottom: '40px' }}>
                   {project.galleryImages.map((imgUrl, idx) => (
                     <div
                       key={idx}
@@ -193,7 +188,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                       }}
                     >
                       <img
-                        src={getImageUrl(imgUrl)}
+                        src={getAssetUrl(imgUrl)}
                         alt={`${project.title} detail ${idx + 1}`}
                         style={{
                           width: '100%',
@@ -209,13 +204,13 @@ export default function ProjectDetailPage({ onContactClick }) {
             </div>
 
             {/* Project Summary sidebar */}
-            <div style={{
-              position: 'sticky',
-              top: '100px',
+            <aside className="project-detail-sidebar" style={{
               display: 'flex',
               flexDirection: 'column',
               gap: '24px'
             }}>
+
+              <MethodologyGraphic compact activeStages={project.methodologyStages} />
 
               {/* Category */}
               <div>
@@ -227,7 +222,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                   letterSpacing: '0.06em',
                   marginBottom: '6px'
                 }}>
-                  Category
+                  Services
                 </div>
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
                   {project.category}
@@ -286,7 +281,7 @@ export default function ProjectDetailPage({ onContactClick }) {
               </div>
 
               {/* Project Features */}
-              <div>
+              {features.length > 0 && (<div>
                 <div style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
@@ -298,12 +293,12 @@ export default function ProjectDetailPage({ onContactClick }) {
                   Project Features
                 </div>
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.features.join(' | ') || 'Project feature 1 | Project feature 2 | Project feature 3'}
+                  {features.join(' | ')}
                 </div>
-              </div>
+              </div>)}
 
               {/* Key Scope Elements */}
-              <div>
+              {scopeElements.length > 0 && (<div>
                 <div style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
@@ -315,11 +310,11 @@ export default function ProjectDetailPage({ onContactClick }) {
                   Key Scope Elements
                 </div>
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.scopeElements.join(' | ') || 'Scope element 1 | Scope element 2 | Scope element 3'}
+                  {scopeElements.join(' | ')}
                 </div>
-              </div>
+              </div>)}
 
-            </div>
+            </aside>
 
           </div>
         </div>

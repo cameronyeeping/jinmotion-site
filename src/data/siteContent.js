@@ -6,7 +6,7 @@
 export const siteMeta = {
     brandName: 'J in Motion',
     logoText: 'JiM',
-    tagline: 'Infrastructure | Enterprise Technology | Organizational Transformation',
+    tagline: 'Infrastructure | Enterprise Technology | Leadership',
     copyright: '© 2026 J in Motion. All rights reserved.',
 };
 
@@ -29,9 +29,12 @@ export const ctaBanner = {
     buttonText: 'Get in touch',
 };
 
+// Highlighted methodology stage IDs: vision, roadmap, implement, realize, celebrate.
+// An empty list leaves all stages grey until participation is configured.
 export const projects = [
     {
         id: 'st-pauls',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
         title: 'New St. Paul\'s Hospital',
         category: 'Infrastructure | Digital',
         year: '2027',
@@ -44,7 +47,6 @@ export const projects = [
         ],
 
         image: '/nsph/nsph.jpeg',
-        heroColors: ['#F9D2BA', '#EEA2A5', '#7E3A65', '#13629B', '#10B981'],
         galleryImages: [
             '/nsph/nsph-1.avif',
             '/nsph/nsph-2.jpg'
@@ -66,6 +68,7 @@ export const projects = [
     },
     {
         id: 'dawson-creek',
+        methodologyStages: [],
         title: 'Dawson Creek & District Hospital',
         category: 'Infrastructure',
         year: '2026',
@@ -74,19 +77,19 @@ export const projects = [
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
         long_description: [
             "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
-            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " + 
+            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " +
             "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
             "project deliverables."
         ],
         image: '/dawson/dawson-creek-render.jpg',
-        heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
         galleryImages: [
-            'dawson/dawson-2.jpg',
-            'dawson/dawson-3.jpeg'
+            '/dawson/dawson-2.jpg',
+            '/dawson/dawson-3.jpeg'
         ]
     },
     {
         id: 'bc-childrens',
+        methodologyStages: [],
         title: 'BC Children\'s + Women\'s Hospital Redevelopment',
         category: 'Infrastructure + Advisory',
         year: '2017',
@@ -97,7 +100,6 @@ export const projects = [
             'The Children’s and Women’s Redevelopment was a 675-million-dollar healthcare project completed in October 2017 under a Public-Private Partnership model. The eight-story, 640,000-square-foot critical care hospital provides 350 inpatient rooms in Vancouver. Reporting to the Executive Director and Chief Project Officer, J in Motion developed and applied a collaborative plan for the health authority, building consortium, and subcontractors. We synchronized owner-side projects with the main construction schedule. We also managed review processes, project budgets, and stakeholder communication frameworks to ensure clear project execution.'
         ],
         image: '/bc-childrens/bc-childrens.jpg',
-        heroColors: ['#D8B4E2', '#AE759F', '#6B3074', '#13629B', '#10B981'],
         galleryImages: [
             '/bc-childrens/bc-childrens-2.jpeg',
             '/bc-childrens/bc-childrens-3.jpg'
@@ -105,6 +107,7 @@ export const projects = [
     },
     {
         id: 'stanton',
+        methodologyStages: [],
         title: 'Stanton Territorial Hospital Renewal',
         category: 'Infrastructure + Advisory',
         year: '2023',
@@ -115,14 +118,14 @@ export const projects = [
             'The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
         ],
         image: '/stanton/stanton-territorial.jpg',
-        heroColors: ['#E8A0BF', '#C38D9E', '#85586F', '#13629B', '#34D399'],
         galleryImages: [
-            'stanton/stanton-1.avif',
-            'stanton/stanton-2.jpg'
+            '/stanton/stanton-1.avif',
+            '/stanton/stanton-2.jpg'
         ]
     },
     {
         id: 'bc-cancer',
+        methodologyStages: [],
         title: 'BC Cancer Redevelopments',
         category: 'Advisory',
         year: '2024',
@@ -132,14 +135,15 @@ export const projects = [
         long_description: [
             'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
         ],
-        image: 'bc-cancer/cloverdale-2.avif',
-        galleryImages:[
-            'bc-cancer/cloverdale.webp',
-            'bc-cancer/cloverdale-1.jpeg'
+        image: '/bc-cancer/cloverdale-2.avif',
+        galleryImages: [
+            '/bc-cancer/cloverdale.webp',
+            '/bc-cancer/cloverdale-1.jpeg'
         ]
     },
     {
         id: 'surrey',
+        methodologyStages: [],
         title: 'Surrey Memorial Hospital',
         category: 'Advisory',
         year: '2013',
@@ -150,13 +154,12 @@ export const projects = [
             'SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).'
         ],
         image: '/surrey/surrey.jpg',
-        galleryImages:[
-            'surrey-1.webp',
-            'surrey-2.jpg'
+        galleryImages: [
+            '/surrey/surrey-1.webp',
+            '/surrey/surrey-2.jpg'
         ]
     }
 
-    //'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
 ];
 
 export const homePage = {
@@ -169,11 +172,13 @@ export const homePage = {
         bgAlt: 'Hero Background'
     },
     clients: {
-        heading: 'Our clients',
+        eyebrow: 'WORKING TOGETHER',
+        heading: 'Our partners',
         items: [
             {
                 name: 'Fraser Health Authority',
-                logo: '/client-logos/Fraser-Health-Authority.png'
+                logo: '/client-logos/Fraser-Health-Authority.png',
+                logoScale: 1.15
             },
             {
                 name: 'BC Cancer',
@@ -186,7 +191,54 @@ export const homePage = {
             {
                 name: 'Providence Health Care',
                 logo: '/client-logos/providence-logo.png'
-            }
+            },
+            {
+                name: 'Vancouver Coastal Health',
+                logo: '/client-logos/vancouver-coastal-health-logo.png'
+            },
+            {
+                name: 'Northern Health',
+                logo: '/client-logos/nh-logo.png'
+            },
+            {
+                name: 'Interior Health',
+                logo: '/client-logos/interior-health-logo.avif'
+            },
+            {
+                name: 'Infrastructure BC',
+                logo: '/client-logos/infrastructure-bc.png'
+            },
+            {
+                name: 'British Columbia Ministry of Health',
+                logo: '/client-logos/ministry-of-health.png',
+                logoScale: 1.2
+            },
+            {
+                name: 'Government of Northwest Territories',
+                logo: '/client-logos/govt-northwest-territories.png'
+            },
+            {
+                name: 'Government of Manitoba',
+                logo: '/client-logos/manitoba.jpeg'
+            },
+            {
+                name: 'Humber River Hospital',
+                logo: '/client-logos/humber-river.png',
+                logoScale: 1.35
+            },
+            {
+                name: 'London Health Sciences Centre',
+                logo: '/client-logos/lhsc-logo.png'
+            },
+            {
+                name: 'HH Angus',
+                logo: '/client-logos/hh-angus.png',
+                logoScale: 1.9
+            },
+            {
+                name: 'Arcadis',
+                logo: '/client-logos/arcadis-logo.webp'
+            },
         ]
     },
     approach: {
@@ -223,6 +275,7 @@ export const homePage = {
         steps: [
             {
                 number: '01',
+                id: 'vision',
                 title: 'Vision',
                 description: 'Define the destination and the reason for change.',
                 icon: 'target',
@@ -235,6 +288,7 @@ export const homePage = {
             },
             {
                 number: '02',
+                id: 'roadmap',
                 title: 'Roadmap',
                 description: 'Translate the vision into an achievable path.',
                 icon: 'trending-up',
@@ -247,6 +301,7 @@ export const homePage = {
             },
             {
                 number: '03',
+                id: 'implement',
                 title: 'Implement',
                 description: 'Build the structure required for successful delivery.',
                 icon: 'grid',
@@ -259,6 +314,7 @@ export const homePage = {
             },
             {
                 number: '04',
+                id: 'realize',
                 title: 'Realize',
                 description: 'Lead execution and turn plans into outcomes.',
                 icon: 'arrow-right',
@@ -271,6 +327,7 @@ export const homePage = {
             },
             {
                 number: '05',
+                id: 'celebrate',
                 title: 'Celebrate',
                 description: 'Close well and make the value visible.',
                 icon: 'star',
@@ -282,13 +339,11 @@ export const homePage = {
                 ]
             }
         ],
-        footerSummary: 'Vision → Roadmap → Implement → Realize → Celebrate',
-        footerTagline: 'CLARITY. MOMENTUM. OUTCOMES.'
     },
     portfolio: {
         eyebrow: 'OUR WORK',
         heading: 'Selected Projects',
-        projects: projects
+        projects
     }
 };
 
@@ -296,7 +351,7 @@ export const aboutPage = {
     hero: {
         title: 'About Us',
         subtitle: 'Our Mission and Experience',
-        bgImage: 'vancouver.webp',
+        bgImage: '/vancouver.webp',
         bgAlt: 'About Background'
     },
     content: {
@@ -340,9 +395,7 @@ export const aboutPage = {
                 name: 'Jeannie Gandham',
                 title: 'Principal',
                 image: '/profiles/jeannie_headshot.jpeg',
-                portrait: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
-                headline: 'Strategic Advisory & Project Delivery Leadership',
                 bio: [
                     'Jeannie Gandham is the Principal of J in Motion, bringing over 20 years of executive leadership in major healthcare, capital infrastructure, and technology transformation initiatives across Canada.',
                     'With a proven track record directing multi-billion-dollar public-sector portfolios, Jeannie specializes in strategic advisory, P3 capital delivery, operational readiness, and stakeholder alignment across government ministries, health authorities, and Indigenous communities.'
@@ -369,7 +422,7 @@ export const aboutPage = {
                         description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
                     {
-                        
+
                         project: 'HH Angus + Northern Health Authority - Dawson Creek & District Hospital',
                         role: 'Advisor',
                         description: 'Advised senior project leaders from HH Angus and Northern Health on the roadmap to opening'
@@ -409,16 +462,12 @@ export const aboutPage = {
                     }
                 ],
                 profilePdf: '/resumes/jeannie-resume.pdf'
-            }
-            /*
-             * Gina Pisoni
-             */
-            ,{
+            },
+            {
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
                 title: 'Digital Solutions Lead',
                 image: '/profiles/gina_headshot_bg_change.jpg',
-                portrait: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
                     'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',
@@ -441,7 +490,7 @@ export const aboutPage = {
                         description: 'Digital leadership and governance for four concurrent cancer centre redevelopments across the province, owning a $140M IM/IT capital budget and directing a multidisciplinary Technology Solutions and PMO team. Set digital strategy and capital planning direction while ensuring program-wide risk management and stakeholder alignment across health authority and construction partners. '
                     },
                     {
-                        
+
                         project: 'Providence Health Care- New St. Paul\'s Hospital',
                         role: 'Director, Facilities and Capital Projects',
                         description: 'Led Design-Build contract management and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
@@ -462,41 +511,31 @@ export const aboutPage = {
                     'Healthcare Facilities Planning and Design: Focus on Leadership Certificate, Cornell University',
                 ],
                 profilePdf: '/resumes/gina-resume.pdf'
-            }
-            /* Cameron Yee-Ping
-            ,{
+            },
+            {
                 id: 'cameron-yee-ping',
                 name: 'Cameron Yee-Ping',
                 title: 'Project Leader',
-                image: 'https://placehold.co/500x350/231815/13629B?text=Cameron+Yee-Ping',
+                image: '/profiles/cam_profile_edited.png',
                 alt: 'Cameron Yee-Ping',
                 bio: [
                     'Cameron Yee-Ping provides project delivery, strategic analysis, and systems integration support for complex infrastructure and transformation initiatives.',
                     'Working alongside project leadership, Cameron focuses on digital roadmaps, operational planning, and seamless project execution.'
+                ],
+                credentials: [
+                    'B.Sc., SFU'
                 ]
             }
-            */
+
         ]
     }
 };
 
-export const teamDatabase = Object.fromEntries(aboutPage.team.members.map((m) => [m.id, m]));
+const teamDatabase = new Map(aboutPage.team.members.map((member) => [member.id, member]));
 
-export const getTeamMember = (id) => {
-    if (teamDatabase[id]) return teamDatabase[id];
-    const member = aboutPage.team.members.find((m) => m.id === id);
-    if (member) return member;
-    return {
-        id,
-        name: id ? id.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'Team Member',
-        title: 'Team Member',
-        image: `https://placehold.co/600x750/231815/13629B?text=${id || 'Member'}`,
-        alt: id || 'Team Member',
-        bio: ['Biography details for this team member.']
-    };
-};
+export const getTeamMember = (id) => teamDatabase.get(id);
 
-export const projectDatabase = Object.fromEntries(projects.map((p) => [p.id, p]));
+const projectDatabase = new Map(projects.map((project) => [project.id, project]));
 
 export const projectsPage = {
     hero: {
@@ -508,31 +547,7 @@ export const projectsPage = {
     projects
 };
 
-export const getProjectData = (id) => {
-    if (projectDatabase[id]) return projectDatabase[id];
-
-    const num = id.replace('project-', '');
-    return {
-        id,
-        title: `Project Title ${num || id}`,
-        category: 'CATEGORY / LOREM IPSUM',
-        year: '2024',
-        client: 'Client Name',
-        location: 'Location City',
-        short_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        long_description: [
-            `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Project ${num || id} description details.`,
-            `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.`,
-            `Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet.`
-        ],
-        image: `https://placehold.co/800x600/32231F/10B981?text=Project+${num}`,
-        heroColors: ['#F9D2BA', '#E8A0BF', '#7E3A65', '#13629B', '#10B981'],
-        galleryImages: [
-            `https://placehold.co/800x500/32231F/10B981?text=Project+${num}+Detail+1`,
-            `https://placehold.co/800x500/2A1D1A/1882ce?text=Project+${num}+Detail+2`
-        ]
-    };
-};
+export const getProjectData = (id) => projectDatabase.get(id);
 
 export const servicesPage = {
     hero: {
@@ -599,6 +614,7 @@ export const servicesPage = {
     ]
 };
 
+// Retained community draft content; the current community page uses its own copy.
 export const communityPage = {
     hero: {
         title: 'Community & Impact',
@@ -715,4 +731,3 @@ export const communityPage = {
         }
     ]
 };
-

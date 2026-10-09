@@ -1,32 +1,26 @@
-import React, { useEffect } from 'react';
+import { getAssetUrl } from '../utils/assets';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
+import NotFoundPage from './NotFoundPage';
 import { getTeamMember } from '../data/siteContent';
 
 export default function BioPage({ onContactClick }) {
   const { id } = useParams();
   const member = getTeamMember(id);
 
-  useEffect(() => { document.title = member?.name ? `${member.name} | JIM Co.` : 'Team Member | JIM Co.'; }, [member]);
+  useEffect(() => { document.title = member?.name ? `${member.name} | JIM Co.` : 'Team member not found | JIM Co.'; }, [member]);
 
-  const getImageUrl = (url) => {
-    if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
-      return url;
-    }
-    return `/${url}`;
-  };
+  if (!member) return <NotFoundPage title="Team member not found" to="/team" label="Back to Team" />;
 
-  const portraitSrc = getImageUrl(member.portrait || member.image);
-  const hasProfile = Array.isArray(member.profile) && member.profile.length > 0;
+  const portraitSrc = getAssetUrl(member.image);
   const hasExpertise = Array.isArray(member.expertise) && member.expertise.length > 0;
   const hasExperience = Array.isArray(member.experience) && member.experience.length > 0;
   const hasCredentials = Array.isArray(member.credentials) && member.credentials.length > 0;
-  const hasCredibility = Array.isArray(member.credibility) && member.credibility.length > 0;
 
   const handleDownloadClick = async (e) => {
-    const fileUrl = getImageUrl(member.profilePdf);
+    const fileUrl = getAssetUrl(member.profilePdf);
     if (!fileUrl) return;
 
     const fullUrl = fileUrl.startsWith('http') ? fileUrl : `${window.location.origin}${fileUrl}`;
@@ -376,7 +370,7 @@ export default function BioPage({ onContactClick }) {
                 See {`${member.name.split(' ')[0]}'s`} background, expertise, and selected project experience.
             </p>
             <a
-              href={getImageUrl(member.profilePdf)}
+              href={getAssetUrl(member.profilePdf)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDownloadClick}

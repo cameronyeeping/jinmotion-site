@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, TrendingUp, LayoutGrid, ArrowRight, Star } from 'lucide-react';
 import { homePage } from '../data/siteContent';
 
@@ -10,9 +9,35 @@ const iconComponents = {
   'star': Star
 };
 
-export default function MethodologyGraphic() {
+export default function MethodologyGraphic({ compact = false, activeStages = [] }) {
   const { methodology } = homePage;
   if (!methodology) return null;
+
+  if (compact) {
+    const highlightedStages = new Set(Array.isArray(activeStages) ? activeStages : []);
+    return (
+      <section className="project-methodology" aria-label="J in Motion project stages">
+        <div className="project-methodology-frame">
+            <ol className="project-methodology-stages">
+              {methodology.steps.map((step) => {
+                const Icon = iconComponents[step.icon] || Target;
+                const active = highlightedStages.has(step.id);
+                return (
+                  <li
+                    key={step.id}
+                    className={`project-methodology-stage${active ? ' is-active' : ''}`}
+                    aria-label={`${step.title}: ${active ? 'J in Motion participated' : 'Not highlighted'}`}
+                  >
+                    <span className="project-methodology-icon"><Icon size={20} strokeWidth={1.75} aria-hidden="true" /></span>
+                    <span>{step.title}</span>
+                  </li>
+                );
+              })}
+            </ol>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="section-light" style={{ backgroundColor: 'var(--bg-light)', padding: '80px 0' }}>

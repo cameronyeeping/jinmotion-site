@@ -39,7 +39,6 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <span>{siteMeta.copyright}</span>
-                    <span>{siteMeta.copyrightTagline}</span>
                 </div>
             </div>
         </footer>
