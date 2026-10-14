@@ -71,7 +71,7 @@ export const projects = [
         methodologyStages: [],
         title: 'Dawson Creek & District Hospital',
         category: 'Infrastructure',
-        year: '2026',
+        year: '2027',
         client: 'Northern Health Authority + Infrastructure BC',
         location: 'Dawson Creek, BC',
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
@@ -79,12 +79,23 @@ export const projects = [
             "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
             "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " +
             "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
-            "project deliverables."
+            'project deliverables.'
         ],
         image: '/dawson/dawson-creek-render.jpg',
         galleryImages: [
             '/dawson/dawson-2.jpg',
             '/dawson/dawson-3.jpeg'
+        ],
+        features: [
+            'Greenfield hospital',
+            'Opening spring 2027'
+        ],
+        scopeElements: [
+            'Operational readiness',
+            'Transition services',
+            'Opening-day roadmap',
+            'Detailed project deliverables',
+            'Advisory to HH Angus and Northern Health leadership'
         ]
     },
     {
@@ -97,12 +108,32 @@ export const projects = [
         location: 'Vancouver, BC',
         short_description: 'A 675-million-dollar, 640,000-square-foot pediatric critical care hospital built under a Public-Private Partnership model in Vancouver.',
         long_description: [
-            'The Children’s and Women’s Redevelopment was a 675-million-dollar healthcare project completed in October 2017 under a Public-Private Partnership model. The eight-story, 640,000-square-foot critical care hospital provides 350 inpatient rooms in Vancouver. Reporting to the Executive Director and Chief Project Officer, J in Motion developed and applied a collaborative plan for the health authority, building consortium, and subcontractors. We synchronized owner-side projects with the main construction schedule. We also managed review processes, project budgets, and stakeholder communication frameworks to ensure clear project execution.'
+            'The Children\'s and Women\'s Redevelopment was a $675 million healthcare project delivered under a Public-Private Partnership (P3) model and completed in October 2017. The project delivered an eight-storey, 640,000-square-foot critical care hospital in Vancouver with 350 inpatient rooms.',
+
+            'Reporting to the Executive Director and Chief Project Officer, J in Motion served as transition and delivery lead, managing the $33 million technology capital budget and leading the owner\'s scope for P3 technology execution. We developed and implemented a collaboration plan that aligned the health authority, building consortium, and subcontractors, and synchronized owner-side projects with the main construction schedule. As the key connector between clinical and operational leaders and the technical and construction teams, we translated clinical requirements into actionable technology deliverables, led workflow redesign for future-state operations, and managed review processes and stakeholder communication throughout.',
+
+            'We led the IMIT transition, operational readiness, and facility activation for the opening of the new BC Children\'s & Women\'s Hospital. This mission-critical portfolio included staff training coordination, technology readiness, and go-live support, and it ensured clinical operations were supported from opening day through handover to operations.'
         ],
         image: '/bc-childrens/bc-childrens.jpg',
         galleryImages: [
             '/bc-childrens/bc-childrens-2.jpeg',
             '/bc-childrens/bc-childrens-3.jpg'
+        ],
+        features: [
+            '640,000-square-foot facility',
+            '$675M redevelopment',
+            '350 inpatient rooms',
+            'Eight-storey critical care hospital',
+            'P3 delivery model',
+            'Completed October 2017'
+        ],
+        scopeElements: [
+            '$33M technology capital budget',
+            'Owner-side P3 technology execution',
+            'Clinical and technology alignment',
+            'Workflow redesign',
+            'IMIT transition and operational readiness',
+            'Staff training, activation and go-live support'
         ]
     },
     {
@@ -110,7 +141,7 @@ export const projects = [
         methodologyStages: [],
         title: 'Stanton Territorial Hospital Renewal',
         category: 'Infrastructure + Advisory',
-        year: '2023',
+        year: '2019',
         client: 'Government of Northwest Territories',
         location: 'Yellowknife, NT',
         short_description: 'A $350 million greenfield regional acute hospital delivery project under a P3 model.',
@@ -121,6 +152,21 @@ export const projects = [
         galleryImages: [
             '/stanton/stanton-1.avif',
             '/stanton/stanton-2.jpg'
+        ],
+        features: [
+            'Greenfield regional hospital',
+            '$350M redevelopment',
+            '100 inpatient beds',
+            'P3 delivery model',
+            'Completed 2019'
+        ],
+        scopeElements: [
+            '$41M capital and operational budget',
+            'Clinical program leadership',
+            'Facility design and operationalization',
+            'New healthcare models',
+            'Indigenous community and clinical consultation',
+            'Culturally sensitive care planning'
         ]
     },
     {
@@ -130,7 +176,7 @@ export const projects = [
         category: 'Advisory',
         year: '2024',
         client: 'Provincial Health Services Authority',
-        location: 'Vancouver, BC',
+        location: 'British Columbia',
         short_description: '$440 million investment into cancer centres across British Columbia',
         long_description: [
             'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
@@ -139,6 +185,19 @@ export const projects = [
         galleryImages: [
             '/bc-cancer/cloverdale.webp',
             '/bc-cancer/cloverdale-1.jpeg'
+        ],
+        features: [
+            '$440M capital investment',
+            'Cancer centres across British Columbia',
+            'Expanded care teams and research',
+            'New technology and facilities'
+        ],
+        scopeElements: [
+            'Capital infrastructure advisory',
+            'Expansion and infrastructure planning',
+            'Integrated project and construction schedules',
+            'Design and compliance coordination',
+            'Subject matter input'
         ]
     },
     {
@@ -146,7 +205,7 @@ export const projects = [
         methodologyStages: [],
         title: 'Surrey Memorial Hospital',
         category: 'Advisory',
-        year: '2013',
+        year: '2014',
         client: 'Fraser Health Authority',
         location: 'Surrey, BC',
         short_description: 'A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services',
@@ -157,6 +216,52 @@ export const projects = [
         galleryImages: [
             '/surrey/surrey-1.webp',
             '/surrey/surrey-2.jpg'
+        ],
+        features: [
+            '$512M infrastructure project',
+            '151 inpatient beds',
+            'New emergency department',
+            'Perinatal centre and intensive care unit',
+            'Academic space',
+            'P3 delivery model'
+        ],
+        scopeElements: [
+            'Clinical design of two inpatient units',
+            'Two-phase opening plan',
+            'Emergency department opening in June 2013',
+            'Patient transfer to the new tower',
+            'Critical Care Tower opening on June 8, 2014'
+        ]
+    },
+    {
+        id: 'bc-hydro-it-governance',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
+        title: 'BC Hydro: IT Governance Platform',
+        category: 'Digital | Advisory',
+        client: 'BC Hydro',
+        short_description: 'An IT Governance platform aligning technology project demand, approvals, and delivery with business goals.',
+        long_description: [
+            'BC Hydro implemented an IT Governance (ITG) platform to manage demand and intake for its technology projects and align IT operations with business goals. The system governed each project from initial intake through planning, approval, and procurement to operational handover, automating policy tracking, reviews, and risk management along the way. Shared dashboards gave more than 100 users, including technology VPs, directors, managers, and project managers, clear visibility into the status of approvals and projects.',
+            'As a key lead across the full development lifecycle, from requirements through deployment, we managed multiple concurrent technology projects aligned with BC Hydro\'s business objectives, requirements, and milestones. As primary liaison between operational leadership and technical teams, we built consensus on project vision, requirements, and delivery priorities, and led a team of four business analysts and developers throughout delivery.'
+        ],
+        image: '/bc-hydro/placeholder-hero.svg',
+        galleryImages: [
+            '/bc-hydro/placeholder-platform.svg',
+            '/bc-hydro/placeholder-delivery.svg'
+        ],
+        features: [
+            'IT Governance platform',
+            'More than 100 users',
+            'Demand and project intake management',
+            'Automated policy tracking and risk management',
+            'Shared approval and project dashboards'
+        ],
+        scopeElements: [
+            'Requirements through deployment',
+            'Concurrent technology project delivery',
+            'Operational and technical team liaison',
+            'Consensus on vision and delivery priorities',
+            'Leadership of four business analysts and developers'
         ]
     }
 
@@ -343,6 +448,7 @@ export const homePage = {
     portfolio: {
         eyebrow: 'OUR WORK',
         heading: 'Selected Projects',
+        viewMoreText: 'View more projects',
         projects
     }
 };

@@ -862,6 +862,23 @@ section[id] {
     align-items: start;
 }
 
+.project-detail-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-dark-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.project-detail-list li {
+    overflow-wrap: anywhere;
+}
+
+.project-detail-list li + li {
+    margin-top: 6px;
+}
+
 .project-methodology-frame {
     padding: 0 0 24px;
     border-bottom: 1px solid var(--border-light);

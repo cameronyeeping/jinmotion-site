@@ -86,7 +86,7 @@ const HomePage = ({ onContactClick }) => {
                     <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 40px 0' }}>{homePage.portfolio.heading}</h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '40px' }}>
-                        {homePage.portfolio.projects.map((project) => (
+                        {homePage.portfolio.projects.slice(0, 4).map((project) => (
                             <Link
                                 key={project.id}
                                 to={`/projects/${project.id}`}
@@ -121,6 +121,9 @@ const HomePage = ({ onContactClick }) => {
                             </Link>
                         ))}
                     </div>
+                    <Link to="/projects" className="btn-primary" style={{ marginTop: '32px' }}>
+                        {homePage.portfolio.viewMoreText}
+                    </Link>
                 </div>
             </section>
 

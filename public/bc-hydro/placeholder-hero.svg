@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">BC Hydro: IT Governance Platform</title>
+  <desc id="desc">Placeholder for a future project photograph.</desc>
+  <rect width="1200" height="750" fill="#E8EEE9"/>
+  <rect x="48" y="48" width="1104" height="654" rx="20" fill="none" stroke="#C6D4C9" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="315" font-size="24" letter-spacing="4" fill="#506858">BC HYDRO</text>
+    <text x="600" y="385" font-size="46" fill="#2D4937">IT Governance Platform</text>
+    <text x="600" y="440" font-size="22" fill="#66786B">Image coming soon</text>
+  </g>
+</svg>

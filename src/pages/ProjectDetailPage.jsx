@@ -247,7 +247,7 @@ export default function ProjectDetailPage({ onContactClick }) {
               </div>
 
               {/* Location */}
-              <div>
+              {project.location && (<div>
                 <div style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
@@ -261,10 +261,10 @@ export default function ProjectDetailPage({ onContactClick }) {
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
                   {project.location}
                 </div>
-              </div>
+              </div>)}
 
               {/* Year */}
-              <div>
+              {project.year && (<div>
                 <div style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
@@ -278,7 +278,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
                   {project.year}
                 </div>
-              </div>
+              </div>)}
 
               {/* Project Features */}
               {features.length > 0 && (<div>
@@ -292,9 +292,9 @@ export default function ProjectDetailPage({ onContactClick }) {
                 }}>
                   Project Features
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {features.join(' | ')}
-                </div>
+                <ul className="project-detail-list" role="list">
+                  {features.map((feature, index) => <li key={index}>{feature}</li>)}
+                </ul>
               </div>)}
 
               {/* Key Scope Elements */}
@@ -307,11 +307,11 @@ export default function ProjectDetailPage({ onContactClick }) {
                   letterSpacing: '0.06em',
                   marginBottom: '6px'
                 }}>
-                  Key Scope Elements
+                  Highlights
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {scopeElements.join(' | ')}
-                </div>
+                <ul className="project-detail-list" role="list">
+                  {scopeElements.map((highlight, index) => <li key={index}>{highlight}</li>)}
+                </ul>
               </div>)}
 
             </aside>
