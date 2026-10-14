@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect } from 'react';
 import CtaBanner from '../components/CtaBanner';
 import { servicesPage } from '../data/siteContent';
 import { Building2, Cpu, Compass, CheckCircle2 } from 'lucide-react';
@@ -11,21 +11,16 @@ const iconMap = {
 };
 
 const ServiceCategoryCard = ({ category }) => {
-    const [isHovered, setIsHovered] = useState(false);
     const IconComponent = iconMap[category.icon] || Compass;
 
     return (
         <div
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             style={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: 'var(--radius-lg, 16px)',
                 padding: '40px 36px',
                 border: '1px solid var(--border-light)',
-                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
-                boxShadow: isHovered ? '0 16px 32px rgba(35, 24, 21, 0.08)' : '0 2px 8px rgba(35, 24, 21, 0.03)',
+                boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)',
                 display: 'grid',
                 gridTemplateRows: 'subgrid',
                 gridRow: 'span 4'
@@ -117,6 +112,8 @@ const ServiceCategoryCard = ({ category }) => {
 };
 
 export default function ServicesPage({ onContactClick }) {
+    useEffect(() => { document.title = 'Services | JIM Co.'; }, []);
+
     return (
         <div className="services-page">
             {/* Hero Section */}

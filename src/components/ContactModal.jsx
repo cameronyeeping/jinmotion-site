@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
 const encode = (data) => {
@@ -118,7 +118,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             <h2>Get in Touch</h2>
-            <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+            <p>Tell us about your project and we'll get back to you promptly.</p>
 
             {status === 'error' && (
               <div style={{
@@ -193,7 +193,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <option value="">Select an area</option>
                   <option value="infrastructure">Infrastructure</option>
                   <option value="digital">Digital Transformation & IT</option>
-                  <option value="advisory">Strategic Advisory</option>
+                  <option value="advisory">Advisory</option>
                   <option value="other">General Inquiry / Other</option>
                 </select>
               </div>

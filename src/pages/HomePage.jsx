@@ -1,10 +1,13 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CtaBanner from '../components/CtaBanner';
 import MethodologyGraphic from '../components/MethodologyGraphic';
+import PartnerCarousel from '../components/PartnerCarousel';
 import { homePage } from '../data/siteContent';
 
 const HomePage = ({ onContactClick }) => {
+    useEffect(() => { document.title = 'JIM Co.'; }, []);
+
     return (
         <div className="home-page">
             {/* Hero Section */}
@@ -54,6 +57,22 @@ const HomePage = ({ onContactClick }) => {
                             />
                         </div>
                     </div>
+
+                    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', marginTop: '32px' }}>
+                        <Link 
+                            to="/about" 
+                            className="btn-primary" 
+                            style={{ 
+                                backgroundColor: 'var(--accent-green)', 
+                                color: 'var(--text-light-primary)',
+                                padding: '16px 32px', 
+                                borderRadius: 'var(--radius-pill)', 
+                                textDecoration: 'none', 
+                                fontWeight: 600, 
+                                transition: 'background var(--transition-fast)' 
+                                }}
+                        >Learn more</Link>
+                    </div>
                 </div>
             </section>
 
@@ -67,7 +86,7 @@ const HomePage = ({ onContactClick }) => {
                     <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 40px 0' }}>{homePage.portfolio.heading}</h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '40px' }}>
-                        {homePage.portfolio.projects.map((project) => (
+                        {homePage.portfolio.projects.slice(0, 4).map((project) => (
                             <Link
                                 key={project.id}
                                 to={`/projects/${project.id}`}
@@ -102,74 +121,15 @@ const HomePage = ({ onContactClick }) => {
                             </Link>
                         ))}
                     </div>
+                    <Link to="/projects" className="btn-primary" style={{ marginTop: '32px' }}>
+                        {homePage.portfolio.viewMoreText}
+                    </Link>
                 </div>
             </section>
 
-            {/* Our Clients Section */}
+            {/* Our Partners Section */}
             {homePage.clients && (
-                <section
-                    className="clients-section"
-                    style={{
-                        padding: '40px 0',
-                        backgroundColor: '#FFFFFF',
-                        borderTop: '1px solid var(--border-light)'
-                    }}
-                >
-                    <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-                        <span
-                            style={{
-                                color: 'var(--text-dark-muted)',
-                                fontWeight: 600,
-                                fontSize: '0.8rem',
-                                letterSpacing: '0.12em',
-                                textTransform: 'uppercase',
-                                display: 'block',
-                                marginBottom: '28px'
-                            }}
-                        >
-                            Our Clients
-                        </span>
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexWrap: 'wrap',
-                                gap: '32px 56px'
-                            }}
-                        >
-                            {homePage.clients.items.map((client, idx) => (
-                                <div
-                                    key={idx}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        padding: '12px 20px',
-                                        height: '70px',
-                                        minWidth: '170px',
-                                        maxWidth: '240px'
-                                    }}
-                                >
-                                    <img
-                                        src={client.logo}
-                                        alt={client.name}
-                                        title={client.name}
-                                        style={{
-                                            maxHeight: '52px',
-                                            maxWidth: '200px',
-                                            width: 'auto',
-                                            height: 'auto',
-                                            objectFit: 'contain',
-                                            display: 'block',
-                                            opacity: 0.8
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <PartnerCarousel eyebrow={homePage.clients.eyebrow} heading={homePage.clients.heading} items={homePage.clients.items} />
             )}
             {/* CTA Section */}
             <CtaBanner onContactClick={onContactClick} />

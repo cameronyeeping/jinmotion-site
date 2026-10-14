@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Compass, Map, Handshake, Heart, Clock, Lightbulb, Users, ArrowRight } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
 
@@ -7,6 +7,8 @@ const ASP_EMERALD = '#046A38';
 const ASP_EMERALD_LIGHT = 'rgba(4, 106, 56, 0.08)';
 
 export default function CommunityPage({ onContactClick }) {
+    useEffect(() => { document.title = 'Community | JIM Co.'; }, []);
+
     return (
         <div className="community-page">
 

@@ -1,30 +1,26 @@
-import React from 'react';
+import { getAssetUrl } from '../utils/assets';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
+import NotFoundPage from './NotFoundPage';
 import { getTeamMember } from '../data/siteContent';
 
 export default function BioPage({ onContactClick }) {
   const { id } = useParams();
   const member = getTeamMember(id);
 
-  const getImageUrl = (url) => {
-    if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
-      return url;
-    }
-    return `/${url}`;
-  };
+  useEffect(() => { document.title = member?.name ? `${member.name} | JIM Co.` : 'Team member not found | JIM Co.'; }, [member]);
 
-  const portraitSrc = getImageUrl(member.portrait || member.image);
-  const hasProfile = Array.isArray(member.profile) && member.profile.length > 0;
+  if (!member) return <NotFoundPage title="Team member not found" to="/team" label="Back to Team" />;
+
+  const portraitSrc = getAssetUrl(member.image);
   const hasExpertise = Array.isArray(member.expertise) && member.expertise.length > 0;
   const hasExperience = Array.isArray(member.experience) && member.experience.length > 0;
   const hasCredentials = Array.isArray(member.credentials) && member.credentials.length > 0;
-  const hasCredibility = Array.isArray(member.credibility) && member.credibility.length > 0;
 
   const handleDownloadClick = async (e) => {
-    const fileUrl = getImageUrl(member.profilePdf);
+    const fileUrl = getAssetUrl(member.profilePdf);
     if (!fileUrl) return;
 
     const fullUrl = fileUrl.startsWith('http') ? fileUrl : `${window.location.origin}${fileUrl}`;
@@ -226,7 +222,7 @@ export default function BioPage({ onContactClick }) {
               margin: '0 0 8px 0',
               fontWeight: 700
             }}>
-              Selected Leadership Experience
+              Highlights
             </h2>
             <div style={{ height: '3px', width: '100%', backgroundColor: 'var(--accent-green)', marginBottom: '20px' }} />
 
@@ -363,7 +359,7 @@ export default function BioPage({ onContactClick }) {
               color: 'var(--text-dark-primary)',
               margin: '0 0 6px 0'
             }}>
-              Download resume
+              Download Executive Profile
             </h3>
             <p style={{
               color: 'var(--text-dark-secondary)',
@@ -371,10 +367,10 @@ export default function BioPage({ onContactClick }) {
               margin: '0 0 20px 0',
               lineHeight: 1.6
             }}>
-              Download {member.name.split(' ')[0]}'s background, expertise, and selected project experience.
+                See {`${member.name.split(' ')[0]}'s`} background, expertise, and selected project experience.
             </p>
             <a
-              href={getImageUrl(member.profilePdf)}
+              href={getAssetUrl(member.profilePdf)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDownloadClick}
