@@ -588,8 +588,10 @@ export const aboutPage = {
                 image: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
-                    'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',
-                    'Throughout her career, Gina has partnered with executive leaders, clinicians, facilities teams, and technology professionals to translate complex challenges into practical solutions. She\'s known for building high-performing teams, fostering trusted relationships, and improving healthcare delivery.'
+                    'Gina Pisoni is an executive technology and capital projects leader with more than 15 years of experience delivering major healthcare infrastructure redevelopment and digital transformation initiatives.',
+                    'She partners with health authority executives, clinicians, and delivery teams from early business-case development through design, construction, activation, and handover to operations by translating ambitious capital investments into technology and facilities that are ready to deliver care.',
+                    'Gina is known for building high-performing teams, aligning diverse stakeholders around a common delivery plan, and building governance and team structure to bring large, complex programs through to their full intended vision.',
+
                 ],
 
                 expertise: [
