@@ -862,6 +862,41 @@ section[id] {
     align-items: start;
 }
 
+.project-category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-category-filters button {
+    padding: 10px 18px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-pill);
+    background: #FFFFFF;
+    color: var(--text-dark-primary);
+    font: inherit;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-category-filters button[aria-pressed="true"] {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    color: #FFFFFF;
+}
+
+.project-category-filters button:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 3px;
+}
+
+.project-filter-count {
+    margin: 20px 0 24px;
+    font-size: 0.875rem;
+    color: var(--text-dark-secondary);
+}
+
 .project-detail-list {
     margin: 0;
     padding: 0;

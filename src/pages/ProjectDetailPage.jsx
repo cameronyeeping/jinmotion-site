@@ -1,20 +1,23 @@
 import { getAssetUrl } from '../utils/assets';
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
 import MethodologyGraphic from '../components/MethodologyGraphic';
 import NotFoundPage from './NotFoundPage';
-import { getProjectData } from '../data/siteContent';
+import { getProjectData, getProjectCategory } from '../data/siteContent';
 
 
 export default function ProjectDetailPage({ onContactClick }) {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const activeCategory = getProjectCategory(searchParams.get('category'))?.id;
+  const projectsUrl = activeCategory ? `/projects?category=${activeCategory}` : '/projects';
   const project = getProjectData(id);
 
   useEffect(() => { document.title = project?.title ? `${project.title} | JIM Co.` : 'Project not found | JIM Co.'; }, [project]);
 
-  if (!project) return <NotFoundPage title="Project not found" to="/projects" label="Back to Projects" />;
+  if (!project) return <NotFoundPage title="Project not found" to={projectsUrl} label="Back to Projects" />;
 
   const features = Array.isArray(project.features) ? project.features : [];
   const scopeElements = Array.isArray(project.scopeElements) ? project.scopeElements : [];
@@ -61,7 +64,7 @@ export default function ProjectDetailPage({ onContactClick }) {
             </h2>
           </div>
           <Link
-            to="/projects"
+            to={projectsUrl}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -89,7 +92,7 @@ export default function ProjectDetailPage({ onContactClick }) {
           {/* Breadcrumb Navigation */}
           <div style={{ marginBottom: '32px' }}>
             <Link
-              to="/projects"
+              to={projectsUrl}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -224,9 +227,12 @@ export default function ProjectDetailPage({ onContactClick }) {
                 }}>
                   Services
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.category}
-                </div>
+                <ul className="project-detail-list" role="list">
+                  {project.categories.map((categoryId) => {
+                    const category = getProjectCategory(categoryId);
+                    return category && <li key={categoryId}>{category.label}</li>;
+                  })}
+                </ul>
               </div>
 
               {/* Client */}
@@ -241,27 +247,11 @@ export default function ProjectDetailPage({ onContactClick }) {
                 }}>
                   Client
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.client}
-                </div>
+                <ul className="project-detail-list" role="list">
+                  <li>{project.client}</li>
+                  {(project.city || project.country) && <li>{[project.city, project.country].filter(Boolean).join(', ')}</li>}
+                </ul>
               </div>
-
-              {/* Location */}
-              {project.location && (<div>
-                <div style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  color: 'var(--text-dark-primary)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '6px'
-                }}>
-                  Location
-                </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.location}
-                </div>
-              </div>)}
 
               {/* Year */}
               {project.year && (<div>

@@ -4,6 +4,10 @@ Run `npm install`, then `npm run dev` for local development or `npm run build` f
 
 Run `npm run check:routes` to check project and team detail rendering, optional project lists, and invalid URLs. Unknown URLs show a not-found page. Page rendering errors are contained so the navigation remains available and changing routes recovers the page. The Netlify redirect in `public/_redirects` supports direct loads and refreshes on nested routes.
 
+### Project categories
+
+Each project has a `categories` array containing one or more IDs: `infrastructure`, `digital`, or `advisory`. Their display labels are defined in `projectCategories` in `src/data/siteContent.js`. For example, `categories: ['infrastructure', 'digital']` includes a project in both filters. Filters use URLs such as `/projects?category=digital`, so they survive refreshes and browser Back/Forward. Categories appear as plain text on detail pages; returning from a filtered project card preserves that filter. Unknown category values show all projects. Category IDs are excluded from the text export; their display labels are exported separately.
+
 ### Project methodology stages
 
 Each project in `src/data/siteContent.js` has a `methodologyStages` array. Add the IDs `vision`, `roadmap`, `implement`, `realize`, and/or `celebrate` to highlight J in Motion's participation. Omitted stages appear grey in the compact list in the project sidebar. For example, `methodologyStages: ['vision', 'roadmap', 'implement', 'realize']` highlights every stage except Celebrate. St. Paul's uses this configuration; other projects start with empty arrays awaiting participation details. These settings are excluded from the text spreadsheet export.

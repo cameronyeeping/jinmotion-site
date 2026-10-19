@@ -12,7 +12,7 @@ export function getContentRows() {
         siteMeta: 'Site', navLinks: 'Navigation', connectLinks: 'Contact links',
         ctaBanner: 'Contact banner', projects: 'Projects', homePage: 'Home',
         aboutPage: 'About and team', projectsPage: 'Projects page',
-        servicesPage: 'Services', communityPage: 'Community draft',
+        servicesPage: 'Services', communityPage: 'Community draft', projectCategories: 'Project categories',
     };
     function visit(value, path, page, item = '') {
         if (typeof value === 'string') {
@@ -21,6 +21,7 @@ export function getContentRows() {
             seen.add(value);
             const label = value.name || value.title || value.label || item;
             for (const [key, child] of Object.entries(value)) {
+                if (key === 'categories' && path.startsWith('projects[')) continue;
                 if (!technicalFields.has(key)) visit(child, Array.isArray(value) ? `${path}[${key}]` : `${path}.${key}`, page, label);
             }
         }

@@ -29,6 +29,15 @@ export const ctaBanner = {
     buttonText: 'Get in touch',
 };
 
+export const projectCategories = [
+    { id: 'infrastructure', label: 'Infrastructure' },
+    { id: 'digital', label: 'Digital' },
+    { id: 'advisory', label: 'Advisory' }
+];
+
+export const getProjectCategory = (id) => projectCategories.find((category) => category.id === id);
+
+// Assign one or more category IDs from projectCategories to each project.
 // Highlighted methodology stage IDs: vision, roadmap, implement, realize, celebrate.
 // An empty list leaves all stages grey until participation is configured.
 export const projects = [
@@ -36,10 +45,11 @@ export const projects = [
         id: 'st-pauls',
         methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
         title: 'New St. Paul\'s Hospital',
-        category: 'Infrastructure | Digital',
+        categories: ['infrastructure', 'digital', 'advisory'],
         year: '2027',
         client: 'Providence Health Care',
-        location: 'Vancouver, BC',
+        city: 'Vancouver',
+        country: 'Canada',
         short_description: 'Western Canada\'s largest hospital redevelopment project.',
         long_description: [
             'The New St. Paul\'s Hospital is the largest healthcare infrastructure project under construction in Western Canada. This $2.2 billion investment will deliver a 1.7-million-square-foot facility with more than 600 beds, scheduled to open in early 2027.',
@@ -70,10 +80,11 @@ export const projects = [
         id: 'dawson-creek',
         methodologyStages: [],
         title: 'Dawson Creek & District Hospital',
-        category: 'Infrastructure',
+        categories: ['infrastructure'],
         year: '2027',
         client: 'Northern Health Authority + Infrastructure BC',
-        location: 'Dawson Creek, BC',
+        city: 'Dawson Creek',
+        country: 'Canada',
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
         long_description: [
             "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
@@ -102,10 +113,11 @@ export const projects = [
         id: 'bc-childrens',
         methodologyStages: [],
         title: 'BC Children\'s + Women\'s Hospital Redevelopment',
-        category: 'Infrastructure + Advisory',
+        categories: ['infrastructure', 'advisory'],
         year: '2017',
         client: 'Provincial Health Services Authority',
-        location: 'Vancouver, BC',
+        city: 'Vancouver',
+        country: 'Canada',
         short_description: 'A 675-million-dollar, 640,000-square-foot pediatric critical care hospital built under a Public-Private Partnership model in Vancouver.',
         long_description: [
             'The Children\'s and Women\'s Redevelopment was a $675 million healthcare project delivered under a Public-Private Partnership (P3) model and completed in October 2017. The project delivered an eight-storey, 640,000-square-foot critical care hospital in Vancouver with 350 inpatient rooms.',
@@ -140,10 +152,11 @@ export const projects = [
         id: 'stanton',
         methodologyStages: [],
         title: 'Stanton Territorial Hospital Renewal',
-        category: 'Infrastructure + Advisory',
+        categories: ['infrastructure', 'advisory'],
         year: '2019',
         client: 'Government of Northwest Territories',
-        location: 'Yellowknife, NT',
+        city: 'Yellowknife',
+        country: 'Canada',
         short_description: 'A $350 million greenfield regional acute hospital delivery project under a P3 model.',
         long_description: [
             'The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
@@ -173,10 +186,11 @@ export const projects = [
         id: 'bc-cancer',
         methodologyStages: [],
         title: 'BC Cancer Redevelopments',
-        category: 'Advisory',
+        categories: ['advisory'],
         year: '2024',
         client: 'Provincial Health Services Authority',
-        location: 'British Columbia',
+        city: 'British Columbia',
+        country: 'Canada',
         short_description: '$440 million investment into cancer centres across British Columbia',
         long_description: [
             'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
@@ -204,10 +218,11 @@ export const projects = [
         id: 'surrey',
         methodologyStages: [],
         title: 'Surrey Memorial Hospital',
-        category: 'Advisory',
+        categories: ['advisory'],
         year: '2014',
         client: 'Fraser Health Authority',
-        location: 'Surrey, BC',
+        city: 'Surrey',
+        country: 'Canada',
         short_description: 'A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services',
         long_description: [
             'SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).'
@@ -237,8 +252,9 @@ export const projects = [
         id: 'bc-hydro-it-governance',
         methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
         title: 'BC Hydro: IT Governance Platform',
-        category: 'Digital | Advisory',
+        categories: ['digital', 'advisory'],
         client: 'BC Hydro',
+        country: 'Canada',
         short_description: 'An IT Governance platform aligning technology project demand, approvals, and delivery with business goals.',
         long_description: [
             'BC Hydro implemented an IT Governance (ITG) platform to manage demand and intake for its technology projects and align IT operations with business goals. The system governed each project from initial intake through planning, approval, and procurement to operational handover, automating policy tracking, reviews, and risk management along the way. Shared dashboards gave more than 100 users, including technology VPs, directors, managers, and project managers, clear visibility into the status of approvals and projects.',
@@ -642,6 +658,10 @@ const teamDatabase = new Map(aboutPage.team.members.map((member) => [member.id, 
 export const getTeamMember = (id) => teamDatabase.get(id);
 
 const projectDatabase = new Map(projects.map((project) => [project.id, project]));
+
+export const getProjectsByCategory = (categoryId) => getProjectCategory(categoryId)
+    ? projects.filter((project) => project.categories.includes(categoryId))
+    : projects;
 
 export const projectsPage = {
     hero: {
