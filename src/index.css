@@ -807,18 +807,20 @@ section[id] {
 .partners-carousel-track {
     --partners-visible: 5;
     display: grid;
-    grid-template-columns: repeat(var(--partners-visible), minmax(0, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--partners-visible) - 1) * 16px) / var(--partners-visible));
     gap: 16px;
     min-height: 144px;
-    opacity: 1;
-    transition: opacity 100ms ease;
-    touch-action: pan-y;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.partners-carousel-track.is-fading { opacity: 0; }
-.client-logo[hidden] { display: none; }
+.partners-carousel-track::-webkit-scrollbar { display: none; }
+.partners-carousel-track .client-logo { scroll-snap-align: start; }
 
 .client-logo {
     display: flex;
@@ -845,13 +847,14 @@ section[id] {
 
 @media (max-width: 600px) {
     .clients-section { padding: 48px 0; }
-    .partners-carousel-track { --partners-visible: 2; gap: 12px; min-height: 120px; }
+    .partners-carousel-track {
+        --partners-visible: 2;
+        grid-auto-columns: calc((100% - 12px) / 2);
+        gap: 12px;
+        min-height: 120px;
+    }
     .client-logo { height: 120px; padding: 16px; }
     .client-logo img { height: 76px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .partners-carousel-track { transition: none; }
 }
 
 /* Methodology Graphic Responsive Layout */

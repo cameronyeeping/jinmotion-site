@@ -260,10 +260,10 @@ export const projects = [
             'BC Hydro implemented an IT Governance (ITG) platform to manage demand and intake for its technology projects and align IT operations with business goals. The system governed each project from initial intake through planning, approval, and procurement to operational handover, automating policy tracking, reviews, and risk management along the way. Shared dashboards gave more than 100 users, including technology VPs, directors, managers, and project managers, clear visibility into the status of approvals and projects.',
             'As a key lead across the full development lifecycle, from requirements through deployment, we managed multiple concurrent technology projects aligned with BC Hydro\'s business objectives, requirements, and milestones. As primary liaison between operational leadership and technical teams, we built consensus on project vision, requirements, and delivery priorities, and led a team of four business analysts and developers throughout delivery.'
         ],
-        image: '/bc-hydro/placeholder-hero.svg',
+        image: '/bc-hydro/bc-hydro-logo.webp',
         galleryImages: [
-            '/bc-hydro/placeholder-platform.svg',
-            '/bc-hydro/placeholder-delivery.svg'
+            '/bc-hydro/ITG.jpeg',
+            '/bc-hydro/it-governance-software.webp'
         ],
         features: [
             'IT Governance platform',

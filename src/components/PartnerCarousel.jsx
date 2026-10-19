@@ -4,42 +4,38 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export default function PartnerCarousel({ eyebrow, heading, items }) {
     const trackRef = useRef(null);
     const id = useId();
-    const [pageSize, setPageSize] = useState(5);
-    const [page, setPage] = useState(0);
-    const [fading, setFading] = useState(false);
-    const timerRef = useRef(null);
-    const swipeRef = useRef(null);
-    const pageCount = Math.ceil(items.length / pageSize);
-    const currentPage = pageCount ? page % pageCount : 0;
-    const canMove = pageCount > 1;
+    const [edges, setEdges] = useState({ atStart: true, atEnd: true });
 
     useEffect(() => {
         const track = trackRef.current;
+        let frame = null;
         const measure = () => {
-            const count = parseInt(getComputedStyle(track).getPropertyValue('--partners-visible'), 10) || 5;
-            setPageSize(count);
+            frame = null;
+            const atStart = track.scrollLeft <= 1;
+            const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+            setEdges((previous) => previous.atStart === atStart && previous.atEnd === atEnd
+                ? previous : { atStart, atEnd });
+        };
+        const scheduleMeasure = () => {
+            if (frame === null) frame = requestAnimationFrame(measure);
         };
         measure();
-        const observer = new ResizeObserver(measure);
+        track.addEventListener('scroll', scheduleMeasure, { passive: true });
+        const observer = new ResizeObserver(scheduleMeasure);
         observer.observe(track);
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => () => clearTimeout(timerRef.current), []);
+        return () => {
+            track.removeEventListener('scroll', scheduleMeasure);
+            observer.disconnect();
+            if (frame !== null) cancelAnimationFrame(frame);
+        };
+    }, [items]);
 
     const move = (direction) => {
-        if (!canMove || timerRef.current !== null) return;
-        const advance = () => setPage((previous) => ((previous % pageCount) + direction + pageCount) % pageCount);
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            advance();
-            return;
-        }
-        setFading(true);
-        timerRef.current = setTimeout(() => {
-            advance();
-            setFading(false);
-            timerRef.current = null;
-        }, 100);
+        const track = trackRef.current;
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        const end = Math.max(0, track.scrollWidth - track.clientWidth);
+        const left = Math.max(0, Math.min(end, track.scrollLeft + direction * (track.clientWidth + gap)));
+        track.scrollTo({ left, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     };
 
     return (
@@ -51,28 +47,18 @@ export default function PartnerCarousel({ eyebrow, heading, items }) {
                         <h2 id={`${id}-heading`}>{heading}</h2>
                     </div>
                     <div className="partners-carousel-controls">
-                        <button type="button" aria-label="Previous partners" aria-controls={`${id}-track`} disabled={!canMove} onClick={() => move(-1)}><ChevronLeft size={20} aria-hidden="true" /></button>
-                        <button type="button" aria-label="Next partners" aria-controls={`${id}-track`} disabled={!canMove} onClick={() => move(1)}><ChevronRight size={20} aria-hidden="true" /></button>
+                        <button type="button" aria-label="Previous partners" aria-controls={`${id}-track`} disabled={edges.atStart} onClick={() => move(-1)}><ChevronLeft size={20} aria-hidden="true" /></button>
+                        <button type="button" aria-label="Next partners" aria-controls={`${id}-track`} disabled={edges.atEnd} onClick={() => move(1)}><ChevronRight size={20} aria-hidden="true" /></button>
                     </div>
                 </div>
-                <ul id={`${id}-track`} className={`partners-carousel-track${fading ? ' is-fading' : ''}`} ref={trackRef} tabIndex={0} aria-label="Partner logos. Use arrow keys or swipe to browse." aria-live="polite" aria-busy={fading}
-                    onPointerDown={(event) => { swipeRef.current = { x: event.clientX, y: event.clientY }; }}
-                    onPointerCancel={() => { swipeRef.current = null; }}
-                    onPointerUp={(event) => {
-                        const start = swipeRef.current;
-                        swipeRef.current = null;
-                        if (!start) return;
-                        const dx = event.clientX - start.x;
-                        const dy = event.clientY - start.y;
-                        if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
-                    }} onKeyDown={(event) => {
+                <ul id={`${id}-track`} className="partners-carousel-track" ref={trackRef} tabIndex={0} aria-label="Partner logos. Use arrow keys or swipe to browse." onKeyDown={(event) => {
                     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
                         event.preventDefault();
                         move(event.key === 'ArrowLeft' ? -1 : 1);
                     }
                 }}>
-                    {items.map((partner, index) => (
-                        <li className="client-logo" key={partner.name} hidden={index < currentPage * pageSize || index >= (currentPage + 1) * pageSize}>
+                    {items.map((partner) => (
+                        <li className="client-logo" key={partner.name}>
                             <img src={partner.logo} alt={partner.name} title={partner.name} loading="lazy" decoding="async" style={{ '--logo-scale': partner.logoScale || 1 }} />
                         </li>
                     ))}
