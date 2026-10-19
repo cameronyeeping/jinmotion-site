@@ -1,43 +1,81 @@
 import { mkdir, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as content from '../src/data/siteContent.js';
+import { projects, projectsPage, projectCategories, homePage } from '../src/data/siteContent.js';
 
-// Shared projects appear on several pages; export their canonical rows once.
+export const headers = ['Page', 'Project ID', 'Item', 'Reference', 'Current text', 'Updated text', 'Notes'];
+
+// Explicit fields keep unrelated pages, routing IDs, and image paths out of the handoff.
+const textFields = {
+    title: 'Project title',
+    short_description: 'Short description shown on project cards and the detail page',
+    client: 'Client name',
+    city: 'City or region; displayed together with country beneath the client',
+    country: 'Country; displayed together with city beneath the client',
+    year: 'Opening year; leave unspecified if unknown',
+};
+const listFields = {
+    long_description: { separator: '\n\n', notes: 'Full description. Separate paragraphs with a blank line inside this cell.' },
+    features: { separator: '\n', notes: 'Project features. Put each feature on its own line inside this cell.' },
+    scopeElements: { separator: '\n', notes: 'Highlights. Put each highlight on its own line inside this cell.' },
+};
+
 export function getContentRows() {
     const rows = [];
-    const seen = new WeakSet();
-    const technicalFields = new Set(['id', 'to', 'icon', 'image', 'logo', 'bgImage', 'profilePdf', 'galleryImages', 'methodologyStages']);
-    const groups = {
-        siteMeta: 'Site', navLinks: 'Navigation', connectLinks: 'Contact links',
-        ctaBanner: 'Contact banner', projects: 'Projects', homePage: 'Home',
-        aboutPage: 'About and team', projectsPage: 'Projects page',
-        servicesPage: 'Services', communityPage: 'Community draft', projectCategories: 'Project categories',
+    const add = (page, projectId, item, reference, value, notes) => {
+        rows.push([page, projectId, item, reference, value ?? '', '', notes]);
     };
-    function visit(value, path, page, item = '') {
-        if (typeof value === 'string') {
-            rows.push([page, item, path, value, '', page === 'Community draft' ? 'Draft; not displayed by the current community page.' : '']);
-        } else if (value && typeof value === 'object' && !seen.has(value)) {
-            seen.add(value);
-            const label = value.name || value.title || value.label || item;
-            for (const [key, child] of Object.entries(value)) {
-                if (key === 'categories' && path.startsWith('projects[')) continue;
-                if (!technicalFields.has(key)) visit(child, Array.isArray(value) ? `${path}[${key}]` : `${path}.${key}`, page, label);
-            }
-        }
+
+    for (const field of ['title', 'subtitle', 'bgAlt']) {
+        add('Projects page', '', 'Project listing', `projectsPage.hero.${field}`, projectsPage.hero[field],
+            field === 'bgAlt' ? 'Hero image description' : `Listing ${field}`);
     }
-    for (const [key, page] of Object.entries(groups)) visit(content[key], key, page);
+    projectCategories.forEach((category, index) => {
+        add('Project categories', '', category.label, `projectCategories[${index}].label`, category.label,
+            `Display label for category ID "${category.id}". Used in filters, cards, and detail pages.`);
+    });
+
+    const categoryLabels = new Map(projectCategories.map(({ id, label }) => [id, label]));
+    const stages = homePage.methodology.steps;
+    const stageLabels = new Map(stages.map(({ id, title }) => [id, title]));
+    projects.forEach((project, index) => {
+        const reference = `projects[${index}]`;
+        const addProjectRow = (field, value, notes) => add('Projects', project.id, project.title, `${reference}.${field}`, value, notes);
+
+        for (const [field, notes] of Object.entries(textFields)) {
+            addProjectRow(field, project[field], notes);
+        }
+        addProjectRow('categories', project.categories.map((id) => categoryLabels.get(id) || id).join(', '),
+            `Comma-separated categories. Choose one or more: ${projectCategories.map(({ label }) => label).join(', ')}. Maintainer maps labels to category IDs.`);
+        addProjectRow('methodologyStages', (project.methodologyStages || []).map((id) => stageLabels.get(id) || id).join(', '),
+            `Comma-separated highlighted stages: ${stages.map(({ title }) => title).join(', ')}. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs.`);
+
+        for (const [field, { separator, notes }] of Object.entries(listFields)) {
+            const entries = project[field] || [];
+            addProjectRow(field, entries.join(separator), `${notes} Use Notes to request clearing the entire list.`);
+        }
+    });
     return rows;
 }
 
-export const headers = ['Page', 'Item', 'Reference', 'Current text', 'Updated text', 'Notes'];
+export function toCsv(rows) {
+    const quote = (value) => `"${String(value).replaceAll('"', '""')}"`;
+    return '\uFEFF' + [headers, ...rows].map((row) => row.map(quote).join(',')).join('\r\n') + '\r\n';
+}
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    const output = resolve(process.argv[2] || 'exports/site-content.csv');
+    const output = resolve(process.argv[2] || 'exports/project-content.xlsx');
+    const extension = extname(output).toLowerCase();
+    if (!['.xlsx', '.csv'].includes(extension)) throw new Error('Choose an output filename ending in .xlsx or .csv.');
     const rows = getContentRows();
-    const quote = (value) => `"${String(value).replaceAll('"', '""')}"`;
-    const csv = [headers, ...rows].map((row) => row.map(quote).join(',')).join('\r\n');
-    await mkdir(resolve(output, '..'), { recursive: true });
-    await writeFile(output, '\uFEFF' + csv + '\r\n');
-    console.log(`Exported ${rows.length} text fields to ${output}`);
+    await mkdir(dirname(output), { recursive: true });
+    if (extension === '.csv') {
+        await writeFile(output, toCsv(rows));
+    } else {
+        const { createProjectWorkbook } = await import('./project-workbook.mjs');
+        const { workbook, SpreadsheetFile } = await createProjectWorkbook(headers, rows);
+        const xlsx = await SpreadsheetFile.exportXlsx(workbook);
+        await xlsx.save(output);
+    }
+    console.log(`Exported ${rows.length} project fields from ${projects.length} projects to ${output}`);
 }

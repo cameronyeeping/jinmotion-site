@@ -1,0 +1,147 @@
+﻿"Page","Project ID","Item","Reference","Current text","Updated text","Notes"
+"Projects page","","Project listing","projectsPage.hero.title","Projects","","Listing title"
+"Projects page","","Project listing","projectsPage.hero.subtitle","Two Decades of Proven Delivery","","Listing subtitle"
+"Projects page","","Project listing","projectsPage.hero.bgAlt","Projects Hero","","Hero image description"
+"Project categories","","Infrastructure","projectCategories[0].label","Infrastructure","","Display label for category ID ""infrastructure"". Used in filters, cards, and detail pages."
+"Project categories","","Digital","projectCategories[1].label","Digital","","Display label for category ID ""digital"". Used in filters, cards, and detail pages."
+"Project categories","","Advisory","projectCategories[2].label","Advisory","","Display label for category ID ""advisory"". Used in filters, cards, and detail pages."
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].title","New St. Paul's Hospital","","Project title"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].short_description","Western Canada's largest hospital redevelopment project.","","Short description shown on project cards and the detail page"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].client","Providence Health Care","","Client name"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].city","Vancouver","","City or region; displayed together with country beneath the client"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].year","2027","","Opening year; leave unspecified if unknown"
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].categories","Infrastructure, Digital, Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].methodologyStages","Vision, Roadmap, Implement, Realize","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].long_description","The New St. Paul's Hospital is the largest healthcare infrastructure project under construction in Western Canada. This $2.2 billion investment will deliver a 1.7-million-square-foot facility with more than 600 beds, scheduled to open in early 2027.
+
+J in Motion serves as Program Director for the project's $450 million technology portfolio, overseeing more than 50 concurrent projects that include command centres, security networks, and enterprise IT systems. We lead cross-functional teams, coordinate closely with government and construction partners, and help integrate Indigenous design principles into the facility plan. Through ongoing executive reporting on scope, schedule, budget, and risk, we give leadership the visibility needed to keep the program on track for opening.","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].features","1.7 million ft2
+$2.2B budget
+558 inpatient beds
+Single patient rooms
+Command centre
+Opening 2027","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","st-pauls","New St. Paul's Hospital","projects[0].scopeElements","Command centre
+Security networks
+IT systems","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].title","Dawson Creek & District Hospital","","Project title"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].short_description","Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.","","Short description shown on project cards and the detail page"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].client","Northern Health Authority + Infrastructure BC","","Client name"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].city","Dawson Creek","","City or region; displayed together with country beneath the client"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].year","2027","","Opening year; leave unspecified if unknown"
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].categories","Infrastructure","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].methodologyStages","","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].long_description","The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority project senior project leadership, responsible for roadmap to opening day including creation of detailed project deliverables.","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].features","Greenfield hospital
+Opening spring 2027","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","dawson-creek","Dawson Creek & District Hospital","projects[1].scopeElements","Operational readiness
+Transition services
+Opening-day roadmap
+Detailed project deliverables
+Advisory to HH Angus and Northern Health leadership","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].title","BC Children's + Women's Hospital Redevelopment","","Project title"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].short_description","A 675-million-dollar, 640,000-square-foot pediatric critical care hospital built under a Public-Private Partnership model in Vancouver.","","Short description shown on project cards and the detail page"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].client","Provincial Health Services Authority","","Client name"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].city","Vancouver","","City or region; displayed together with country beneath the client"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].year","2017","","Opening year; leave unspecified if unknown"
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].categories","Infrastructure, Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].methodologyStages","","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].long_description","The Children's and Women's Redevelopment was a $675 million healthcare project delivered under a Public-Private Partnership (P3) model and completed in October 2017. The project delivered an eight-storey, 640,000-square-foot critical care hospital in Vancouver with 350 inpatient rooms.
+
+Reporting to the Executive Director and Chief Project Officer, J in Motion served as transition and delivery lead, managing the $33 million technology capital budget and leading the owner's scope for P3 technology execution. We developed and implemented a collaboration plan that aligned the health authority, building consortium, and subcontractors, and synchronized owner-side projects with the main construction schedule. As the key connector between clinical and operational leaders and the technical and construction teams, we translated clinical requirements into actionable technology deliverables, led workflow redesign for future-state operations, and managed review processes and stakeholder communication throughout.
+
+We led the IMIT transition, operational readiness, and facility activation for the opening of the new BC Children's & Women's Hospital. This mission-critical portfolio included staff training coordination, technology readiness, and go-live support, and it ensured clinical operations were supported from opening day through handover to operations.","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].features","640,000-square-foot facility
+$675M redevelopment
+350 inpatient rooms
+Eight-storey critical care hospital
+P3 delivery model
+Completed October 2017","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-childrens","BC Children's + Women's Hospital Redevelopment","projects[2].scopeElements","$33M technology capital budget
+Owner-side P3 technology execution
+Clinical and technology alignment
+Workflow redesign
+IMIT transition and operational readiness
+Staff training, activation and go-live support","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].title","Stanton Territorial Hospital Renewal","","Project title"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].short_description","A $350 million greenfield regional acute hospital delivery project under a P3 model.","","Short description shown on project cards and the detail page"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].client","Government of Northwest Territories","","Client name"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].city","Yellowknife","","City or region; displayed together with country beneath the client"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].year","2019","","Opening year; leave unspecified if unknown"
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].categories","Infrastructure, Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].methodologyStages","","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].long_description","The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].features","Greenfield regional hospital
+$350M redevelopment
+100 inpatient beds
+P3 delivery model
+Completed 2019","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","stanton","Stanton Territorial Hospital Renewal","projects[3].scopeElements","$41M capital and operational budget
+Clinical program leadership
+Facility design and operationalization
+New healthcare models
+Indigenous community and clinical consultation
+Culturally sensitive care planning","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].title","BC Cancer Redevelopments","","Project title"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].short_description","$440 million investment into cancer centres across British Columbia","","Short description shown on project cards and the detail page"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].client","Provincial Health Services Authority","","Client name"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].city","British Columbia","","City or region; displayed together with country beneath the client"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].year","2024","","Opening year; leave unspecified if unknown"
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].categories","Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].methodologyStages","","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].long_description","BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. ","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].features","$440M capital investment
+Cancer centres across British Columbia
+Expanded care teams and research
+New technology and facilities","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-cancer","BC Cancer Redevelopments","projects[4].scopeElements","Capital infrastructure advisory
+Expansion and infrastructure planning
+Integrated project and construction schedules
+Design and compliance coordination
+Subject matter input","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","surrey","Surrey Memorial Hospital","projects[5].title","Surrey Memorial Hospital","","Project title"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].short_description","A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services","","Short description shown on project cards and the detail page"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].client","Fraser Health Authority","","Client name"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].city","Surrey","","City or region; displayed together with country beneath the client"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].year","2014","","Opening year; leave unspecified if unknown"
+"Projects","surrey","Surrey Memorial Hospital","projects[5].categories","Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","surrey","Surrey Memorial Hospital","projects[5].methodologyStages","","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","surrey","Surrey Memorial Hospital","projects[5].long_description","SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","surrey","Surrey Memorial Hospital","projects[5].features","$512M infrastructure project
+151 inpatient beds
+New emergency department
+Perinatal centre and intensive care unit
+Academic space
+P3 delivery model","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","surrey","Surrey Memorial Hospital","projects[5].scopeElements","Clinical design of two inpatient units
+Two-phase opening plan
+Emergency department opening in June 2013
+Patient transfer to the new tower
+Critical Care Tower opening on June 8, 2014","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].title","BC Hydro: IT Governance Platform","","Project title"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].short_description","An IT Governance platform aligning technology project demand, approvals, and delivery with business goals.","","Short description shown on project cards and the detail page"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].client","BC Hydro","","Client name"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].city","","","City or region; displayed together with country beneath the client"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].country","Canada","","Country; displayed together with city beneath the client"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].year","","","Opening year; leave unspecified if unknown"
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].categories","Digital, Advisory","","Comma-separated categories. Choose one or more: Infrastructure, Digital, Advisory. Maintainer maps labels to category IDs."
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].methodologyStages","Vision, Roadmap, Implement, Realize","","Comma-separated highlighted stages: Vision, Roadmap, Implement, Realize, Celebrate. Omitted stages appear grey. Use Notes to request clearing all stages. Maintainer maps titles to stage IDs."
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].long_description","BC Hydro implemented an IT Governance (ITG) platform to manage demand and intake for its technology projects and align IT operations with business goals. The system governed each project from initial intake through planning, approval, and procurement to operational handover, automating policy tracking, reviews, and risk management along the way. Shared dashboards gave more than 100 users, including technology VPs, directors, managers, and project managers, clear visibility into the status of approvals and projects.
+
+As a key lead across the full development lifecycle, from requirements through deployment, we managed multiple concurrent technology projects aligned with BC Hydro's business objectives, requirements, and milestones. As primary liaison between operational leadership and technical teams, we built consensus on project vision, requirements, and delivery priorities, and led a team of four business analysts and developers throughout delivery.","","Full description. Separate paragraphs with a blank line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].features","IT Governance platform
+More than 100 users
+Demand and project intake management
+Automated policy tracking and risk management
+Shared approval and project dashboards","","Project features. Put each feature on its own line inside this cell. Use Notes to request clearing the entire list."
+"Projects","bc-hydro-it-governance","BC Hydro: IT Governance Platform","projects[6].scopeElements","Requirements through deployment
+Concurrent technology project delivery
+Operational and technical team liaison
+Consensus on vision and delivery priorities
+Leadership of four business analysts and developers","","Highlights. Put each highlight on its own line inside this cell. Use Notes to request clearing the entire list."

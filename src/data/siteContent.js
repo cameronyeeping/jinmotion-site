@@ -539,24 +539,20 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Providence Health Care - New St. Paul\'s Hospital',
-                        role: 'Program Director',
+                        projectId: 'st-pauls',
                         description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
                     {
 
-                        project: 'HH Angus + Northern Health Authority - Dawson Creek & District Hospital',
-                        role: 'Advisor',
+                        projectId: 'dawson-creek',
                         description: 'Advised senior project leaders from HH Angus and Northern Health on the roadmap to opening'
                     },
                     {
-                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
-                        role: 'Senior Consultant',
+                        projectId: 'bc-childrens',
                         description: 'Created and led approach for collaboration with the Public-Private Partnership (P3) construction partner and health authority.'
                     },
                     {
-                        project: 'Stanton Territorial Hospital Renewal',
-                        role: 'Program Director',
+                        projectId: 'stanton',
                         description: 'Led a $41M clinical, operational and technology portfolio to operationalize the new Stanton Territorial Hospital'
                     }
                 ],
@@ -607,24 +603,20 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Provincial Health Services Authority - BC Cancer Redevelopment Projects',
-                        role: 'Senior Director, Delivery Solutions, Capital Projects',
+                        projectId: 'bc-cancer',
                         description: 'Digital leadership and governance for four concurrent cancer centre redevelopments across the province, owning a $140M IM/IT capital budget and directing a multidisciplinary Technology Solutions and PMO team. Set digital strategy and capital planning direction while ensuring program-wide risk management and stakeholder alignment across health authority and construction partners. '
                     },
                     {
 
-                        project: 'Providence Health Care- New St. Paul\'s Hospital',
-                        role: 'Director, Facilities and Capital Projects',
+                        projectId: 'st-pauls',
                         description: 'Led Design-Build contract management and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
                     },
                     {
-                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
-                        role: 'Director, IMIT',
+                        projectId: 'bc-childrens',
                         description: 'Owned IMIT strategy and a $33M capital budget for the redevelopment\'s technology scope and led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
                     },
                     {
-                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
-                        role: 'Senior Manager, Clinical Alignment',
+                        projectId: 'bc-childrens',
                         description: 'Led P3 (Public-Private Partnership) IM/IT contract execution, serving as the bridge between clinical leadership and construction/technology teams to align clinical requirements with facility design — supporting clinical technology planning and workflow readiness for the new care environment.'
                     }
                 ],

@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "export:content": "node scripts/export-content.mjs",
+    "export:projects": "node scripts/export-content.mjs",
     "check:routes": "node scripts/check-routes.mjs"
   },
   "dependencies": {

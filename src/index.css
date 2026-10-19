@@ -1012,6 +1012,105 @@ section[id] {
    ========================================================================= */
 
 /* Split hero: text left, portrait right */
+.bio-section {
+    padding: 8px 0;
+}
+
+.bio-content-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.bio-panel {
+    padding: clamp(20px, 2.5vw, 28px);
+    border-radius: 22px;
+    background: #EAF0E9;
+}
+
+.bio-panel-sage {
+    background: #EAF0E9;
+}
+
+.bio-panel h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-heading);
+    color: var(--text-dark-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.bio-panel h3 {
+    margin: 0 0 4px;
+    font-family: var(--font-heading);
+    color: var(--accent-green-dark, var(--accent-green));
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.bio-panel p {
+    margin: 0;
+    color: var(--text-dark-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.bio-expertise-list,
+.bio-credentials-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-dark-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bio-credentials-list {
+    gap: 6px 24px;
+    color: var(--text-dark-secondary);
+    font-size: 0.875rem;
+}
+
+.bio-credentials-panel h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.bio-highlights {
+    display: grid;
+    gap: 18px;
+}
+
+.bio-conferences {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.bio-panel .bio-conference-date {
+    margin-bottom: 6px;
+    color: var(--accent-green);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.bio-download-section {
+    margin-top: 12px;
+    padding: 32px 0;
+    background: #EAF0E9;
+}
+
+@media (max-width: 700px) {
+    .bio-expertise-list,
+    .bio-credentials-list,
+    .bio-conferences { grid-template-columns: minmax(0, 1fr); }
+    .bio-panel { border-radius: 16px; }
+}
+
 .profile-hero {
     padding: 96px 0 32px 0;
     background-color: var(--bg-light);
