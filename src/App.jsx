@@ -11,6 +11,8 @@ import ProjectDetailPage from './pages/ProjectDetailPage'
 import ServicesPage from './pages/ServicesPage'
 import BioPage from './pages/BioPage'
 import CommunityPage from './pages/CommunityPage'
+import NotFoundPage from './pages/NotFoundPage'
+import RouteErrorBoundary from './components/RouteErrorBoundary'
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false)
@@ -22,17 +24,20 @@ function App() {
     <BrowserRouter>
       <Header onContactClick={openContact} />
       <main>
-        <Routes>
-          <Route path="/" element={<HomePage onContactClick={openContact} />} />
-          <Route path="/about" element={<AboutPage onContactClick={openContact} />} />
-          <Route path="/team" element={<TeamPage onContactClick={openContact} />} />
-          <Route path="/team/:id" element={<BioPage onContactClick={openContact} />} />
-          <Route path="/bio/:id" element={<BioPage onContactClick={openContact} />} />
-          <Route path="/services" element={<ServicesPage onContactClick={openContact} />} />
-          <Route path="/projects" element={<ProjectsPage onContactClick={openContact} />} />
-          <Route path="/projects/:id" element={<ProjectDetailPage onContactClick={openContact} />} />
-          <Route path="/community" element={<CommunityPage onContactClick={openContact} />} />
-        </Routes>
+        <RouteErrorBoundary>
+          <Routes>
+            <Route path="/" element={<HomePage onContactClick={openContact} />} />
+            <Route path="/about" element={<AboutPage onContactClick={openContact} />} />
+            <Route path="/team" element={<TeamPage onContactClick={openContact} />} />
+            <Route path="/team/:id" element={<BioPage onContactClick={openContact} />} />
+            <Route path="/bio/:id" element={<BioPage onContactClick={openContact} />} />
+            <Route path="/services" element={<ServicesPage onContactClick={openContact} />} />
+            <Route path="/projects" element={<ProjectsPage onContactClick={openContact} />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage onContactClick={openContact} />} />
+            <Route path="/community" element={<CommunityPage onContactClick={openContact} />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </RouteErrorBoundary>
       </main>
       <Footer />
       <ContactModal isOpen={isContactOpen} onClose={closeContact} />

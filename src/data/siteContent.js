@@ -6,7 +6,7 @@
 export const siteMeta = {
     brandName: 'J in Motion',
     logoText: 'JiM',
-    tagline: 'Tech and Infrastructure Consulting',
+    tagline: 'Infrastructure | Enterprise Technology | Leadership',
     copyright: '© 2026 J in Motion. All rights reserved.',
 };
 
@@ -29,118 +29,258 @@ export const ctaBanner = {
     buttonText: 'Get in touch',
 };
 
+export const projectCategories = [
+    { id: 'infrastructure', label: 'Infrastructure' },
+    { id: 'digital', label: 'Digital' },
+    { id: 'advisory', label: 'Advisory' }
+];
+
+export const getProjectCategory = (id) => projectCategories.find((category) => category.id === id);
+
+// Assign one or more category IDs from projectCategories to each project.
+// Highlighted methodology stage IDs: vision, roadmap, implement, realize, celebrate.
+// An empty list leaves all stages grey until participation is configured.
 export const projects = [
     {
         id: 'st-pauls',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
         title: 'New St. Paul\'s Hospital',
-        category: 'Infrastructure + Digital',
-        year: '2026',
+        categories: ['infrastructure', 'digital', 'advisory'],
+        year: '2027',
         client: 'Providence Health Care',
-        location: 'Vancouver, BC',
+        city: 'Vancouver',
+        country: 'Canada',
         short_description: 'Western Canada\'s largest hospital redevelopment project.',
         long_description: [
-            'The New St. Paul’s Hospital redevelopment is the largest healthcare infrastructure project in Western Canada. The project includes a 2.2-billion-dollar investment to construct a 1.7-million-square-foot facility with more than 600 beds. As Program Director, J in Motion manages a 450-million-dollar technology portfolio and oversees more than 50 concurrent projects, including command centers, security networks, and IT systems. We lead cross-functional teams, coordinate with government and construction partners, and integrate Indigenous design principles into the facility plan. We provide continuous executive reporting on project scope, schedule, budget, and risk to ensure opening in early 2027.'
+            'The New St. Paul\'s Hospital is the largest healthcare infrastructure project under construction in Western Canada. This $2.2 billion investment will deliver a 1.7-million-square-foot facility with more than 600 beds, scheduled to open in early 2027.',
+            'J in Motion serves as Program Director for the project\'s $450 million technology portfolio, overseeing more than 50 concurrent projects that include command centres, security networks, and enterprise IT systems. We lead cross-functional teams, coordinate closely with government and construction partners, and help integrate Indigenous design principles into the facility plan. Through ongoing executive reporting on scope, schedule, budget, and risk, we give leadership the visibility needed to keep the program on track for opening.'
         ],
+
         image: '/nsph/nsph.jpeg',
-        heroColors: ['#F9D2BA', '#EEA2A5', '#7E3A65', '#13629B', '#10B981'],
         galleryImages: [
             '/nsph/nsph-1.avif',
             '/nsph/nsph-2.jpg'
+        ],
+        features: [
+            '1.7 million ft2',
+            '$2.2B budget',
+            '558 inpatient beds',
+            'Single patient rooms',
+            'Command centre',
+            'Opening 2027'
+
+        ],
+        scopeElements: [
+            'Command centre',
+            'Security networks',
+            'IT systems'
         ]
     },
     {
         id: 'dawson-creek',
+        methodologyStages: [],
         title: 'Dawson Creek & District Hospital',
-        category: 'Infrastructure',
-        year: '2026',
+        categories: ['infrastructure'],
+        year: '2027',
         client: 'Northern Health Authority + Infrastructure BC',
-        location: 'Dawson Creek, BC',
+        city: 'Dawson Creek',
+        country: 'Canada',
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
         long_description: [
             "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
-            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " + 
+            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " +
             "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
-            "project deliverables."
+            'project deliverables.'
         ],
         image: '/dawson/dawson-creek-render.jpg',
-        heroColors: ['#F4A261', '#E76F51', '#2A9D8F', '#264653', '#13629B'],
         galleryImages: [
-            'dawson/dawson-2.jpg',
-            'dawson/dawson-3.jpeg'
+            '/dawson/dawson-2.jpg',
+            '/dawson/dawson-3.jpeg'
+        ],
+        features: [
+            'Greenfield hospital',
+            'Opening spring 2027'
+        ],
+        scopeElements: [
+            'Operational readiness',
+            'Transition services',
+            'Opening-day roadmap',
+            'Detailed project deliverables',
+            'Advisory to HH Angus and Northern Health leadership'
         ]
     },
     {
         id: 'bc-childrens',
+        methodologyStages: [],
         title: 'BC Children\'s + Women\'s Hospital Redevelopment',
-        category: 'Infrastructure + Advisory',
+        categories: ['infrastructure', 'advisory'],
         year: '2017',
         client: 'Provincial Health Services Authority',
-        location: 'Vancouver, BC',
+        city: 'Vancouver',
+        country: 'Canada',
         short_description: 'A 675-million-dollar, 640,000-square-foot pediatric critical care hospital built under a Public-Private Partnership model in Vancouver.',
         long_description: [
-            'The Children’s and Women’s Redevelopment was a 675-million-dollar healthcare project completed in October 2017 under a Public-Private Partnership model. The eight-story, 640,000-square-foot critical care hospital provides 350 inpatient rooms in Vancouver. Reporting to the Executive Director and Chief Project Officer, J in Motion developed and applied a collaborative plan for the health authority, building consortium, and subcontractors. We synchronized owner-side projects with the main construction schedule. We also managed review processes, project budgets, and stakeholder communication frameworks to ensure clear project execution.'
+            'The Children\'s and Women\'s Redevelopment was a $675 million healthcare project delivered under a Public-Private Partnership (P3) model and completed in October 2017. The project delivered an eight-storey, 640,000-square-foot critical care hospital in Vancouver with 350 inpatient rooms.',
+
+            'Reporting to the Executive Director and Chief Project Officer, J in Motion served as transition and delivery lead, managing the $33 million technology capital budget and leading the owner\'s scope for P3 technology execution. We developed and implemented a collaboration plan that aligned the health authority, building consortium, and subcontractors, and synchronized owner-side projects with the main construction schedule. As the key connector between clinical and operational leaders and the technical and construction teams, we translated clinical requirements into actionable technology deliverables, led workflow redesign for future-state operations, and managed review processes and stakeholder communication throughout.',
+
+            'We led the IMIT transition, operational readiness, and facility activation for the opening of the new BC Children\'s & Women\'s Hospital. This mission-critical portfolio included staff training coordination, technology readiness, and go-live support, and it ensured clinical operations were supported from opening day through handover to operations.'
         ],
         image: '/bc-childrens/bc-childrens.jpg',
-        heroColors: ['#D8B4E2', '#AE759F', '#6B3074', '#13629B', '#10B981'],
         galleryImages: [
             '/bc-childrens/bc-childrens-2.jpeg',
             '/bc-childrens/bc-childrens-3.jpg'
+        ],
+        features: [
+            '640,000-square-foot facility',
+            '$675M redevelopment',
+            '350 inpatient rooms',
+            'Eight-storey critical care hospital',
+            'P3 delivery model',
+            'Completed October 2017'
+        ],
+        scopeElements: [
+            '$33M technology capital budget',
+            'Owner-side P3 technology execution',
+            'Clinical and technology alignment',
+            'Workflow redesign',
+            'IMIT transition and operational readiness',
+            'Staff training, activation and go-live support'
         ]
     },
     {
         id: 'stanton',
+        methodologyStages: [],
         title: 'Stanton Territorial Hospital Renewal',
-        category: 'Infrastructure + Advisory',
-        year: '2023',
+        categories: ['infrastructure', 'advisory'],
+        year: '2019',
         client: 'Government of Northwest Territories',
-        location: 'Yellowknife, NT',
+        city: 'Yellowknife',
+        country: 'Canada',
         short_description: 'A $350 million greenfield regional acute hospital delivery project under a P3 model.',
         long_description: [
             'The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
         ],
         image: '/stanton/stanton-territorial.jpg',
-        heroColors: ['#E8A0BF', '#C38D9E', '#85586F', '#13629B', '#34D399'],
         galleryImages: [
-            'stanton/stanton-1.avif',
-            'stanton/stanton-2.jpg'
+            '/stanton/stanton-1.avif',
+            '/stanton/stanton-2.jpg'
+        ],
+        features: [
+            'Greenfield regional hospital',
+            '$350M redevelopment',
+            '100 inpatient beds',
+            'P3 delivery model',
+            'Completed 2019'
+        ],
+        scopeElements: [
+            '$41M capital and operational budget',
+            'Clinical program leadership',
+            'Facility design and operationalization',
+            'New healthcare models',
+            'Indigenous community and clinical consultation',
+            'Culturally sensitive care planning'
         ]
     },
     {
         id: 'bc-cancer',
+        methodologyStages: [],
         title: 'BC Cancer Redevelopments',
-        category: 'Advisory',
+        categories: ['advisory'],
         year: '2024',
         client: 'Provincial Health Services Authority',
-        location: 'Vancouver, BC',
+        city: 'British Columbia',
+        country: 'Canada',
         short_description: '$440 million investment into cancer centres across British Columbia',
         long_description: [
             'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
         ],
-        image: 'bc-cancer/cloverdale-2.avif',
-        galleryImages:[
-            'bc-cancer/cloverdale.webp',
-            'bc-cancer/cloverdale-1.jpeg'
+        image: '/bc-cancer/cloverdale-2.avif',
+        galleryImages: [
+            '/bc-cancer/cloverdale.webp',
+            '/bc-cancer/cloverdale-1.jpeg'
+        ],
+        features: [
+            '$440M capital investment',
+            'Cancer centres across British Columbia',
+            'Expanded care teams and research',
+            'New technology and facilities'
+        ],
+        scopeElements: [
+            'Capital infrastructure advisory',
+            'Expansion and infrastructure planning',
+            'Integrated project and construction schedules',
+            'Design and compliance coordination',
+            'Subject matter input'
         ]
     },
     {
         id: 'surrey',
+        methodologyStages: [],
         title: 'Surrey Memorial Hospital',
-        category: 'Advisory',
-        year: '2013',
+        categories: ['advisory'],
+        year: '2014',
         client: 'Fraser Health Authority',
-        location: 'Surrey, BC',
+        city: 'Surrey',
+        country: 'Canada',
         short_description: 'A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services',
         long_description: [
             'SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).'
         ],
         image: '/surrey/surrey.jpg',
-        galleryImages:[
-            'surrey-1.webp',
-            'surrey-2.jpg'
+        galleryImages: [
+            '/surrey/surrey-1.webp',
+            '/surrey/surrey-2.jpg'
+        ],
+        features: [
+            '$512M infrastructure project',
+            '151 inpatient beds',
+            'New emergency department',
+            'Perinatal centre and intensive care unit',
+            'Academic space',
+            'P3 delivery model'
+        ],
+        scopeElements: [
+            'Clinical design of two inpatient units',
+            'Two-phase opening plan',
+            'Emergency department opening in June 2013',
+            'Patient transfer to the new tower',
+            'Critical Care Tower opening on June 8, 2014'
+        ]
+    },
+    {
+        id: 'bc-hydro-it-governance',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
+        title: 'BC Hydro: IT Governance Platform',
+        categories: ['digital', 'advisory'],
+        client: 'BC Hydro',
+        country: 'Canada',
+        short_description: 'An IT Governance platform aligning technology project demand, approvals, and delivery with business goals.',
+        long_description: [
+            'BC Hydro implemented an IT Governance (ITG) platform to manage demand and intake for its technology projects and align IT operations with business goals. The system governed each project from initial intake through planning, approval, and procurement to operational handover, automating policy tracking, reviews, and risk management along the way. Shared dashboards gave more than 100 users, including technology VPs, directors, managers, and project managers, clear visibility into the status of approvals and projects.',
+            'As a key lead across the full development lifecycle, from requirements through deployment, we managed multiple concurrent technology projects aligned with BC Hydro\'s business objectives, requirements, and milestones. As primary liaison between operational leadership and technical teams, we built consensus on project vision, requirements, and delivery priorities, and led a team of four business analysts and developers throughout delivery.'
+        ],
+        image: '/bc-hydro/bc-hydro-logo.webp',
+        galleryImages: [
+            '/bc-hydro/ITG.jpeg',
+            '/bc-hydro/it-governance-software.webp'
+        ],
+        features: [
+            'IT Governance platform',
+            'More than 100 users',
+            'Demand and project intake management',
+            'Automated policy tracking and risk management',
+            'Shared approval and project dashboards'
+        ],
+        scopeElements: [
+            'Requirements through deployment',
+            'Concurrent technology project delivery',
+            'Operational and technical team liaison',
+            'Consensus on vision and delivery priorities',
+            'Leadership of four business analysts and developers'
         ]
     }
 
-    //'https://placehold.co/800x500/32231F/1882ce?text=Project+Detail+1',
 ];
 
 export const homePage = {
@@ -153,11 +293,13 @@ export const homePage = {
         bgAlt: 'Hero Background'
     },
     clients: {
-        heading: 'Our clients',
+        eyebrow: 'WORKING TOGETHER',
+        heading: 'Our partners',
         items: [
             {
                 name: 'Fraser Health Authority',
-                logo: '/client-logos/Fraser-Health-Authority.png'
+                logo: '/client-logos/Fraser-Health-Authority.png',
+                logoScale: 1.15
             },
             {
                 name: 'BC Cancer',
@@ -170,15 +312,62 @@ export const homePage = {
             {
                 name: 'Providence Health Care',
                 logo: '/client-logos/providence-logo.png'
-            }
+            },
+            {
+                name: 'Vancouver Coastal Health',
+                logo: '/client-logos/vancouver-coastal-health-logo.png'
+            },
+            {
+                name: 'Northern Health',
+                logo: '/client-logos/nh-logo.png'
+            },
+            {
+                name: 'Interior Health',
+                logo: '/client-logos/interior-health-logo.avif'
+            },
+            {
+                name: 'Infrastructure BC',
+                logo: '/client-logos/infrastructure-bc.png'
+            },
+            {
+                name: 'British Columbia Ministry of Health',
+                logo: '/client-logos/ministry-of-health.png',
+                logoScale: 1.2
+            },
+            {
+                name: 'Government of Northwest Territories',
+                logo: '/client-logos/govt-northwest-territories.png'
+            },
+            {
+                name: 'Government of Manitoba',
+                logo: '/client-logos/manitoba.jpeg'
+            },
+            {
+                name: 'Humber River Hospital',
+                logo: '/client-logos/humber-river.png',
+                logoScale: 1.35
+            },
+            {
+                name: 'London Health Sciences Centre',
+                logo: '/client-logos/lhsc-logo.png'
+            },
+            {
+                name: 'HH Angus',
+                logo: '/client-logos/hh-angus.png',
+                logoScale: 1.9
+            },
+            {
+                name: 'Arcadis',
+                logo: '/client-logos/arcadis-logo.webp'
+            },
         ]
     },
     approach: {
         eyebrow: 'ABOUT US',
         heading: 'Driving Momentum Across Complex Projects',
         paragraphs: [
-            'We are a strategic advisory firm with a proven track record of managing over $40B in capital infrastructure and enterprise technology portfolios across Canada.',
-            'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to complex infrastructure landscapes.',
+            'We are an infrastructure and technology advising firm with a proven track record, contributing to major public-sector programs representing more than $40B in capital infrastructure and enterprise technology portfolios across Canada.',
+            'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to infrastructure, enterprise technology, and organizational transformation landscapes.',
         ],
         image: '/HOSPITAL1.jpg',
         imageAlt: 'Studio Approach'
@@ -207,6 +396,7 @@ export const homePage = {
         steps: [
             {
                 number: '01',
+                id: 'vision',
                 title: 'Vision',
                 description: 'Define the destination and the reason for change.',
                 icon: 'target',
@@ -219,6 +409,7 @@ export const homePage = {
             },
             {
                 number: '02',
+                id: 'roadmap',
                 title: 'Roadmap',
                 description: 'Translate the vision into an achievable path.',
                 icon: 'trending-up',
@@ -231,6 +422,7 @@ export const homePage = {
             },
             {
                 number: '03',
+                id: 'implement',
                 title: 'Implement',
                 description: 'Build the structure required for successful delivery.',
                 icon: 'grid',
@@ -243,6 +435,7 @@ export const homePage = {
             },
             {
                 number: '04',
+                id: 'realize',
                 title: 'Realize',
                 description: 'Lead execution and turn plans into outcomes.',
                 icon: 'arrow-right',
@@ -255,6 +448,7 @@ export const homePage = {
             },
             {
                 number: '05',
+                id: 'celebrate',
                 title: 'Celebrate',
                 description: 'Close well and make the value visible.',
                 icon: 'star',
@@ -266,13 +460,12 @@ export const homePage = {
                 ]
             }
         ],
-        footerSummary: 'Vision → Roadmap → Implement → Realize → Celebrate',
-        footerTagline: 'CLARITY. MOMENTUM. OUTCOMES.'
     },
     portfolio: {
         eyebrow: 'OUR WORK',
         heading: 'Selected Projects',
-        projects: projects
+        viewMoreText: 'View more projects',
+        projects
     }
 };
 
@@ -280,29 +473,21 @@ export const aboutPage = {
     hero: {
         title: 'About Us',
         subtitle: 'Our Mission and Experience',
-        bgImage: 'vancouver.webp',
+        bgImage: '/vancouver.webp',
         bgAlt: 'About Background'
     },
     content: {
         heading: 'Driving Momentum Across Canada',
         paragraphs: [
-            'J in Motion delivers infrastructure, enterprise technology, and organizational transformation projects through clear roadmaps, focused execution, and measurable results.',
-            // 'J in Motion brings vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
-            'With over than 20 years of leadership experience, we have contributed to major public programs that represent more than 40 billion dollars in capital investment across Canada. This experience includes healthcare facility construction, digital modernization, operational readiness, and enterprise system integration. We ensure that organizations put new infrastructure and technology into operation safely within approved scope, budget, and schedule limits.',
-            // 'Our core capabilities include capital infrastructure delivery for complex Public-Private Partnership (P3) and Design-Build-Finance projects. We control project schedules, budgets, risk, and regulatory compliance throughout the project lifecycle. In addition, we direct technology and systems integration, which includes the procurement and deployment of enterprise information systems, command centers, and digital networks.',
-            'We also prepare organizations for opening day through operational readiness planning and clinical workflow design. We lead structured stakeholder engagement and consult directly with Indigenous Nations, healthcare boards, and government ministries. Through this collaborative approach, we integrate community priorities and build resilient physical and digital environments for public institutions across Canada.'
-
-            // 'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. This experience spans healthcare redevelopment, digital modernization, operational readiness and the integrated enterprise systems required to bring new futuristic infrastructure and innovation safely into operation within defined scope, budget and timeline.',
-            // 'JiM Co works alongside health authorities, provincial governments, municipalities and leadership teams from executives to front line, throughout the project lifecycle. Specializing in early engagement visioning art of the possible, planning and business-case development through procurement, design, implementation, activation and stabilization.',
-            // 'The firm is known for stepping into complex environments and moving the work forward with confidence and customization of approach to align with organizational guiding principles and culture. That means establishing clear direction through governance, documenting decisions, aligning people and priorities, resolving issues and maintaining momentum when the pressure is high. The approach is collaborative and grounded in the discipline required to deliver.',
-            // 'JiM Co does more than provide advice. The firm works alongside clients embedded in their teams, takes ownership of the path forward and does "whatever it takes" to turn plans into action. Challenges are addressed directly, teams are supported and progress remains visible from vision through realization.'
-
+        'We bring vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
+        'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. The firm works alongside health authorities, governments and leadership teams to advance complex initiatives from early vision and planning through implementation, activation and stabilization.',
+        'Known for stepping into complex environments and moving the work forward, we establish clear direction, strengthen governance, align people and priorities, resolve issues and maintain momentum when the pressure is high.',
         ]
     },
     stats: [
-        { value: '20+', label: 'Years of Experience' },
-        { value: '50+', label: 'Concurrent Projects Directed' },
-        { value: '$40B', label: 'Portfolio Value Delivered' },
+        { value: '20+', label: 'Years of Leadership Experience' },
+        { value: '50+', label: 'Concurrent Projects Led within One Integrated Portfolio' },
+        { value: '$40B+', label: 'in Major Programs Contributed To' },
         { value: '$450M', label: 'Technology Portfolio Led' }
     ],
     guidingPrinciples: {
@@ -332,15 +517,13 @@ export const aboutPage = {
                 name: 'Jeannie Gandham',
                 title: 'Principal',
                 image: '/profiles/jeannie_headshot.jpeg',
-                portrait: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
-                headline: 'Strategic Advisory & Project Delivery Leadership',
                 bio: [
                     'Jeannie Gandham is the Principal of J in Motion, bringing over 20 years of executive leadership in major healthcare, capital infrastructure, and technology transformation initiatives across Canada.',
                     'With a proven track record directing multi-billion-dollar public-sector portfolios, Jeannie specializes in strategic advisory, P3 capital delivery, operational readiness, and stakeholder alignment across government ministries, health authorities, and Indigenous communities.'
                 ],
                 profile: [
-                    'Jeannie Gandham is an executive project and program leader with more than 20years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
+                    'Jeannie Gandham is an executive project and program leader with more than 20 years of experience guiding complex healthcare infrastructure, digital transformation and organizational change.',
                     'She works with executive teams from early strategy and business-case development through delivery, activation, go-live and stabilization. Her strength is turning ambitious direction into executable roadmaps, aligning diverse stakeholders and maintaining focus on the decisions that create forward movement.',
                     'Jeannie is known for an inclusive, direct and outcomes-focused leadership style—and for building the governance, capability and confidence organizations need to sustain results.'
                 ],
@@ -356,24 +539,20 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Providence Healthcare - New St. Paul\'s Hospital',
-                        role: 'Program Director',
+                        projectId: 'st-pauls',
                         description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
                     {
-                        
-                        project: 'HH Angus + Northern Health Authority - Dawson Creek & District Hospital',
-                        role: 'Advisor',
-                        description: 'Advised both HH Angus and Northern Health Authority senior project leadership in their roadmap to opening day including creation of detailed project deliverables.'
+
+                        projectId: 'dawson-creek',
+                        description: 'Advised senior project leaders from HH Angus and Northern Health on the roadmap to opening'
                     },
                     {
-                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
-                        role: 'Senior Consultant',
-                        description: 'Created and led approach for collaboration with the Private Public Partnership (P3) construction partner and health authority.'
+                        projectId: 'bc-childrens',
+                        description: 'Created and led approach for collaboration with the Public-Private Partnership (P3) construction partner and health authority.'
                     },
                     {
-                        project: 'Stanton Territorial Hospital Renewal',
-                        role: 'Program Director',
+                        projectId: 'stanton',
                         description: 'Led a $41M clinical, operational and technology portfolio to operationalize the new Stanton Territorial Hospital'
                     }
                 ],
@@ -401,20 +580,18 @@ export const aboutPage = {
                     }
                 ],
                 profilePdf: '/resumes/jeannie-resume.pdf'
-            }
-            /*
-             * Gina Pisoni
-             */
-            ,{
+            },
+            {
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
-                title: 'Digital Solutions Lead`',
+                title: 'Digital Solutions Lead',
                 image: '/profiles/gina_headshot_bg_change.jpg',
-                portrait: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
-                    'Gina is a healthcare technology leader with more than 20 years of experience delivering complex digital transformation and major capital redevelopment initiatives within the healthcare sector.',
-                    'Throughout her career, Gina has partnered with executive leaders, clinicians, facilities, teams, and technology professionals to translate complex challenges into practical, strategic solutions. She\'s known for building high-performing teams, fostering trusted relationships, and improving healthcare delivery.'
+                    'Gina Pisoni is an executive technology and capital projects leader with more than 15 years of experience delivering major healthcare infrastructure redevelopment and digital transformation initiatives.',
+                    'She partners with health authority executives, clinicians, and delivery teams from early business-case development through design, construction, activation, and handover to operations by translating ambitious capital investments into technology and facilities that are ready to deliver care.',
+                    'Gina is known for building high-performing teams, aligning diverse stakeholders around a common delivery plan, and building governance and team structure to bring large, complex programs through to their full intended vision.',
+
                 ],
 
                 expertise: [
@@ -428,24 +605,20 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Provincial Health Services Authority - BC Cancer Redevelopment Projects',
-                        role: 'Senior Director, Delivery Solutions, Capital Projects',
+                        projectId: 'bc-cancer',
                         description: 'Digital leadership and governance for four concurrent cancer centre redevelopments across the province, owning a $140M IM/IT capital budget and directing a multidisciplinary Technology Solutions and PMO team. Set digital strategy and capital planning direction while ensuring program-wide risk management and stakeholder alignment across health authority and construction partners. '
                     },
                     {
-                        
-                        project: 'Provincial Health Services Authority - New St. Paul\'s Hospital',
-                        role: 'Director, Facilities and Capital Projects',
-                        description: 'Led Design-Build contract management, and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
+
+                        projectId: 'st-pauls',
+                        description: 'Led Design-Build contract management and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
                     },
                     {
-                        project: 'Provincial Health Services Authority - BC Children\'s & Women\'s Redevelopment',
-                        role: 'Director, IMIT',
+                        projectId: 'bc-childrens',
                         description: 'Owned IMIT strategy and a $33M capital budget for the redevelopment\'s technology scope and led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
                     },
                     {
-                        project: 'Provincial Health Services Authority - Children\'s and Women\'s Redevelopment',
-                        role: 'Senior Manager, Clinical Alignment',
+                        projectId: 'bc-childrens',
                         description: 'Led P3 (Public-Private Partnership) IM/IT contract execution, serving as the bridge between clinical leadership and construction/technology teams to align clinical requirements with facility design — supporting clinical technology planning and workflow readiness for the new care environment.'
                     }
                 ],
@@ -454,41 +627,35 @@ export const aboutPage = {
                     'Healthcare Facilities Planning and Design: Focus on Leadership Certificate, Cornell University',
                 ],
                 profilePdf: '/resumes/gina-resume.pdf'
-            }
-            /* Cameron Yee-Ping
-            ,{
+            },
+            {
                 id: 'cameron-yee-ping',
                 name: 'Cameron Yee-Ping',
                 title: 'Project Leader',
-                image: 'https://placehold.co/500x350/231815/13629B?text=Cameron+Yee-Ping',
+                image: '/profiles/cam_profile_edited.png',
                 alt: 'Cameron Yee-Ping',
                 bio: [
                     'Cameron Yee-Ping provides project delivery, strategic analysis, and systems integration support for complex infrastructure and transformation initiatives.',
                     'Working alongside project leadership, Cameron focuses on digital roadmaps, operational planning, and seamless project execution.'
+                ],
+                credentials: [
+                    'B.Sc., SFU'
                 ]
             }
-            */
+
         ]
     }
 };
 
-export const teamDatabase = Object.fromEntries(aboutPage.team.members.map((m) => [m.id, m]));
+const teamDatabase = new Map(aboutPage.team.members.map((member) => [member.id, member]));
 
-export const getTeamMember = (id) => {
-    if (teamDatabase[id]) return teamDatabase[id];
-    const member = aboutPage.team.members.find((m) => m.id === id);
-    if (member) return member;
-    return {
-        id,
-        name: id ? id.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'Team Member',
-        title: 'Team Member',
-        image: `https://placehold.co/600x750/231815/13629B?text=${id || 'Member'}`,
-        alt: id || 'Team Member',
-        bio: ['Biography details for this team member.']
-    };
-};
+export const getTeamMember = (id) => teamDatabase.get(id);
 
-export const projectDatabase = Object.fromEntries(projects.map((p) => [p.id, p]));
+const projectDatabase = new Map(projects.map((project) => [project.id, project]));
+
+export const getProjectsByCategory = (categoryId) => getProjectCategory(categoryId)
+    ? projects.filter((project) => project.categories.includes(categoryId))
+    : projects;
 
 export const projectsPage = {
     hero: {
@@ -500,36 +667,12 @@ export const projectsPage = {
     projects
 };
 
-export const getProjectData = (id) => {
-    if (projectDatabase[id]) return projectDatabase[id];
-
-    const num = id.replace('project-', '');
-    return {
-        id,
-        title: `Project Title ${num || id}`,
-        category: 'CATEGORY / LOREM IPSUM',
-        year: '2024',
-        client: 'Client Name',
-        location: 'Location City',
-        short_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        long_description: [
-            `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Project ${num || id} description details.`,
-            `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.`,
-            `Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet.`
-        ],
-        image: `https://placehold.co/800x600/32231F/10B981?text=Project+${num}`,
-        heroColors: ['#F9D2BA', '#E8A0BF', '#7E3A65', '#13629B', '#10B981'],
-        galleryImages: [
-            `https://placehold.co/800x500/32231F/10B981?text=Project+${num}+Detail+1`,
-            `https://placehold.co/800x500/2A1D1A/1882ce?text=Project+${num}+Detail+2`
-        ]
-    };
-};
+export const getProjectData = (id) => projectDatabase.get(id);
 
 export const servicesPage = {
     hero: {
         title: 'Our Services',
-        subtitle: 'Comprehensive strategic consulting and delivery leadership for complex capital, digital, and advisory initiatives.',
+        subtitle: 'Embedded leadership that moves complex infrastructure, enterprise technology and organizational transformation initiatives from vision through delivery.',
         bgImage: '/vancouver.webp',
         bgAlt: 'Services Background'
     },
@@ -542,13 +685,13 @@ export const servicesPage = {
             id: 'infrastructure',
             title: 'Infrastructure',
             icon: 'building',
-            description: 'We provide strategic leadership for complex capital and infrastructure projects, from early planning and design through construction, operational readiness, activation and opening. We bring together the people, plans and decisions required to move a project forward with clarity and confidence.',
+            description: 'We lead complex capital and infrastructure initiatives from early vision and planning through design, implementation, operational readiness, activation and stabilization. Our work connects people, decisions and delivery requirements to maintain momentum across the complete project lifecycle.',
             servicesIncludeLabel: 'Our infrastructure services include:',
             items: [
-                'Strategic and master planning',
+                'Visioning and master planning',
                 'Project definition and business cases',
                 'Governance and integrated project planning',
-                'Design and construction coordination',
+                'Design, construction and operational integration',
                 'Clinical and operational planning',
                 'Operational readiness, activation and transition',
                 'Opening, stabilization and project closeout'
@@ -558,7 +701,7 @@ export const servicesPage = {
             id: 'digital',
             title: 'Digital',
             icon: 'cpu',
-            description: 'We help organizations plan and deliver digital transformation that is connected to infrastructure, operations and the people who will use it. Our approach considers technology as part of the complete environment, ensuring systems are practical, integrated and ready for implementation.',
+            description: 'We lead enterprise technology and digital modernization programs that connect infrastructure, operations and the people who rely on them. Systems, workflows, equipment and readiness activities are integrated into one executable path toward implementation and go-live.',
             servicesIncludeLabel: 'Our digital services include:',
             items: [
                 'Digital and technology strategy',
@@ -575,11 +718,11 @@ export const servicesPage = {
             id: 'advisory',
             title: 'Advisory',
             icon: 'compass',
-            description: 'We provide senior guidance to organizations navigating complex decisions, major transformation or critical stages of project delivery. We help leaders define the vision, understand the challenges and establish a practical path from strategy to implementation.',
+            description: 'We provide experience at critical moments, defining the vision, mobilizing delivery, resolving complexity and recovering initiatives that have lost momentum. We help leaders define the vision, understand the challenges and establish a practical path from strategy to implementation.',
             servicesIncludeLabel: 'Our advisory services include:',
             items: [
-                'Executive and project advisory',
-                'Visioning and strategic planning',
+                'Executive, program and project planning',
+                'Visioning and organizational planning',
                 'Research and best-practice review',
                 'Program roadmaps and mobilization',
                 'Governance and delivery models',
@@ -591,6 +734,7 @@ export const servicesPage = {
     ]
 };
 
+// Retained community draft content; the current community page uses its own copy.
 export const communityPage = {
     hero: {
         title: 'Community & Impact',
@@ -707,4 +851,3 @@ export const communityPage = {
         }
     ]
 };
-

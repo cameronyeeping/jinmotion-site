@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import CtaBanner from '../components/CtaBanner';
-import { projectsPage } from '../data/siteContent';
+import { projectsPage, projectCategories, getProjectCategory, getProjectsByCategory } from '../data/siteContent';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, activeCategory }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <Link
-            to={`/projects/${project.id}`}
+            to={`/projects/${project.id}${activeCategory ? `?category=${activeCategory}` : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             style={{
@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
                         marginBottom: '8px'
                     }}
                 >
-                    {project.category}
+                    {project.categories.map((id) => getProjectCategory(id)?.label).filter(Boolean).join(' · ')}
                 </span>
                 <h3
                     style={{
@@ -79,6 +79,19 @@ const ProjectCard = ({ project }) => {
 };
 
 export default function ProjectsPage({ onContactClick }) {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const activeCategory = getProjectCategory(searchParams.get('category'))?.id;
+    const filteredProjects = getProjectsByCategory(activeCategory);
+
+    const selectCategory = (category) => {
+        const nextParams = new URLSearchParams(searchParams);
+        if (category) nextParams.set('category', category);
+        else nextParams.delete('category');
+        setSearchParams(nextParams);
+    };
+
+    useEffect(() => { document.title = 'Projects | JIM Co.'; }, []);
+
     return (
         <div>
             <section className="hero-wrapper" style={{ minHeight: '50vh', position: 'relative', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
@@ -104,17 +117,29 @@ export default function ProjectsPage({ onContactClick }) {
 
             <section className="section-light" style={{ padding: '5rem 0', backgroundColor: 'var(--bg-light, #F8F5F0)' }}>
                 <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+                    <div className="project-category-filters" role="group" aria-label="Filter projects by category">
+                        <button type="button" aria-pressed={!activeCategory} onClick={() => selectCategory(null)}>All projects</button>
+                        {projectCategories.map((category) => (
+                            <button key={category.id} type="button" aria-pressed={activeCategory === category.id} onClick={() => selectCategory(category.id)}>
+                                {category.label}
+                            </button>
+                        ))}
+                    </div>
+                    <p className="project-filter-count" role="status">
+                        {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'}{activeCategory ? ` in ${getProjectCategory(activeCategory).label}` : ''}
+                    </p>
                     <div
                         style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
                             gap: '32px'
                         }}
                     >
-                        {projectsPage.projects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
+                        {filteredProjects.map((project) => (
+                            <ProjectCard key={project.id} project={project} activeCategory={activeCategory} />
                         ))}
                     </div>
+                    {filteredProjects.length === 0 && <p>No projects in this category yet.</p>}
                 </div>
             </section>
 
