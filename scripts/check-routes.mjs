@@ -32,12 +32,8 @@ try {
       assert.ok(html.includes(projectCategories.find((category) => category.id === categoryId).label));
     }
   }
-  const expectedByCategory = {
-    infrastructure: ['st-pauls', 'dawson-creek', 'bc-childrens', 'stanton'],
-    digital: ['st-pauls', 'bc-hydro-it-governance'],
-    advisory: ['st-pauls', 'bc-childrens', 'stanton', 'bc-cancer', 'surrey', 'bc-hydro-it-governance'],
-  };
-  for (const [category, expected] of Object.entries(expectedByCategory)) {
+  for (const { id: category } of projectCategories) {
+    const expected = projects.filter((project) => project.categories.includes(category)).map((project) => project.id);
     assert.deepEqual(getProjectsByCategory(category).map((project) => project.id), expected);
     const html = render(`/projects?category=${category}`);
     for (const project of projects) {
@@ -64,8 +60,35 @@ try {
     Object.assign(project, saved);
   }
   for (const member of aboutPage.team.members) {
-    assert.ok(render(`/team/${member.id}`).includes(member.name));
+    const html = render(`/team/${member.id}`);
+    assert.ok(html.includes(member.name));
     assert.ok(render(`/bio/${member.id}`).includes(member.name));
+    for (const entry of member.experience || []) {
+      const title = getProjectData(entry.projectId)?.title || entry.project;
+      assert.ok(title, `${member.id}: highlight needs a website projectId or standalone project name`);
+      assert.ok(html.includes(renderToString(createElement('h3', null, title))));
+    }
+  }
+  // Standalone highlights never need entries in the public projects collection.
+  const member = aboutPage.team.members[0];
+  const originalExperience = member.experience;
+  try {
+    member.experience = [
+      { project: 'Independent "Prototype"', description: 'Standalone contribution.' },
+      { projectId: 'st-pauls', project: 'Fallback title', description: 'Linked contribution.' },
+      { projectId: 'unlisted-project', project: 'Unlisted Project', description: '' },
+      {},
+    ];
+    const html = render(`/team/${member.id}`);
+    assert.ok(html.includes(renderToString(createElement('h3', null, 'Independent "Prototype"'))));
+    assert.ok(html.includes('<p>Standalone contribution.</p>'));
+    assert.ok(html.includes(renderToString(createElement('h3', null, getProjectData('st-pauls').title))));
+    assert.ok(!html.includes('Fallback title'));
+    assert.ok(html.includes('<h3>Unlisted Project</h3>'));
+    assert.ok(!html.includes('<h3></h3>') && !html.includes('<p></p>'));
+    assert.equal(getProjectData('unlisted-project'), undefined);
+  } finally {
+    member.experience = originalExperience;
   }
   for (const id of ['missing', 'constructor', '__proto__', undefined]) {
     assert.equal(getProjectData(id), undefined);
