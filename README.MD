@@ -4,6 +4,19 @@ Run `npm install`, then `npm run dev` for local development or `npm run build` f
 
 Run `npm run check:routes` to check project and team detail rendering, optional project lists, and invalid URLs. Unknown URLs show a not-found page. Page rendering errors are contained so the navigation remains available and changing routes recovers the page. The Netlify redirect in `public/_redirects` supports direct loads and refreshes on nested routes.
 
+### Bio highlights
+
+In a team member's `experience` array, use `projectId` for a project on the website; its title will automatically match the Projects page. Use `project` for a standalone title when the project is not listed on the website:
+
+```js
+experience: [
+    { projectId: 'st-pauls', description: 'Contribution to the listed project.' },
+    { project: 'Independent Project Name', description: 'Contribution to this project.' }
+]
+```
+
+Standalone highlights appear only on the bio page. If both fields are supplied, a matching website project's title takes precedence; `project` also acts as a fallback if that project is later removed. Empty descriptions are omitted from the display.
+
 ### Project categories
 
 Each project has a `categories` array containing one or more IDs: `infrastructure`, `digital`, or `advisory`. Their display labels are defined in `projectCategories` in `src/data/siteContent.js`. For example, `categories: ['infrastructure', 'digital']` includes a project in both filters. Filters use URLs such as `/projects?category=digital`, so they survive refreshes and browser Back/Forward. Categories appear as plain text on detail pages; returning from a filtered project card preserves that filter. Unknown category values show all projects. The project export includes category assignments as readable labels and exports their shared display labels separately.

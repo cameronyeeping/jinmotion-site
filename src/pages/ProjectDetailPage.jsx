@@ -265,8 +265,12 @@ export default function ProjectDetailPage({ onContactClick }) {
                 }}>
                   Opening Year
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5 }}>
-                  {project.year}
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5, whiteSpace: 'pre-line' }}>
+                  {project.year.split(/(re-paced)/i).map((part, index) => (
+                    /^re-paced$/i.test(part)
+                      ? <em key={index} style={{ color: '#858585', fontStyle: 'italic' }}>{part}</em>
+                      : part
+                  ))}
                 </div>
               </div>)}
 

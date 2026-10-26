@@ -43,7 +43,7 @@ export const getProjectCategory = (id) => projectCategories.find((category) => c
 export const projects = [
     {
         id: 'st-pauls',
-        methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
         title: 'New St. Paul\'s Hospital',
         categories: ['infrastructure', 'digital', 'advisory'],
         year: '2027',
@@ -112,6 +112,7 @@ export const projects = [
     {
         id: 'bc-childrens',
         methodologyStages: [],
+        
         title: 'BC Children\'s + Women\'s Hospital Redevelopment',
         categories: ['infrastructure', 'advisory'],
         year: '2017',
@@ -184,10 +185,10 @@ export const projects = [
     },
     {
         id: 'bc-cancer',
-        methodologyStages: [],
+        methodologyStages: ['vision', 'roadmap'],
         title: 'BC Cancer Redevelopments',
-        categories: ['advisory'],
-        year: '2024',
+        categories: ['advisory', 'digital'],
+        year: 'Nanaimo 2028\nKamloops 2028\nSurrey 2028\nBurnaby Re-paced',
         client: 'Provincial Health Services Authority',
         city: 'British Columbia',
         country: 'Canada',
@@ -202,7 +203,7 @@ export const projects = [
         ],
         features: [
             '$440M capital investment',
-            'Cancer centres across British Columbia',
+            '4 new cancer centres across British Columbia',
             'Expanded care teams and research',
             'New technology and facilities'
         ],
@@ -615,12 +616,8 @@ export const aboutPage = {
                     },
                     {
                         projectId: 'bc-childrens',
-                        description: 'Owned IMIT strategy and a $33M capital budget for the redevelopment\'s technology scope and led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
+                        description: 'Led P3 (Public-Private Partnership) and owned IMIT strategy alongside a $33M capital budget for the redevelopment\'s technology scope. Led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
                     },
-                    {
-                        projectId: 'bc-childrens',
-                        description: 'Led P3 (Public-Private Partnership) IM/IT contract execution, serving as the bridge between clinical leadership and construction/technology teams to align clinical requirements with facility design — supporting clinical technology planning and workflow readiness for the new care environment.'
-                    }
                 ],
                 credentials: [
                     'Computer Information Systems Diploma, Langara College',
@@ -635,8 +632,38 @@ export const aboutPage = {
                 image: '/profiles/cam_profile_edited.png',
                 alt: 'Cameron Yee-Ping',
                 bio: [
-                    'Cameron Yee-Ping provides project delivery, strategic analysis, and systems integration support for complex infrastructure and transformation initiatives.',
-                    'Working alongside project leadership, Cameron focuses on digital roadmaps, operational planning, and seamless project execution.'
+                    'Cameron Yee-Ping is a systems and technology associate with a background in computing science, data optimization, and complex technical workflows.',
+                    'He supports project delivery teams by translating technical and operational requirements into streamlined, data-driven solutions by analyzing workflows, resolving system bottlenecks, and ensuring tools and processes are built for peak operational performance.',
+                    'Cameron is known for a rigorous analytical approach, clear technical communication, and a proactive mindset for turning complex data and system challenges into reliable, well-structured outcomes.'
+                ],
+                expertise: [
+                    'Requirements Gathering',
+                    'Technical Training',
+                    'Technical Analysis',
+                    'Full-Stack Development',
+                    'Systems Architecture',
+                    'Cross-Functional Technical Collaboration',
+                    'Troubleshooting, QA, & Visual Debugging',
+                    'Data Modeling'
+                ],
+                experience: [
+                    {
+                        project: '3D Interactive Scene Viewer',
+                        description: 'Led the development of a high-performance 3D scene viewer and editor, utilizing advanced AI rendering techniques to deliver a fully interactive, real-time user experience at 30 FPS.'
+                    },
+                    {
+                        project: 'Reinforcement Learning Software Developer',
+                        description: 'Architected a high-performance simulation pipeline for autonomous robot soccer agents, streamlining the training pipeline and accelerating the iteration cycle for reinforcement learning models.'
+                    },
+                    {
+                        project: 'Computer Science Teaching Assistant',
+                        description: 'Taught the mechanics and low-level design of data structures and algorithms to first and second year computer science students.',
+                    },
+                    {
+                        project: 'Activity and Fitness Tracker',
+                        description: 'Architected a full-stack Android application in Kotlin, designing the Room database schema to efficiently persist and manage user exercise history and location data.'
+                    }
+
                 ],
                 credentials: [
                     'B.Sc., SFU'

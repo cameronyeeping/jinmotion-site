@@ -179,12 +179,17 @@ export default function BioPage({ onContactClick }) {
             <div className="bio-panel">
               <h2 id="bio-highlights-heading">Highlights</h2>
               <div className="bio-highlights">
-                {member.experience.map((entry, index) => (
-                  <article key={index}>
-                    <h3>{getProjectData(entry.projectId)?.title || entry.project}</h3>
-                    <p>{entry.description}</p>
-                  </article>
-                ))}
+                {member.experience.map((entry, index) => {
+                  // Website projects inherit their canonical title; standalone projects supply their own.
+                  const title = getProjectData(entry.projectId)?.title || entry.project;
+                  if (!title && !entry.description) return null;
+                  return (
+                    <article key={index}>
+                      {title && <h3>{title}</h3>}
+                      {entry.description && <p>{entry.description}</p>}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </div>
