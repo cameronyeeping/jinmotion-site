@@ -15,7 +15,7 @@ export default function ProjectDetailPage({ onContactClick }) {
   const projectsUrl = activeCategory ? `/projects?category=${activeCategory}` : '/projects';
   const project = getProjectData(id);
 
-  useEffect(() => { document.title = project?.title ? `${project.title} | JIM Co.` : 'Project not found | JIM Co.'; }, [project]);
+  useEffect(() => { document.title = project?.title ? `${project.title} | J in Motion` : 'Project not found | J in Motion'; }, [project]);
 
   if (!project) return <NotFoundPage title="Project not found" to={projectsUrl} label="Back to Projects" />;
 

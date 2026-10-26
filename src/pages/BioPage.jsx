@@ -10,7 +10,7 @@ export default function BioPage({ onContactClick }) {
   const { id } = useParams();
   const member = getTeamMember(id);
 
-  useEffect(() => { document.title = member?.name ? `${member.name} | JIM Co.` : 'Team member not found | JIM Co.'; }, [member]);
+  useEffect(() => { document.title = member?.name ? `${member.name} | J in Motion` : 'Team member not found | J in Motion'; }, [member]);
 
   if (!member) return <NotFoundPage title="Team member not found" to="/team" label="Back to Team" />;
 

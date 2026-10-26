@@ -5,7 +5,7 @@ import CtaBanner from '../components/CtaBanner';
 import { aboutPage } from '../data/siteContent';
 
 const AboutPage = ({ onContactClick }) => {
-    useEffect(() => { document.title = 'About | JIM Co.'; }, []);
+    useEffect(() => { document.title = 'About | J in Motion'; }, []);
 
     return (
         <div className="about-page">

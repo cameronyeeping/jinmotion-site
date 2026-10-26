@@ -90,7 +90,7 @@ const TeamMemberCard = ({ member }) => {
 };
 
 const TeamPage = ({ onContactClick }) => {
-    useEffect(() => { document.title = 'Team | JIM Co.'; }, []);
+    useEffect(() => { document.title = 'Team | J in Motion'; }, []);
 
     return (
         <div className="team-page">

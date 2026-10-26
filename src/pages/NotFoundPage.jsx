@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NotFoundPage({ title = 'Page not found', to = '/', label = 'Back to Home' }) {
-  useEffect(() => { document.title = `${title} | JIM Co.`; }, [title]);
+  useEffect(() => { document.title = `${title} | J in Motion`; }, [title]);
 
   return (
     <section className="section-light" style={{ minHeight: '60vh', padding: '160px 24px 80px' }}>

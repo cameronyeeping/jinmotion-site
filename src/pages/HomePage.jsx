@@ -6,7 +6,7 @@ import PartnerCarousel from '../components/PartnerCarousel';
 import { homePage } from '../data/siteContent';
 
 const HomePage = ({ onContactClick }) => {
-    useEffect(() => { document.title = 'JIM Co.'; }, []);
+    useEffect(() => { document.title = 'Home | J in Motion'; }, []);
 
     return (
         <div className="home-page">

@@ -112,7 +112,7 @@ const ServiceCategoryCard = ({ category }) => {
 };
 
 export default function ServicesPage({ onContactClick }) {
-    useEffect(() => { document.title = 'Services | JIM Co.'; }, []);
+    useEffect(() => { document.title = 'Services | J in Motion'; }, []);
 
     return (
         <div className="services-page">

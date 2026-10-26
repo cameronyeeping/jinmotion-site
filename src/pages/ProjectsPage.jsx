@@ -90,7 +90,7 @@ export default function ProjectsPage({ onContactClick }) {
         setSearchParams(nextParams);
     };
 
-    useEffect(() => { document.title = 'Projects | JIM Co.'; }, []);
+    useEffect(() => { document.title = 'Projects | J in Motion'; }, []);
 
     return (
         <div>
