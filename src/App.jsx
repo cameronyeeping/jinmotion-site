@@ -11,6 +11,8 @@ import ProjectDetailPage from './pages/ProjectDetailPage'
 import ServicesPage from './pages/ServicesPage'
 import BioPage from './pages/BioPage'
 import CommunityPage from './pages/CommunityPage'
+import OutreachPage from './pages/OutreachPage'
+import WorkshopDetailPage from './pages/WorkshopDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import RouteErrorBoundary from './components/RouteErrorBoundary'
 
@@ -35,6 +37,8 @@ function App() {
             <Route path="/projects" element={<ProjectsPage onContactClick={openContact} />} />
             <Route path="/projects/:id" element={<ProjectDetailPage onContactClick={openContact} />} />
             <Route path="/community" element={<CommunityPage onContactClick={openContact} />} />
+            <Route path="/outreach/:id" element={<WorkshopDetailPage />} />
+            <Route path="/outreach" element={<OutreachPage onContactClick={openContact} />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </RouteErrorBoundary>

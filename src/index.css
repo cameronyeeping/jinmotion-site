@@ -656,7 +656,7 @@ section[id] {
     background: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links,
     .nav-container > .btn-primary {
         display: none;
@@ -665,7 +665,9 @@ section[id] {
     .mobile-menu-toggle {
         display: flex;
     }
+}
 
+@media (max-width: 768px) {
     .hero-title {
         font-size: 2.2rem;
     }
@@ -762,16 +764,6 @@ section[id] {
     padding: 0 24px;
 }
 
-.partners-eyebrow {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--accent-green);
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
 .clients-section h2 {
     margin: 0;
     font-family: var(--font-heading);
@@ -855,6 +847,38 @@ section[id] {
     }
     .client-logo { height: 120px; padding: 16px; }
     .client-logo img { height: 76px; }
+}
+
+/* Conference resources */
+.outreach-page { background: var(--bg-light); color: var(--text-dark-primary); }
+.outreach-hero { min-height: 50vh; }
+.outreach-hero .hero-title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin: 0 0 16px; }
+.outreach-hero .hero-subtitle { font-size: 1.25rem; line-height: 1.6; margin: 0; }
+.outreach-shell { width: 100%; max-width: 1200px; padding: 0 24px; margin: 0 auto; }
+.outreach-library { padding-top: 64px; padding-bottom: 80px; }
+.outreach-library-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.outreach-library-header h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; }
+.outreach-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 28px; }
+.outreach-resource { display: flex; flex-direction: column; min-width: 0; text-decoration: none; color: inherit; }
+.outreach-resource-image { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 16px; background: #EAF0E9; }
+.outreach-resource-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 200ms ease; }
+a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025); }
+.outreach-resource-body { padding: 20px 0 0; }
+.outreach-resource-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-bottom: 12px; color: var(--accent-green); font-size: 0.75rem; font-weight: 600; }
+.outreach-resource h3 { font-family: var(--font-heading); font-size: 1.25rem; line-height: 1.35; margin: 0 0 10px; }
+.outreach-resource p { color: var(--text-dark-secondary); line-height: 1.6; font-size: 0.95rem; margin: 0 0 12px; }
+.outreach-resource-action { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--accent-green); font-weight: 600; margin-top: 6px; }
+.outreach-page a:focus-visible, .outreach-page button:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 5px; }
+@media (max-width: 900px) {
+    .outreach-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .outreach-library-header { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 560px) {
+    .outreach-resource-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .outreach-library { padding-top: 40px; padding-bottom: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .outreach-resource-image img { transition: none; }
 }
 
 /* Methodology Graphic Responsive Layout */
@@ -1204,4 +1228,26 @@ section[id] {
     .profile-credentials-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Workshop articles */
+.workshop-detail { min-height: 100vh; background: var(--bg-light); }
+.workshop-detail-hero { position: relative; height: 55vh; min-height: 380px; overflow: hidden; background: #231815; }
+.workshop-detail-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.workshop-detail-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(35, 24, 21, 0.3), rgba(35, 24, 21, 0.6)); }
+.workshop-detail-title { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 1200px; padding: 24px 32px; background: rgba(35, 24, 21, 0.75); backdrop-filter: blur(16px); border-radius: var(--radius-md); }
+.workshop-detail-title h1 { color: #FFFFFF; font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.2; margin: 0; }
+.workshop-detail-content { padding-top: 44px; padding-bottom: 72px; }
+.workshop-description { max-width: 840px; margin: 0 auto; }
+.workshop-description p { color: var(--text-dark-secondary); font-size: 1.15rem; line-height: 1.8; margin: 0 0 24px; }
+.workshop-description a { color: var(--accent-green); text-decoration: underline; text-underline-offset: 4px; }
+.workshop-description a:hover { text-decoration-thickness: 2px; }
+.workshop-event-image { display: block; max-width: 100%; width: auto; height: auto; margin: 0 auto 36px; border-radius: var(--radius-md); }
+.workshop-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-top: 16px; }
+.workshop-description a:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 5px; }
+.workshop-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 560px) {
+    .workshop-detail-title { padding: 20px; bottom: 24px; }
+    .workshop-detail-content { padding-top: 32px; padding-bottom: 48px; }
+    .workshop-description p { font-size: 1.05rem; }
 }

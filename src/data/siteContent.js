@@ -16,6 +16,7 @@ export const navLinks = [
     { to: '/services', label: 'Services' },
     { to: '/projects', label: 'Projects' },
     { to: '/team', label: 'Team' },
+    { to: '/outreach', label: 'Outreach' },
     // { to: '/community', label: 'Community' },
 ];
 
@@ -294,8 +295,7 @@ export const homePage = {
         bgAlt: 'Hero Background'
     },
     clients: {
-        eyebrow: 'WORKING TOGETHER',
-        heading: 'Our partners',
+        heading: 'Our Partners',
         items: [
             {
                 name: 'Fraser Health Authority',
@@ -364,10 +364,9 @@ export const homePage = {
         ]
     },
     approach: {
-        eyebrow: 'ABOUT US',
         heading: 'Driving Momentum Across Complex Projects',
         paragraphs: [
-            'We are an infrastructure and technology advising firm with a proven track record, contributing to major public-sector programs representing more than $40B in capital infrastructure and enterprise technology portfolios across Canada.',
+            'J in Motion is an infrastructure and technology advising firm with a proven track record, contributing to major public-sector programs representing more than $40B in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to infrastructure, enterprise technology, and organizational transformation landscapes.',
         ],
         image: '/HOSPITAL1.jpg',
@@ -391,9 +390,7 @@ export const homePage = {
         ]
     },
     methodology: {
-        eyebrow: 'THE J IN MOTION METHOD',
         heading: 'From vision to realization.',
-        subtitle: 'A clear, connected approach that turns complex ideas into meaningful outcomes.',
         steps: [
             {
                 number: '01',
@@ -463,7 +460,6 @@ export const homePage = {
         ],
     },
     portfolio: {
-        eyebrow: 'OUR WORK',
         heading: 'Selected Projects',
         viewMoreText: 'View more projects',
         projects
@@ -756,6 +752,45 @@ export const servicesPage = {
                 'Project recovery and issue resolution',
                 'Stakeholder engagement and alignment',
                 'Change leadership and outcome measurement'
+            ]
+        }
+    ]
+};
+
+export const outreachPage = {
+    hero: {
+        title: 'Outreach',
+        subtitle: 'Workshops and ideas shared with our professional community.',
+        bgImage: '/vancouver.webp',
+        bgAlt: 'Vancouver cityscape'
+    },
+    libraryHeading: 'Workshops',
+    // Each workshop opens at /outreach/:id. Add description paragraphs below.
+    workshops: [
+        {
+            id: 'icat',
+            title: 'From Vision to Roadmap: Planning ICAT for Healthcare Infrastructure',
+            image: '/outreach/infrastructure.jpeg',
+            imageAlt: 'Jeannie Gandham and Nancy Nguyen',
+            description: [
+                'Join Jeannie Gandham and Nancy Nguyen of Providence Health Care for an interactive workshop using the New St. Paul’s Hospital journey as a real-world example.',
+                'Bring a technology idea, use case or goal from your own organization and begin transforming it into a clear vision and agile roadmap you can take back to your team.'
+            ],
+            registration: {
+                text: 'To add this to your conference experience,',
+                label: 'register here',
+                href: 'https://lnkd.in/gZqSXs6W'
+            }
+        },
+        {
+            id: 'women-in-healthcare-infrastructure',
+            title: 'Women in Healthcare Infrastructure Insight Series: Leadership & Networking Reception',
+            image: '/outreach/women-in-leadership.jpeg',
+            imageAlt: 'Women in Healthcare Infrastructure leadership and networking reception',
+            description: [
+                'Levelling Up, Leading Change and Building High-Performing Healthcare Organizations for the Future. An evening of connection with fellow women leaders in healthcare infrastructure to exchange ideas, foster collaboration, and shape the future of healthcare facilities in Canada.',
+                'Featuring Nadine Bernard, Denise Flemming, Eleanor Lee, Rebecca Repa, and Kristine Jarvi, RN, BNSc, MBA, CHE.',
+                'Pre-registration required online.'
             ]
         }
     ]

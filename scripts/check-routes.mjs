@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { access } from 'node:fs/promises';
 import { createServer } from 'vite';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
@@ -11,13 +12,17 @@ try {
   const { default: ProjectsPage } = await server.ssrLoadModule('/src/pages/ProjectsPage.jsx');
   const { default: BioPage } = await server.ssrLoadModule('/src/pages/BioPage.jsx');
   const { default: NotFoundPage } = await server.ssrLoadModule('/src/pages/NotFoundPage.jsx');
-  const { projects, projectCategories, getProjectsByCategory, aboutPage, getProjectData, getTeamMember } = await server.ssrLoadModule('/src/data/siteContent.js');
+  const { default: OutreachPage } = await server.ssrLoadModule('/src/pages/OutreachPage.jsx');
+  const { default: WorkshopDetailPage } = await server.ssrLoadModule('/src/pages/WorkshopDetailPage.jsx');
+  const { projects, projectCategories, getProjectsByCategory, aboutPage, getProjectData, getTeamMember, outreachPage, navLinks } = await server.ssrLoadModule('/src/data/siteContent.js');
   const render = (url) => renderToString(createElement(StaticRouter, { location: url },
     createElement(Routes, null,
       createElement(Route, { path: '/projects', element: createElement(ProjectsPage) }),
       createElement(Route, { path: '/projects/:id', element: createElement(ProjectPage) }),
       createElement(Route, { path: '/team/:id', element: createElement(BioPage) }),
       createElement(Route, { path: '/bio/:id', element: createElement(BioPage) }),
+      createElement(Route, { path: '/outreach/:id', element: createElement(WorkshopDetailPage) }),
+      createElement(Route, { path: '/outreach', element: createElement(OutreachPage) }),
       createElement(Route, { path: '*', element: createElement(NotFoundPage) }),
     )));
 
@@ -93,6 +98,33 @@ try {
   for (const id of ['missing', 'constructor', '__proto__', undefined]) {
     assert.equal(getProjectData(id), undefined);
     assert.equal(getTeamMember(id), undefined);
+  }
+  const renderOutreach = (url) => render(url).replace(/<!--.*?-->/g, '');
+  const outreachHtml = renderOutreach('/outreach');
+  assert.ok(navLinks.some(({ to }) => to === '/outreach'));
+  assert.ok(outreachHtml.includes('class="hero-title">Outreach</h1>'));
+  assert.ok(!outreachHtml.includes('Featured resource'));
+  assert.ok(!outreachHtml.includes('type="search"'));
+  assert.equal(new Set(outreachPage.workshops.map(({ id }) => id)).size, outreachPage.workshops.length);
+  for (const workshop of outreachPage.workshops) {
+    await access(`public${workshop.image}`);
+    const url = `/outreach/${encodeURIComponent(workshop.id)}`;
+    assert.ok(outreachHtml.includes(`href="${url}"`));
+    const detailHtml = render(url);
+    assert.ok(detailHtml.includes(renderToString(createElement('h1', null, workshop.title))));
+    assert.ok(detailHtml.includes('Back to Outreach'));
+    assert.ok(!detailHtml.includes('<aside'));
+    assert.ok(!detailHtml.includes('Featured Project'));
+    assert.ok(!detailHtml.includes('linkedin.com'));
+    const contentHtml = detailHtml.slice(detailHtml.indexOf('class="workshop-description"'));
+    assert.ok(contentHtml.indexOf('class="workshop-event-image"') < contentHtml.indexOf('<p>'));
+    if (workshop.registration?.href) assert.ok(detailHtml.includes(`href="${workshop.registration.href}"`));
+    const paragraphs = Array.isArray(workshop.description) ? workshop.description : [workshop.description];
+    for (const paragraph of paragraphs.filter(Boolean)) assert.ok(detailHtml.includes(paragraph));
+  }
+  assert.ok(!outreachHtml.includes('target="_blank"'));
+  for (const id of ['missing', 'constructor', '__proto__']) {
+    assert.ok(render(`/outreach/${id}`).includes('Workshop not found'));
   }
   assert.ok(render('/projects/missing').includes('Project not found'));
   assert.ok(render('/team/missing').includes('Team member not found'));

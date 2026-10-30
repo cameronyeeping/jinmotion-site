@@ -40,7 +40,6 @@ const HomePage = ({ onContactClick }) => {
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap' }}>
                         <div style={{ flex: 1, minWidth: '300px' }}>
-                            <span style={{ color: 'var(--accent-green)', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>{homePage.approach.eyebrow}</span>
                             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 24px 0', lineHeight: 1.2 }}>{homePage.approach.heading}</h2>
                             <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '24px' }}>
                                 {homePage.approach.paragraphs[0]}
@@ -82,7 +81,6 @@ const HomePage = ({ onContactClick }) => {
             {/* Portfolio Gallery Section */}
             <section className="section-light" style={{ backgroundColor: 'var(--bg-light-secondary)', padding: '80px 0' }}>
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
-                    <span style={{ color: 'var(--accent-green)', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>{homePage.portfolio.eyebrow}</span>
                     <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 40px 0' }}>{homePage.portfolio.heading}</h2>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '40px' }}>
@@ -129,7 +127,7 @@ const HomePage = ({ onContactClick }) => {
 
             {/* Our Partners Section */}
             {homePage.clients && (
-                <PartnerCarousel eyebrow={homePage.clients.eyebrow} heading={homePage.clients.heading} items={homePage.clients.items} />
+                <PartnerCarousel heading={homePage.clients.heading} items={homePage.clients.items} />
             )}
             {/* CTA Section */}
             <CtaBanner onContactClick={onContactClick} />

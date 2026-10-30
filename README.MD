@@ -4,6 +4,12 @@ Run `npm install`, then `npm run dev` for local development or `npm run build` f
 
 Run `npm run check:routes` to check project and team detail rendering, optional project lists, and invalid URLs. Unknown URLs show a not-found page. Page rendering errors are contained so the navigation remains available and changing routes recovers the page. The Netlify redirect in `public/_redirects` supports direct loads and refreshes on nested routes.
 
+### Outreach workshops
+
+The `/outreach` page uses `outreachPage` in `src/data/siteContent.js`. Edit `hero` to change the title, subtitle, or background image. Each item in `workshops` has a unique `id`, `title`, preview `image`, `imageAlt`, and `description` (an array of paragraphs). Optional `summary`, `event`, and `date` fields appear on its card.
+
+Cards automatically link to `/outreach/:id` in the same tab. For example, the `icat` workshop opens at `/outreach/icat`. Add your workshop text to its `description` array; each entry displays as a separate paragraph. The detail page shows the title over a Vancouver hero, then the workshop graphic above the description without a sidebar. Optional `registration` (`text`, `label`, and `href`) adds a registration link. No presentation file or `href` is needed.
+
 ### Bio highlights
 
 In a team member's `experience` array, use `projectId` for a project on the website; its title will automatically match the Projects page. Use `project` for a standalone title when the project is not listed on the website:

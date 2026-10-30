@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function PartnerCarousel({ eyebrow, heading, items }) {
+export default function PartnerCarousel({ heading, items }) {
     const trackRef = useRef(null);
     const id = useId();
     const [edges, setEdges] = useState({ atStart: true, atEnd: true });
@@ -43,7 +43,6 @@ export default function PartnerCarousel({ eyebrow, heading, items }) {
             <div className="container">
                 <div className="partners-carousel-header">
                     <div>
-                        {eyebrow && <span className="partners-eyebrow">{eyebrow}</span>}
                         <h2 id={`${id}-heading`}>{heading}</h2>
                     </div>
                     <div className="partners-carousel-controls">

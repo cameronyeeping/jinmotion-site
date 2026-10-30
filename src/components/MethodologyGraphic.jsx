@@ -53,36 +53,16 @@ export default function MethodologyGraphic({ compact = false, activeStages = [] 
         }}>
           {/* Header */}
           <div style={{ marginBottom: '40px' }}>
-            <span style={{
-              color: 'var(--accent-green, #2D6A4F)',
-              fontWeight: 700,
-              fontSize: '0.875rem',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              display: 'block',
-              marginBottom: '12px'
-            }}>
-              {methodology.eyebrow}
-            </span>
             <h2 style={{
               fontFamily: 'var(--font-heading)',
               fontSize: 'clamp(2.25rem, 4vw, 3.25rem)',
               color: 'var(--text-dark-primary, #1F1513)',
-              margin: '0 0 16px 0',
+              margin: '0',
               lineHeight: 1.15,
               fontWeight: 700
             }}>
               {methodology.heading}
             </h2>
-            <p style={{
-              color: 'var(--text-dark-secondary, #5C4E47)',
-              fontSize: '1.15rem',
-              lineHeight: 1.6,
-              margin: 0,
-              maxWidth: '750px'
-            }}>
-              {methodology.subtitle}
-            </p>
           </div>
 
           {/* 5-Step Cards Container with responsive wrapping */}
