@@ -676,6 +676,7 @@ export const aboutPage = {
                         projectId: 'bc-childrens',
                     }
                 ],
+                profilePdf: 'resumes/eleanor-resume.pdf',
                 credentials: [
                     'Registered Architect (Retired), Architectural Institute of BC',
                     'Leadership in Energy and Environmental Design (LEED), Canada Green Building Council',
