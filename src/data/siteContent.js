@@ -632,7 +632,7 @@ export const aboutPage = {
                 id: 'eleanor-lee',
                 name: 'Eleanor Lee',
                 title: 'Consultant',
-                image: '/elee.png',
+                image: '/elee.jpg',
                 alt: 'Eleanor Lee',
                 bio: [
                     'Eleanor Lee is an infrastructure development and healthcare leader with more than 20 years of experience developing concept plans and business cases, creating and leading governance structures, and guiding the financing, procurement, and delivery of large, complex public capital programs, including several of BC’s most significant infrastructure investments.',
