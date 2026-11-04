@@ -250,6 +250,7 @@ export const projects = [
             'Critical Care Tower opening on June 8, 2014'
         ]
     },
+    /* Temporarily hidden from the site. Uncomment to restore BC Hydro.
     {
         id: 'bc-hydro-it-governance',
         methodologyStages: ['vision', 'roadmap', 'implement', 'realize'],
@@ -282,6 +283,7 @@ export const projects = [
             'Leadership of four business analysts and developers'
         ]
     }
+    */
 
 ];
 
@@ -465,7 +467,6 @@ export const homePage = {
         projects
     }
 };
-
 export const aboutPage = {
     hero: {
         title: 'About Us',
@@ -512,7 +513,7 @@ export const aboutPage = {
             {
                 id: 'jeannie-gandham',
                 name: 'Jeannie Gandham',
-                title: 'Principal',
+                title: 'Consultant',
                 image: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
                 bio: [
@@ -537,20 +538,16 @@ export const aboutPage = {
                 experience: [
                     {
                         projectId: 'st-pauls',
-                        description: 'Created and led a $450M IM/IT portfolio with 50+ concurrent infrastructure and technology projects.'
                     },
                     {
 
                         projectId: 'dawson-creek',
-                        description: 'Advised senior project leaders from HH Angus and Northern Health on the roadmap to opening'
                     },
                     {
                         projectId: 'bc-childrens',
-                        description: 'Created and led approach for collaboration with the Public-Private Partnership (P3) construction partner and health authority.'
                     },
                     {
                         projectId: 'stanton',
-                        description: 'Led a $41M clinical, operational and technology portfolio to operationalize the new Stanton Territorial Hospital'
                     }
                 ],
                 credentials: [
@@ -581,7 +578,7 @@ export const aboutPage = {
             {
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
-                title: 'Digital Solutions Lead',
+                title: 'Consultant',
                 image: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
                 bio: [
@@ -602,17 +599,27 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        projectId: 'bc-cancer',
-                        description: 'Digital leadership and governance for four concurrent cancer centre redevelopments across the province, owning a $140M IM/IT capital budget and directing a multidisciplinary Technology Solutions and PMO team. Set digital strategy and capital planning direction while ensuring program-wide risk management and stakeholder alignment across health authority and construction partners. '
+                        project: 'Kamloops Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Nanaimo Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Surrey Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Burnaby Cancer Centre',
+                        linkProjectId: 'bc-cancer'
                     },
                     {
 
                         projectId: 'st-pauls',
-                        description: 'Led Design-Build contract management and cross-functional Integrated Project Delivery (PMO) teams to keep scope, schedule, and budget aligned — driving multidisciplinary program delivery at scale.'
                     },
                     {
                         projectId: 'bc-childrens',
-                        description: 'Led P3 (Public-Private Partnership) and owned IMIT strategy alongside a $33M capital budget for the redevelopment\'s technology scope. Led operational readiness and transition planning through facility activation — guiding the program through opening and handover to clinical operations.'
                     },
                 ],
                 credentials: [
@@ -622,9 +629,69 @@ export const aboutPage = {
                 profilePdf: '/resumes/gina-resume.pdf'
             },
             {
+                id: 'eleanor-lee',
+                name: 'Eleanor Lee',
+                title: 'Consultant',
+                image: '/elee.png',
+                alt: 'Eleanor Lee',
+                bio: [
+                    'Eleanor Lee is an infrastructure development and healthcare leader with more than 20 years of experience developing concept plans and business cases, creating and leading governance structures, and guiding the financing, procurement, and delivery of large, complex public capital programs, including several of BC’s most significant infrastructure investments.',
+                    'Her work spans major delivery and procurement models used in Canada, including Design/Build, Design/Build/Finance, Alliance, Construction Management, and Public-Private Partnership.',
+                    'A former health sector executive, Eleanor now provides strategic and executive-level advisory services in infrastructure development from concept through to completion.'
+                ],
+                expertise: [
+                    'Executive advisory & governance',
+                    'Concept and business plans',
+                    'Master planning and zoning analysis',
+                    'Design management',
+                    'Contract negotiations and contract management',
+                    'Procurement procedures and analysis',
+                    'Project implementation',
+                    'Operational readiness'
+                ],
+                experience: [
+                    {
+                        project: 'Kamloops Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Nanaimo Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Surrey Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        project: 'Burnaby Cancer Centre',
+                        linkProjectId: 'bc-cancer'
+                    },
+                    {
+                        projectId: 'st-pauls',
+                    },
+                    {
+                        project: 'Clinical Support and Research Centre',
+                    },
+                    {
+                        projectId: 'bc-childrens',
+                    }
+                ],
+                credentials: [
+                    'Registered Architect (Retired), Architectural Institute of BC',
+                    'Leadership in Energy and Environmental Design (LEED), Canada Green Building Council',
+                    'Evidence Based Design Accreditation and Certification (EDAC), The Center for Health Design',
+                    'Project Management Professional (PMP), education complete; eligible for PMP designation',
+                    'San’yas Indigenous Cultural Safety Training, Core and Advanced, Provincial Health Services Authority',
+                    'Bachelor of Architecture (post-graduate professional program), University of British Columbia',
+                    'Bachelor of Commerce, International Business and Marketing, McGill University, Montreal',
+                    'Prosci Change Management'
+                ]
+            },
+            /* Temporarily hidden from the site. Uncomment to restore Cameron's profile.
+            {
                 id: 'cameron-yee-ping',
                 name: 'Cameron Yee-Ping',
-                title: 'Project Leader',
+                title: 'Consultant',
                 image: '/profiles/cam_profile_edited.png',
                 alt: 'Cameron Yee-Ping',
                 bio: [
@@ -645,19 +712,15 @@ export const aboutPage = {
                 experience: [
                     {
                         project: '3D Interactive Scene Viewer',
-                        description: 'Led the development of a high-performance 3D scene viewer and editor, utilizing advanced AI rendering techniques to deliver a fully interactive, real-time user experience at 30 FPS.'
                     },
                     {
                         project: 'Reinforcement Learning Software Developer',
-                        description: 'Architected a high-performance simulation pipeline for autonomous robot soccer agents, streamlining the training pipeline and accelerating the iteration cycle for reinforcement learning models.'
                     },
                     {
                         project: 'Computer Science Teaching Assistant',
-                        description: 'Taught the mechanics and low-level design of data structures and algorithms to first and second year computer science students.',
                     },
                     {
                         project: 'Activity and Fitness Tracker',
-                        description: 'Architected a full-stack Android application in Kotlin, designing the Room database schema to efficiently persist and manage user exercise history and location data.'
                     }
 
                 ],
@@ -665,6 +728,7 @@ export const aboutPage = {
                     'B.Sc., SFU'
                 ]
             }
+            */
 
         ]
     }
@@ -756,7 +820,7 @@ export const servicesPage = {
         }
     ]
 };
-
+// List conferences, workshops, presentations, etc.
 export const outreachPage = {
     hero: {
         title: 'Outreach',
@@ -764,7 +828,6 @@ export const outreachPage = {
         bgImage: '/vancouver.webp',
         bgAlt: 'Vancouver cityscape'
     },
-    libraryHeading: 'Workshops',
     // Each workshop opens at /outreach/:id. Add description paragraphs below.
     workshops: [
         {

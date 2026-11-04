@@ -40,7 +40,7 @@ const HomePage = ({ onContactClick }) => {
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap' }}>
                         <div style={{ flex: 1, minWidth: '300px' }}>
-                            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 24px 0', lineHeight: 1.2 }}>{homePage.approach.heading}</h2>
+                            <h2 className="heading-accent" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 24px 0', lineHeight: 1.2 }}>{homePage.approach.heading}</h2>
                             <p style={{ color: 'var(--text-dark-secondary)', fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '24px' }}>
                                 {homePage.approach.paragraphs[0]}
                             </p>

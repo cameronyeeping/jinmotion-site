@@ -40,10 +40,7 @@ export default function OutreachPage({ onContactClick }) {
                 </div>
             </section>
 
-            <section className="outreach-library outreach-shell" aria-labelledby="outreach-library-heading">
-                <div className="outreach-library-header">
-                    <h2 id="outreach-library-heading">{outreachPage.libraryHeading}</h2>
-                </div>
+            <section className="outreach-library outreach-shell" aria-label="Outreach events">
                 <div className="outreach-resource-grid">
                     {outreachPage.workshops.map((workshop) => <WorkshopCard key={workshop.id} workshop={workshop} />)}
                 </div>

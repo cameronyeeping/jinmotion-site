@@ -33,7 +33,7 @@ const AboutPage = ({ onContactClick }) => {
             <section className="section-light" style={{ padding: '80px 0', backgroundColor: 'var(--bg-light)' }}>
                 <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ maxWidth: '800px' }}>
-                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 32px 0', lineHeight: 1.3 }}>
+                        <h2 className="heading-accent" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: 'var(--text-dark-primary)', margin: '0 0 32px 0', lineHeight: 1.3 }}>
                             {aboutPage.content.heading}
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -70,18 +70,7 @@ const AboutPage = ({ onContactClick }) => {
                 <section style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
                     <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
                         <div style={{ marginBottom: '48px' }}>
-                            <span style={{
-                                color: 'var(--accent-green)',
-                                fontWeight: 700,
-                                fontSize: '0.85rem',
-                                letterSpacing: '0.12em',
-                                textTransform: 'uppercase',
-                                display: 'block',
-                                marginBottom: '12px'
-                            }}>
-                                How We Work
-                            </span>
-                            <h2 style={{
+                            <h2 className="heading-accent" style={{
                                 fontFamily: 'var(--font-heading)',
                                 fontSize: '2.5rem',
                                 color: 'var(--text-dark-primary)',

@@ -10,6 +10,7 @@ const server = await createServer({ server: { middlewareMode: true, hmr: false }
 try {
   const { default: ProjectPage } = await server.ssrLoadModule('/src/pages/ProjectDetailPage.jsx');
   const { default: ProjectsPage } = await server.ssrLoadModule('/src/pages/ProjectsPage.jsx');
+  const { default: TeamPage } = await server.ssrLoadModule('/src/pages/TeamPage.jsx');
   const { default: BioPage } = await server.ssrLoadModule('/src/pages/BioPage.jsx');
   const { default: NotFoundPage } = await server.ssrLoadModule('/src/pages/NotFoundPage.jsx');
   const { default: OutreachPage } = await server.ssrLoadModule('/src/pages/OutreachPage.jsx');
@@ -19,6 +20,7 @@ try {
     createElement(Routes, null,
       createElement(Route, { path: '/projects', element: createElement(ProjectsPage) }),
       createElement(Route, { path: '/projects/:id', element: createElement(ProjectPage) }),
+      createElement(Route, { path: '/team', element: createElement(TeamPage) }),
       createElement(Route, { path: '/team/:id', element: createElement(BioPage) }),
       createElement(Route, { path: '/bio/:id', element: createElement(BioPage) }),
       createElement(Route, { path: '/outreach/:id', element: createElement(WorkshopDetailPage) }),
@@ -64,16 +66,39 @@ try {
   } finally {
     Object.assign(project, saved);
   }
+  const teamHtml = render('/team');
+  assert.ok(teamHtml.includes('href="/team/eleanor-lee"'));
+  assert.ok(!teamHtml.includes('cameron-yee-ping'));
+  assert.equal(getTeamMember('cameron-yee-ping'), undefined);
+  assert.ok(render('/team/cameron-yee-ping').includes('Team member not found'));
+  assert.ok(render('/bio/cameron-yee-ping').includes('Team member not found'));
   for (const member of aboutPage.team.members) {
+    assert.equal(member.title, 'Consultant');
+    await access(`public${member.image}`);
     const html = render(`/team/${member.id}`);
     assert.ok(html.includes(member.name));
     assert.ok(render(`/bio/${member.id}`).includes(member.name));
     for (const entry of member.experience || []) {
+      assert.equal(entry.description, undefined);
       const title = getProjectData(entry.projectId)?.title || entry.project;
       assert.ok(title, `${member.id}: highlight needs a website projectId or standalone project name`);
-      assert.ok(html.includes(renderToString(createElement('h3', null, title))));
+      const project = getProjectData(entry.projectId) || getProjectData(entry.linkProjectId);
+      const heading = createElement('h3', null, project
+        ? createElement('a', { href: `/projects/${project.id}` }, title)
+        : title);
+      assert.ok(html.includes(renderToString(heading)));
+      assert.ok(html.includes('<h2 id="bio-highlights-heading">Project Highlights</h2>'));
+      assert.ok(html.includes('<aside class="bio-project-sidebar"'));
     }
   }
+  for (const id of ['gina-pisoni', 'eleanor-lee']) {
+    const html = render(`/team/${id}`);
+    for (const city of ['Kamloops', 'Nanaimo', 'Surrey', 'Burnaby']) {
+      assert.ok(html.includes(`<h3><a href="/projects/bc-cancer">${city} Cancer Centre</a></h3>`));
+    }
+    assert.ok(!getTeamMember(id).experience.some((entry) => entry.projectId === 'bc-cancer'));
+  }
+  assert.ok(getProjectData('bc-cancer'));
   // Standalone highlights never need entries in the public projects collection.
   const member = aboutPage.team.members[0];
   const originalExperience = member.experience;
@@ -84,10 +109,13 @@ try {
       { projectId: 'unlisted-project', project: 'Unlisted Project', description: '' },
       {},
     ];
+    assert.equal(member.title, 'Consultant');
+    await access(`public${member.image}`);
     const html = render(`/team/${member.id}`);
     assert.ok(html.includes(renderToString(createElement('h3', null, 'Independent "Prototype"'))));
-    assert.ok(html.includes('<p>Standalone contribution.</p>'));
-    assert.ok(html.includes(renderToString(createElement('h3', null, getProjectData('st-pauls').title))));
+    assert.ok(!html.includes('Standalone contribution.'));
+    assert.ok(!html.includes('Linked contribution.'));
+    assert.ok(html.includes(renderToString(createElement('h3', null, createElement('a', { href: '/projects/st-pauls' }, getProjectData('st-pauls').title)))));
     assert.ok(!html.includes('Fallback title'));
     assert.ok(html.includes('<h3>Unlisted Project</h3>'));
     assert.ok(!html.includes('<h3></h3>') && !html.includes('<p></p>'));

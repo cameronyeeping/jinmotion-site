@@ -160,46 +160,28 @@ export default function BioPage({ onContactClick }) {
         </div>
       </section>
 
-      {hasExpertise && (
-        <section className="bio-section" aria-labelledby="bio-expertise-heading">
-          <div className="bio-content-shell">
-            <div className="bio-panel bio-panel-sage">
+      <div className={`bio-content-shell bio-detail-layout${hasExperience ? ' project-detail-layout' : ''}`}>
+        <div className="bio-detail-main">
+          {hasExpertise && (
+            <section className="bio-panel bio-credentials-panel" aria-labelledby="bio-expertise-heading">
               <h2 id="bio-expertise-heading">Areas of Expertise</h2>
-              <ul className="bio-expertise-list" role="list">
+              <ul className="bio-credentials-list" role="list">
                 {member.expertise.map((item, index) => <li key={index}>{item}</li>)}
               </ul>
-            </div>
-          </div>
-        </section>
-      )}
+            </section>
+          )}
 
-      {hasExperience && (
-        <section className="bio-section" aria-labelledby="bio-highlights-heading">
-          <div className="bio-content-shell">
-            <div className="bio-panel">
-              <h2 id="bio-highlights-heading">Highlights</h2>
-              <div className="bio-highlights">
-                {member.experience.map((entry, index) => {
-                  // Website projects inherit their canonical title; standalone projects supply their own.
-                  const title = getProjectData(entry.projectId)?.title || entry.project;
-                  if (!title && !entry.description) return null;
-                  return (
-                    <article key={index}>
-                      {title && <h3>{title}</h3>}
-                      {entry.description && <p>{entry.description}</p>}
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+          {hasCredentials && (
+            <section className="bio-panel bio-credentials-panel" aria-labelledby="bio-credentials-heading">
+              <h2 id="bio-credentials-heading">Credentials</h2>
+              <ul className="bio-credentials-list" role="list">
+                {member.credentials.map((credential, index) => <li key={index}>{credential}</li>)}
+              </ul>
+            </section>
+          )}
 
-      {Array.isArray(member.conferences) && member.conferences.length > 0 && (
-        <section className="bio-section" aria-labelledby="bio-conferences-heading">
-          <div className="bio-content-shell">
-            <div className="bio-panel">
+          {Array.isArray(member.conferences) && member.conferences.length > 0 && (
+            <section className="bio-panel" aria-labelledby="bio-conferences-heading">
               <h2 id="bio-conferences-heading">Conference Highlights</h2>
               <div className="bio-conferences">
                 {member.conferences.map((conference, index) => (
@@ -210,23 +192,29 @@ export default function BioPage({ onContactClick }) {
                   </article>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-      )}
+            </section>
+          )}
+        </div>
 
-      {hasCredentials && (
-        <section className="bio-section" aria-labelledby="bio-credentials-heading">
-          <div className="bio-content-shell">
-            <div className="bio-panel bio-credentials-panel">
-              <h2 id="bio-credentials-heading">Credentials</h2>
-              <ul className="bio-credentials-list" role="list">
-                {member.credentials.map((credential, index) => <li key={index}>{credential}</li>)}
-              </ul>
-            </div>
-          </div>
-        </section>
-      )}
+        {hasExperience && (
+          <aside className="bio-project-sidebar" aria-labelledby="bio-highlights-heading">
+            <h2 id="bio-highlights-heading">Project Highlights</h2>
+            <ul className="bio-highlights" role="list">
+              {member.experience.map((entry, index) => {
+                const namedProject = getProjectData(entry.projectId);
+                const project = namedProject || getProjectData(entry.linkProjectId);
+                const title = namedProject?.title || entry.project;
+                if (!title) return null;
+                return (
+                  <li key={index}>
+                    <h3>{project ? <Link to={`/projects/${project.id}`}>{title}</Link> : title}</h3>
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
+        )}
+      </div>
 
       {/* ───────────────────────────────────────────────
           8. DOWNLOADABLE ONE-PAGE PROFILE CTA

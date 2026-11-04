@@ -1039,9 +1039,8 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
    ========================================================================= */
 
 /* Split hero: text left, portrait right */
-.bio-section {
-    padding: 8px 0;
-}
+.bio-content-shell.bio-detail-layout { padding-bottom: 24px; }
+.bio-detail-main { display: grid; gap: 16px; min-width: 0; }
 
 .bio-content-shell {
     max-width: 1200px;
@@ -1052,10 +1051,6 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
 .bio-panel {
     padding: clamp(20px, 2.5vw, 28px);
     border-radius: 22px;
-    background: #EAF0E9;
-}
-
-.bio-panel-sage {
     background: #EAF0E9;
 }
 
@@ -1083,7 +1078,6 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
     line-height: 1.6;
 }
 
-.bio-expertise-list,
 .bio-credentials-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1107,14 +1101,16 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
     font-size: 1.1rem;
 }
 
-.bio-highlights {
-    display: grid;
-    gap: 18px;
-}
+.bio-project-sidebar h2 { color: var(--text-dark-primary); margin: 0 0 20px; font-family: var(--font-heading); font-size: 1.1rem; line-height: 1.3; }
+.bio-highlights { display: grid; gap: 18px; list-style: none; padding: 0; margin: 0; }
+.bio-highlights h3 { margin: 0; font-family: var(--font-heading); color: var(--text-dark-secondary); font-size: 0.95rem; font-weight: 500; line-height: 1.5; }
+.bio-highlights a { color: var(--accent-green); text-decoration: underline; text-underline-offset: 4px; }
+.bio-highlights a:hover { text-decoration-thickness: 2px; }
+.bio-highlights a:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 4px; }
 
 .bio-conferences {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -1132,8 +1128,7 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
 }
 
 @media (max-width: 700px) {
-    .bio-expertise-list,
-    .bio-credentials-list,
+        .bio-credentials-list,
     .bio-conferences { grid-template-columns: minmax(0, 1fr); }
     .bio-panel { border-radius: 16px; }
 }
@@ -1250,4 +1245,15 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
     .workshop-detail-title { padding: 20px; bottom: 24px; }
     .workshop-detail-content { padding-top: 32px; padding-bottom: 48px; }
     .workshop-description p { font-size: 1.05rem; }
+}
+
+/* Accent reserved for the selected introductory headings. */
+.heading-accent::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 18px;
+    border-radius: 999px;
+    background: var(--accent-green);
 }
