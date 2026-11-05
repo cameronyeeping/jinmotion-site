@@ -33,6 +33,7 @@ try {
     assert.ok(html.includes('Back to Projects'), project.id);
     assert.equal(html.includes('Project Features'), !!project.features?.length, project.id);
     assert.equal(html.includes('Highlights'), !!project.scopeElements?.length, project.id);
+    assert.ok(!html.includes('Deliverables &amp; Scope'), project.id);
     assert.ok(project.categories.length > 0, project.id);
     for (const categoryId of project.categories) {
       assert.ok(projectCategories.some((category) => category.id === categoryId), `${project.id}: invalid category`);

@@ -88,10 +88,9 @@ export const projects = [
         country: 'Canada',
         short_description: 'Strategic advisory and roadmap development to guide opening-day readiness for Northern Health Authority and project leadership.',
         long_description: [
-            "The new greenfield Dawson Creek District Hospital will accept patients in Spring 2027 and required " +
-            "Operational Readiness + Transition Services. Advising both HH Angus and Northern Health Authority " +
-            "project senior project leadership, responsible for roadmap to opening day including creation of detailed "+
-            'project deliverables.'
+            'The new Dawson Creek & District Hospital will replace the existing hospital with a 263,000-square-foot, three-storey facility on a greenfield site. Scheduled to welcome patients in spring 2027, the hospital will be built to meet LEED Gold certification.',
+            'The facility will include an emergency department with 15 treatment spaces and 70 inpatient beds supporting medical, surgical, maternity, high-acuity and mental health services. It will also provide two operating rooms, a procedure room, diagnostic imaging, a chemotherapy area, a perinatal unit with labour, delivery, recovery and post-partum rooms, a nursery, a mental health department, academic and teaching space, and pharmacy services.',
+            'J in Motion advises senior project leaders at HH Angus and Northern Health Authority on operational readiness and transition services. Our work includes developing the roadmap to opening day and defining detailed project deliverables to support a coordinated transition into the new hospital.'
         ],
         image: '/dawson/dawson-creek-render.jpg',
         galleryImages: [
@@ -100,6 +99,11 @@ export const projects = [
         ],
         features: [
             'Greenfield hospital',
+            '263,000 sq. ft. across three storeys',
+            '70 inpatient beds',
+            '15 emergency treatment spaces',
+            'Two operating rooms and a procedure room',
+            'Designed to meet LEED Gold certification',
             'Opening spring 2027'
         ],
         scopeElements: [
@@ -133,6 +137,7 @@ export const projects = [
             '/bc-childrens/bc-childrens-2.jpeg',
             '/bc-childrens/bc-childrens-3.jpg'
         ],
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
         features: [
             '640,000-square-foot facility',
             '$675M redevelopment',
@@ -159,9 +164,12 @@ export const projects = [
         client: 'Government of Northwest Territories',
         city: 'Yellowknife',
         country: 'Canada',
-        short_description: 'A $350 million greenfield regional acute hospital delivery project under a P3 model.',
+        short_description: 'A $350 million fast-track P3 hospital project serving the Northwest Territories and the Kitikmeot Region of Nunavut.',
         long_description: [
-            'The Stanton Territorial Hospital Renewal was a 350-million-dollar greenfield hospital project completed in 2019 under a Public-Private Partnership model. The regional facility contains 100 inpatient beds to serve the Northwest Territories. As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a 41-million-dollar capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models. We also conducted stakeholder consultations with Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
+            'Completed in 2019, the Stanton Territorial Hospital Renewal was a $350 million greenfield hospital project delivered through a fast-track Public-Private Partnership (P3) model. The project addressed the increasing healthcare needs of residents of the Northwest Territories and the Kitikmeot Region of Nunavut.',
+            'The new 27,270-square-metre structural steel facility consists of a two-storey podium and a three-storey inpatient tower. A freestanding mass timber entrance, wooden cladding and other wood elements create a welcoming atmosphere.',
+            'The hospital provides outpatient services and 105 inpatient beds, with departments including medical imaging, dialysis, obstetrics, pediatrics, cardiology and mental health. The design also includes an expanded emergency department with two trauma bays, along with day procedure and surgery suites.',
+            'As clinical program lead reporting to the Assistant Deputy Minister and hospital Chief Executive Officer, J in Motion managed a $41 million capital and operational budget. We led project teams to design and operationalize the facility with new healthcare models, and consulted Indigenous communities and clinical staff to integrate culturally sensitive care practices into the building design.'
         ],
         image: '/stanton/stanton-territorial.jpg',
         galleryImages: [
@@ -171,8 +179,12 @@ export const projects = [
         features: [
             'Greenfield regional hospital',
             '$350M redevelopment',
-            '100 inpatient beds',
-            'P3 delivery model',
+            '27,270 m² facility',
+            '105 inpatient beds',
+            'Two-storey podium and three-storey inpatient tower',
+            'Mass timber entrance and wooden cladding',
+            'Expanded emergency department with two trauma bays',
+            'Fast-track P3 delivery model',
             'Completed 2019'
         ],
         scopeElements: [
@@ -217,38 +229,37 @@ export const projects = [
         ]
     },
     {
-        id: 'surrey',
+        id: 'provincial-radiology-pacs',
         methodologyStages: [],
-        title: 'Surrey Memorial Hospital',
-        categories: ['advisory'],
-        year: '2014',
-        client: 'Fraser Health Authority',
-        city: 'Surrey',
+        title: 'Provincial Radiology Imaging: PACS Connecting DI & Stabilization',
+        categories: ['digital', 'advisory'],
+        client: 'Participating health regions',
+        city: 'Vancouver',
         country: 'Canada',
-        short_description: 'A 512-million-dollar P3 hospital project providing 151 inpatient beds and a phased opening for acute emergency and critical care services',
+        short_description: 'Restoring control, transparency and momentum across two at-risk radiology technology programs.',
         long_description: [
-            'SMH Critical Care Tower is a new, state-of-the art acute facility, complete with a new emergency department, perinatal centre, 151 inpatient beds, intensive care unit and academic space. The P3 infrastructure project was $512M and opened successfully summer of 2014. Lead the clinical design of the two inpatient units and also lead the planning and execution of a comprehensive plan for a two phase opening. First to open the new Emergency Department (opened June 2013) and then to move admitted patients from the existing campus into the new Critical Care Tower (opened June 8 2014).'
+            'The Provincial Radiology Imaging PACS Connecting DI initiative was a province-wide program delivered in partnership with the Ministry of Health and Canada Health Infoway. Its mandate was to replace critical radiology software across Vancouver-area health regions and implement a Provincial Diagnostic Imaging Repository.',
+            'Running concurrently, the PACS Stabilization Program upgraded legacy Intelerad, Agfa and Philips software and supporting hardware across seven acute-care hospitals representing more than 2,100 beds.',
+            'The programs involved complex technology integration across clinical and enterprise systems, medical imaging equipment, hospital infrastructure and multiple vendor platforms. Delivery also required careful coordination with radiologists and clinical teams to protect physician workflows and maintain the availability of systems essential to patient diagnosis and care.',
+            'With both programs escalated and at risk of failure, J in Motion provided the leadership and delivery structure required to restore control, transparency and momentum.'
         ],
-        image: '/surrey/surrey.jpg',
-        galleryImages: [
-            '/surrey/surrey-1.webp',
-            '/surrey/surrey-2.jpg'
-        ],
+        image: '/radiology/radiology-service.jpg',
         features: [
-            '$512M infrastructure project',
-            '151 inpatient beds',
-            'New emergency department',
-            'Perinatal centre and intensive care unit',
-            'Academic space',
-            'P3 delivery model'
+            'Province-wide diagnostic imaging initiative',
+            'Provincial Diagnostic Imaging Repository',
+            'Seven acute-care hospitals',
+            'More than 2,100 beds',
+            'Intelerad, Agfa and Philips platforms',
+            'Clinical and enterprise technology integration'
         ],
         scopeElements: [
-            'Clinical design of two inpatient units',
-            'Two-phase opening plan',
-            'Emergency department opening in June 2013',
-            'Patient transfer to the new tower',
-            'Critical Care Tower opening on June 8, 2014'
-        ]
+            'Reporting on risks and decisions',
+            'Funding approvals',
+            'Specialist recruitment',
+            'Radiology roadmap and health-region Board approval',
+            'Oversight of mission-critical system stability and readiness'
+        ],
+        galleryImages: ['/radiology/radiologist.jpg', '/radiology/radiologist.jpg']
     },
     /* Temporarily hidden from the site. Uncomment to restore BC Hydro.
     {
