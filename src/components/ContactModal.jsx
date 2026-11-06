@@ -118,7 +118,11 @@ const ContactModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             <h2>Get in Touch</h2>
-            <p>Tell us about your project and we'll get back to you promptly.</p>
+            <p>
+              We look forward to connecting with you. Email our office at{' '}
+              <a href="mailto:jim@jinmotion.co" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>jim@jinmotion.co</a>
+              {' '}or fill out the form below.
+            </p>
 
             {status === 'error' && (
               <div style={{

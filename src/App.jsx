@@ -38,6 +38,7 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetailPage onContactClick={openContact} />} />
             <Route path="/community" element={<CommunityPage onContactClick={openContact} />} />
             <Route path="/outreach/:id" element={<WorkshopDetailPage />} />
+            <Route path="/engagements" element={<OutreachPage onContactClick={openContact} />} />
             <Route path="/outreach" element={<OutreachPage onContactClick={openContact} />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

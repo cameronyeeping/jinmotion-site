@@ -8,6 +8,25 @@ import NotFoundPage from './NotFoundPage';
 import { getProjectData, getProjectCategory } from '../data/siteContent';
 
 
+// Only inline emphasis and newline-separated bullets are supported; content stays plain text.
+function descriptionText(text) {
+  return text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, index) => {
+    if (part.startsWith('**')) return <strong key={index}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith('*')) return <em key={index}>{part.slice(1, -1)}</em>;
+    return part;
+  });
+}
+
+function DescriptionParagraph({ text }) {
+  const [lead, ...items] = text.split('\n');
+  return (
+    <div className="project-description-block">
+      <p>{descriptionText(lead)}</p>
+      {items.length > 0 && <ul>{items.map((item, index) => <li key={index}>{descriptionText(item.replace(/^- /, ''))}</li>)}</ul>}
+    </div>
+  );
+}
+
 export default function ProjectDetailPage({ onContactClick }) {
   const { id } = useParams();
   const [searchParams] = useSearchParams();
@@ -147,32 +166,10 @@ export default function ProjectDetailPage({ onContactClick }) {
 
               {/* Long Description Body */}
               <div className="project-content" style={{ marginBottom: '56px' }}>
-                {Array.isArray(project.long_description || project.longDescription) ? (
-                  (project.long_description || project.longDescription).map((paragraph, index) => (
-                    <p
-                      key={index}
-                      style={{
-                        color: 'var(--text-dark-secondary)',
-                        fontSize: '1.1rem',
-                        lineHeight: 1.8,
-                        marginBottom: '24px'
-                      }}
-                    >
-                      {paragraph}
-                    </p>
-                  ))
-                ) : (
-                  <p
-                    style={{
-                      color: 'var(--text-dark-secondary)',
-                      fontSize: '1.1rem',
-                      lineHeight: 1.8,
-                      marginBottom: '24px'
-                    }}
-                  >
-                    {project.long_description || project.longDescription}
-                  </p>
-                )}
+                {(Array.isArray(project.long_description || project.longDescription)
+                  ? (project.long_description || project.longDescription)
+                  : [project.long_description || project.longDescription]
+                ).filter(Boolean).map((paragraph, index) => <DescriptionParagraph key={index} text={paragraph} />)}
               </div>
 
               {/* Gallery Images */}

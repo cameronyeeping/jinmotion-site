@@ -17,21 +17,21 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="footer-col-title">Navigation</h4>
-                        <ul className="footer-links">
-                            {navLinks.map((link, idx) => (
-                                <li key={idx}><Link to={link.to} className="footer-link">{link.label}</Link></li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="footer-col-title">Connect</h4>
+                        <h4 className="footer-col-title">Contact Our Office</h4>
                         <ul className="footer-links">
                             {connectLinks.map((link, idx) => (
                                 <li key={idx}>
                                     <a href={link.href} className="footer-link" {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}>{link.label}</a>
                                 </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="footer-col-title">Navigation</h4>
+                        <ul className="footer-links">
+                            {navLinks.map((link, idx) => (
+                                <li key={idx}><Link to={link.to} className="footer-link">{link.label}</Link></li>
                             ))}
                         </ul>
                     </div>

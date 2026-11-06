@@ -6,7 +6,7 @@
 export const siteMeta = {
     brandName: 'J in Motion',
     logoText: 'JiM',
-    tagline: 'Infrastructure | Enterprise Technology | Leadership',
+    tagline: 'Infrastructure | Advisory | Digital',
     copyright: '© 2026 J in Motion. All rights reserved.',
 };
 
@@ -16,13 +16,13 @@ export const navLinks = [
     { to: '/services', label: 'Services' },
     { to: '/projects', label: 'Projects' },
     { to: '/team', label: 'Team' },
-    { to: '/outreach', label: 'Outreach' },
+    { to: '/engagements', label: 'Engagements' },
     // { to: '/community', label: 'Community' },
 ];
 
 export const connectLinks = [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jeannie-gandham-52856142/', external: true }, // TODO: Create a company LinkedIn (Low prio)
-    { label: 'Email', href: 'mailto:jim@jinmotion.com', external: false }, // TODO: Replace with shared mailbox when active
+    { label: 'jim@jinmotion.co', href: 'mailto:jim@jinmotion.co', external: false }, // TODO: Replace with shared mailbox when active
+    { label: '604-506-8638', href: 'tel:+16045068638', external: false },
 ];
 
 export const ctaBanner = {
@@ -51,10 +51,15 @@ export const projects = [
         client: 'Providence Health Care',
         city: 'Vancouver',
         country: 'Canada',
-        short_description: 'Western Canada\'s largest hospital redevelopment project.',
+        short_description: 'Owner-side leadership from business case and DBF procurement through project delivery, technology integration and opening-day readiness.',
         long_description: [
-            'The New St. Paul\'s Hospital is the largest healthcare infrastructure project under construction in Western Canada. This $2.2 billion investment will deliver a 1.7-million-square-foot facility with more than 600 beds, scheduled to open in early 2027.',
-            'J in Motion serves as Program Director for the project\'s $450 million technology portfolio, overseeing more than 50 concurrent projects that include command centres, security networks, and enterprise IT systems. We lead cross-functional teams, coordinate closely with government and construction partners, and help integrate Indigenous design principles into the facility plan. Through ongoing executive reporting on scope, schedule, budget, and risk, we give leadership the visibility needed to keep the program on track for opening.'
+            "The New St. Paul's Hospital and Health Campus replaces Providence Health Care's St. Paul's Hospital with a 548-bed, $2.17 billion facility in Vancouver's False Creek Flats, on the traditional, ancestral and unceded territories of the Musqueam, Squamish and Tsleil-Waututh Nations. Procured as a Design-Build-Finance (DBF) project and built around an ambitious digital vision, it is scheduled to welcome its first patients in 2027.",
+            "J in Motion consultants held senior leadership roles on the owner's team, representing the project's interests from the earliest stages through delivery.",
+            "**Business case:** developed the owner's business case through to government approval.",
+            "**DBF procurement:**\n- **Procurement readiness:** defined the owner's requirements, risk allocation and evaluation framework before going to market\n- **Request for Qualifications:** ran market engagement, evaluated submissions and shortlisted qualified teams\n- **Request for Proposals:** issued the RFP and draft Project Agreement, led collaborative meetings with proponents, and reviewed their designs against the owner's requirements\n- **Evaluation and selection:** led technical and financial evaluations, under the oversight of an independent fairness advisor, to select the preferred proponent\n- **Negotiations, legal and finance:** negotiated the Project Agreement, coordinated legal review, security and insurance, and supported financing and lenders' due diligence\n- **Financial close:** secured final approvals, executed the agreements and handed over to the delivery team",
+            "**Project management:** led Integrated Project Delivery (the PMO) portfolio, and reported to executives on governance, scope, schedule, budget and risk.",
+            "**IMIT leadership:** $450 million technology portfolio, overseeing more than 50 concurrent projects, including command centres, security networks, enterprise IT and the Cerner EHR, and leading activation and go-live readiness for opening day.",
+            "*Our team's experience on New St. Paul's reflects what we do best: helping owners see large, complex capital programs through to their full intended vision.*"
         ],
 
         image: '/nsph/nsph.jpeg',
@@ -64,17 +69,20 @@ export const projects = [
         ],
         features: [
             '1.7 million ft2',
-            '$2.2B budget',
-            '558 inpatient beds',
+            '$2.17B budget',
+            '548 inpatient beds',
+            'Design-Build-Finance delivery',
             'Single patient rooms',
             'Command centre',
             'Opening 2027'
 
         ],
         scopeElements: [
-            'Command centre',
-            'Security networks',
-            'IT systems'
+            'Business case and government approval',
+            'DBF procurement through financial close',
+            'Owner-side project and PMO leadership',
+            '$450M IMIT portfolio with 50+ projects',
+            'Activation and go-live readiness'
         ]
     },
     {
@@ -260,6 +268,41 @@ export const projects = [
             'Oversight of mission-critical system stability and readiness'
         ],
         galleryImages: ['/radiology/radiologist.jpg', '/radiology/radiologist.jpg']
+    },
+    {
+        id: 'csrc',
+        methodologyStages: ['vision', 'roadmap'],
+        title: 'Clinical Support and Research Centre',
+        categories: ['infrastructure', 'advisory'],
+        client: 'Providence Health Care',
+        city: 'Vancouver',
+        country: 'Canada',
+        short_description: 'Strategic planning and project leadership for a new hub connecting research, clinical services and innovation on the Jim Pattison Medical Campus.',
+        long_description: [
+            'Providence Health Care is developing the Clinical Support and Research Centre (CSRC), a state-of-the-art research, technology and medical complex beside the new St. Paul’s Hospital on the Jim Pattison Medical Campus in Vancouver. The 12-storey facility will span 34,400 square metres (370,000 square feet) and connect directly to the hospital by skybridge.',
+            'At its heart will be an Innovation Centre, with a floor dedicated to collaboration, invention and dynamic events. The CSRC will bring together specialty medical services, physician workspace and exam rooms; extensive research facilities, including wet labs, dry labs and biobanks; corporate services; and a 49-space childcare centre.',
+            'The centre will connect patients, physicians, researchers and academic partners to develop sustainable solutions to global health and well-being challenges. Infrastructure for emerging technologies, including 3D bioprinting, research data and analytics, will support medical discovery and attract leading care providers, scientists and industry partners to B.C.’s life sciences community.',
+            'J in Motion provided strategic planning and project leadership, leading the development of the Development Plan, Concept Plan and Business Plan. This work established the strategic vision, project scope, functional requirements and business rationale to advance the initiative.',
+            'We translated Providence’s clinical, research and innovation objectives into an integrated facility concept, aligned stakeholder needs with organizational priorities, and developed the planning and business framework to support project approval and implementation. This foundation supports closer integration of research, innovation and patient care.'
+        ],
+        // Replace with a CSRC project image when available.
+        image: '/vancouver.webp',
+        features: [
+            '12-storey research, technology and medical complex',
+            '34,400 m² / 370,000 sq. ft.',
+            'Direct skybridge to St. Paul’s Hospital',
+            'Innovation Centre and collaboration space',
+            'Specialty medical services and physician workspace',
+            'Wet labs, dry labs and biobanks',
+            'Corporate services space',
+            '49-space childcare centre'
+        ],
+        scopeElements: [
+            'Vision',
+            'Scope',
+            'Funding strategies',
+            'City engagement'
+        ]
     },
     /* Temporarily hidden from the site. Uncomment to restore BC Hydro.
     {
@@ -524,6 +567,7 @@ export const aboutPage = {
             {
                 id: 'jeannie-gandham',
                 name: 'Jeannie Gandham',
+                email: 'jeannie.gandham@jinmotion.co',
                 title: 'Consultant',
                 image: '/profiles/jeannie_headshot.jpeg',
                 alt: 'Jeannie Gandham',
@@ -589,6 +633,7 @@ export const aboutPage = {
             {
                 id: 'gina-pisoni',
                 name: 'Gina Pisoni',
+                email: 'gina.pisoni@jinmotion.co',
                 title: 'Consultant',
                 image: '/profiles/gina_headshot_bg_change.jpg',
                 alt: 'Gina Pisoni',
@@ -642,6 +687,7 @@ export const aboutPage = {
             {
                 id: 'eleanor-lee',
                 name: 'Eleanor Lee',
+                email: 'eleanor.lee@jinmotion.co',
                 title: 'Consultant',
                 image: '/elee.jpg',
                 alt: 'Eleanor Lee',
@@ -681,7 +727,7 @@ export const aboutPage = {
                         projectId: 'st-pauls',
                     },
                     {
-                        project: 'Clinical Support and Research Centre',
+                        projectId: 'csrc',
                     },
                     {
                         projectId: 'bc-childrens',
@@ -703,6 +749,7 @@ export const aboutPage = {
             {
                 id: 'cameron-yee-ping',
                 name: 'Cameron Yee-Ping',
+                email: 'cameron.yee-ping@jinmotion.co',
                 title: 'Consultant',
                 image: '/profiles/cam_profile_edited.png',
                 alt: 'Cameron Yee-Ping',
@@ -835,7 +882,7 @@ export const servicesPage = {
 // List conferences, workshops, presentations, etc.
 export const outreachPage = {
     hero: {
-        title: 'Outreach',
+        title: 'Engagements',
         subtitle: 'Workshops and ideas shared with our professional community.',
         bgImage: '/vancouver.webp',
         bgAlt: 'Vancouver cityscape'

@@ -1,29 +1,23 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
 import { outreachPage } from '../data/siteContent';
 import { getAssetUrl } from '../utils/assets';
 
 function WorkshopCard({ workshop }) {
     return (
-        <Link className="outreach-resource" to={`/outreach/${encodeURIComponent(workshop.id)}`}>
+        <article className="outreach-resource">
             <div className="outreach-resource-image">
                 <img src={getAssetUrl(workshop.image)} alt={workshop.imageAlt || ''} loading="lazy" />
             </div>
             <div className="outreach-resource-body">
-                {workshop.date && <div className="outreach-resource-meta">{workshop.date}</div>}
                 <h3>{workshop.title}</h3>
-                {workshop.event && <p>{workshop.event}</p>}
-                {workshop.summary && <p>{workshop.summary}</p>}
-                <span className="outreach-resource-action">View details<ArrowUpRight size={18} aria-hidden="true" /></span>
             </div>
-        </Link>
+        </article>
     );
 }
 
 export default function OutreachPage({ onContactClick }) {
-    useEffect(() => { document.title = 'Outreach | J in Motion'; }, []);
+    useEffect(() => { document.title = 'Engagements | J in Motion'; }, []);
 
     return (
         <div className="outreach-page">
@@ -40,7 +34,7 @@ export default function OutreachPage({ onContactClick }) {
                 </div>
             </section>
 
-            <section className="outreach-library outreach-shell" aria-label="Outreach events">
+            <section className="outreach-library outreach-shell" aria-label="Engagements">
                 <div className="outreach-resource-grid">
                     {outreachPage.workshops.map((workshop) => <WorkshopCard key={workshop.id} workshop={workshop} />)}
                 </div>

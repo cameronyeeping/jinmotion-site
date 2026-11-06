@@ -473,6 +473,10 @@ h6 {
     }
 }
 
+.footer-brand .logo-brand {
+    width: fit-content;
+}
+
 .footer-brand p {
     margin-top: 16px;
     max-width: 320px;
@@ -856,29 +860,19 @@ section[id] {
 .outreach-hero .hero-subtitle { font-size: 1.25rem; line-height: 1.6; margin: 0; }
 .outreach-shell { width: 100%; max-width: 1200px; padding: 0 24px; margin: 0 auto; }
 .outreach-library { padding-top: 64px; padding-bottom: 80px; }
-.outreach-library-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
-.outreach-library-header h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; }
 .outreach-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 28px; }
 .outreach-resource { display: flex; flex-direction: column; min-width: 0; text-decoration: none; color: inherit; }
 .outreach-resource-image { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 16px; background: #EAF0E9; }
-.outreach-resource-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 200ms ease; }
-a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025); }
+.outreach-resource-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .outreach-resource-body { padding: 20px 0 0; }
-.outreach-resource-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-bottom: 12px; color: var(--accent-green); font-size: 0.75rem; font-weight: 600; }
 .outreach-resource h3 { font-family: var(--font-heading); font-size: 1.25rem; line-height: 1.35; margin: 0 0 10px; }
-.outreach-resource p { color: var(--text-dark-secondary); line-height: 1.6; font-size: 0.95rem; margin: 0 0 12px; }
-.outreach-resource-action { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--accent-green); font-weight: 600; margin-top: 6px; }
 .outreach-page a:focus-visible, .outreach-page button:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 5px; }
 @media (max-width: 900px) {
     .outreach-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .outreach-library-header { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 560px) {
     .outreach-resource-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     .outreach-library { padding-top: 40px; padding-bottom: 48px; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .outreach-resource-image img { transition: none; }
 }
 
 /* Methodology Graphic Responsive Layout */
@@ -1257,3 +1251,14 @@ a.outreach-resource:hover .outreach-resource-image img { transform: scale(1.025)
     border-radius: 999px;
     background: var(--accent-green);
 }
+
+.bio-email { display: inline-block; margin-bottom: 16px; font-size: 0.875rem; line-height: 1.5; color: var(--text-dark-secondary); text-decoration: none; overflow-wrap: anywhere; }
+.bio-email:hover { color: var(--accent-green); text-decoration: underline; text-underline-offset: 3px; }
+.bio-email:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 4px; }
+
+.project-description-block { margin-bottom: 24px; color: var(--text-dark-secondary); font-size: 1.1rem; line-height: 1.8; }
+.project-description-block p { margin: 0; }
+.project-description-block strong { color: var(--text-dark-primary); font-weight: 600; }
+.project-description-block ul { display: grid; gap: 14px; margin: 18px 0 0; padding-left: 22px; }
+.project-description-block li { padding-left: 6px; }
+.project-description-block li::marker { color: var(--accent-green); }

@@ -71,7 +71,7 @@ export default function BioPage({ onContactClick }) {
           {/* Text column */}
           <div className="profile-hero-text">
             <Link
-              to="/about"
+              to="/team"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -83,7 +83,7 @@ export default function BioPage({ onContactClick }) {
                 marginBottom: '16px'
               }}
             >
-              <ArrowLeft size={16} /> Back to About
+              <ArrowLeft size={16} /> Back to Team
             </Link>
 
             <span style={{
@@ -115,10 +115,11 @@ export default function BioPage({ onContactClick }) {
               color: 'var(--accent-green-dark)',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
-              marginBottom: '16px'
+              marginBottom: member.email ? '4px' : '16px'
             }}>
               {member.title}
             </div>
+            {member.email && <a className="bio-email" href={`mailto:${member.email}`}>{member.email}</a>}
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {(member.profile || member.bio || []).map((para, idx) => (

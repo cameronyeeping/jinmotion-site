@@ -24,6 +24,7 @@ try {
       createElement(Route, { path: '/team/:id', element: createElement(BioPage) }),
       createElement(Route, { path: '/bio/:id', element: createElement(BioPage) }),
       createElement(Route, { path: '/outreach/:id', element: createElement(WorkshopDetailPage) }),
+      createElement(Route, { path: '/engagements', element: createElement(OutreachPage) }),
       createElement(Route, { path: '/outreach', element: createElement(OutreachPage) }),
       createElement(Route, { path: '*', element: createElement(NotFoundPage) }),
     )));
@@ -40,6 +41,11 @@ try {
       assert.ok(html.includes(projectCategories.find((category) => category.id === categoryId).label));
     }
   }
+  const stPaulsHtml = render('/projects/st-pauls');
+  assert.ok(stPaulsHtml.includes('<strong>Procurement readiness:</strong>'));
+  assert.ok(stPaulsHtml.includes('<strong>Financial close:</strong>'));
+  assert.ok(!stPaulsHtml.includes('**'));
+  assert.ok(stPaulsHtml.includes('<em>Our team'));
   for (const { id: category } of projectCategories) {
     const expected = projects.filter((project) => project.categories.includes(category)).map((project) => project.id);
     assert.deepEqual(getProjectsByCategory(category).map((project) => project.id), expected);
@@ -78,6 +84,7 @@ try {
     await access(`public${member.image}`);
     const html = render(`/team/${member.id}`);
     assert.ok(html.includes(member.name));
+    assert.ok(html.includes(`href="mailto:${member.email}"`));
     assert.ok(render(`/bio/${member.id}`).includes(member.name));
     for (const entry of member.experience || []) {
       assert.equal(entry.description, undefined);
@@ -129,16 +136,17 @@ try {
     assert.equal(getTeamMember(id), undefined);
   }
   const renderOutreach = (url) => render(url).replace(/<!--.*?-->/g, '');
-  const outreachHtml = renderOutreach('/outreach');
-  assert.ok(navLinks.some(({ to }) => to === '/outreach'));
-  assert.ok(outreachHtml.includes('class="hero-title">Outreach</h1>'));
+  const outreachHtml = renderOutreach('/engagements');
+  assert.ok(navLinks.some(({ to }) => to === '/engagements'));
+  assert.ok(outreachHtml.includes('class="hero-title">Engagements</h1>'));
   assert.ok(!outreachHtml.includes('Featured resource'));
   assert.ok(!outreachHtml.includes('type="search"'));
   assert.equal(new Set(outreachPage.workshops.map(({ id }) => id)).size, outreachPage.workshops.length);
   for (const workshop of outreachPage.workshops) {
     await access(`public${workshop.image}`);
     const url = `/outreach/${encodeURIComponent(workshop.id)}`;
-    assert.ok(outreachHtml.includes(`href="${url}"`));
+    assert.ok(!outreachHtml.includes(`href="${url}"`));
+    assert.ok(outreachHtml.includes(renderToString(createElement('h3', null, workshop.title))));
     const detailHtml = render(url);
     assert.ok(detailHtml.includes(renderToString(createElement('h1', null, workshop.title))));
     assert.ok(detailHtml.includes('Back to Outreach'));
@@ -152,6 +160,7 @@ try {
     for (const paragraph of paragraphs.filter(Boolean)) assert.ok(detailHtml.includes(paragraph));
   }
   assert.ok(!outreachHtml.includes('target="_blank"'));
+  assert.ok(!outreachHtml.includes('View details'));
   for (const id of ['missing', 'constructor', '__proto__']) {
     assert.ok(render(`/outreach/${id}`).includes('Workshop not found'));
   }
