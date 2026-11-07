@@ -99,14 +99,22 @@ try {
       assert.ok(html.includes('<aside class="bio-project-sidebar"'));
     }
   }
-  for (const id of ['gina-pisoni', 'eleanor-lee']) {
+  for (const [id, cities] of [
+    ['gina-pisoni', ['Kamloops', 'Nanaimo']],
+    ['eleanor-lee', ['Nanaimo', 'Burnaby']],
+  ]) {
     const html = render(`/team/${id}`);
     for (const city of ['Kamloops', 'Nanaimo', 'Surrey', 'Burnaby']) {
-      assert.ok(html.includes(`<h3><a href="/projects/bc-cancer">${city} Cancer Centre</a></h3>`));
+      assert.equal(html.includes(`<h3><a href="/projects/${city.toLowerCase()}-cancer-centre">${city} Cancer Centre</a></h3>`), cities.includes(city));
     }
     assert.ok(!getTeamMember(id).experience.some((entry) => entry.projectId === 'bc-cancer'));
   }
-  assert.ok(getProjectData('bc-cancer'));
+  assert.equal(getProjectData('bc-cancer'), undefined);
+  for (const city of ['Kamloops', 'Nanaimo', 'Surrey', 'Burnaby']) {
+    const project = getProjectData(`${city.toLowerCase()}-cancer-centre`);
+    assert.equal(project.title, `${city} Cancer Centre`);
+    assert.ok(render(`/projects/${project.id}`).includes(renderToString(createElement('p', null, project.long_description[0]))));
+  }
   // Standalone highlights never need entries in the public projects collection.
   const member = aboutPage.team.members[0];
   const originalExperience = member.experience;

@@ -205,43 +205,178 @@ export const projects = [
         ]
     },
     {
-        id: 'bc-cancer',
-        methodologyStages: ['vision', 'roadmap'],
-        title: 'BC Cancer Redevelopments',
-        categories: ['advisory', 'digital'],
-        year: 'Nanaimo 2028\nKamloops 2028\nSurrey 2028\nBurnaby Re-paced',
-        client: 'Provincial Health Services Authority',
-        city: 'British Columbia',
-        country: 'Canada',
-        short_description: '$440 million investment into cancer centres across British Columbia',
-        long_description: [
-            'BC Cancer plans, coordinates and evaluates cancer care with the health authorities across BC to provide equitable and cost-effective health care for people living with or affected by cancer. In support of the BC Cancer Strategic Plan, over $440million capital invested to expand cancer care teams, research, technology and build new facilities. Reporting to the Executive leadership, provided capital infrastructure advisory for $440M capital expansion and infrastructure planning. Leadership over complex deliverables including delivery of integrated project schedule with construction schedules, design, compliance and subject matter input. '
+        "id": "kamloops-cancer-centre",
+        "methodologyStages": [
+            "vision",
+            "roadmap"
         ],
-        image: '/bc-cancer/cloverdale-2.avif',
-        galleryImages: [
-            '/bc-cancer/cloverdale.webp',
-            '/bc-cancer/cloverdale-1.jpeg'
+        "title": "Kamloops Cancer Centre",
+        "categories": [
+            "infrastructure"
         ],
-        features: [
-            '$440M capital investment',
-            '4 new cancer centres across British Columbia',
-            'Expanded care teams and research',
-            'New technology and facilities'
+        "year": "2028",
+        "client": "Provincial Health Services Authority",
+        "city": "Kamloops",
+        "country": "Canada",
+        "short_description": "A new BC Cancer centre at Royal Inland Hospital, bringing radiation treatment closer to home for Kamloops and surrounding communities.",
+        "long_description": [
+            "Targeted to open in 2028, the new BC Cancer centre at the Royal Inland Hospital campus will bring radiation treatment closer to home for people in Kamloops and surrounding areas.",
+            "Alongside the new cancer centre, upgrades to the community oncology clinic will modernize and increase the number of cancer treatment spaces and exam rooms at Royal Inland Hospital. Renovation and expansion of the existing pharmacy will improve functionality, with improved dispensing facilities, an automated dispensing replenishment area and storage.",
+            "The centre is part of BC’s 10-Year Cancer Action Plan, which outlines immediate steps to prevent, detect and treat cancer. The plan aims to improve care for people facing cancer today while preparing for growing future needs.",
+            "J in Motion provided strategic leadership for the Kamloops Cancer Centre, translating regional cancer care needs into a clear project vision and infrastructure plan. We guided concept development, business planning and design management, defined the scope, budget and schedule, and secured the executive and government approvals needed to advance the project."
         ],
-        scopeElements: [
-            'Capital infrastructure advisory',
-            'Expansion and infrastructure planning',
-            'Integrated project and construction schedules',
-            'Design and compliance coordination',
-            'Subject matter input'
+        "image": "/bc-cancer/kamloops.png",
+        "galleryImages": [
+            "/bc-cancer/kamloops2.png",
+            "/bc-cancer/kamloops3.png"
+        ],
+        "features": [
+            "Royal Inland Hospital campus",
+            "Radiation treatment closer to home",
+            "Modernized oncology treatment spaces and exam rooms",
+            "Expanded pharmacy and improved dispensing facilities",
+            "Part of BC’s 10-Year Cancer Action Plan",
+            "Targeted opening 2028"
+        ],
+        "scopeElements": [
+            "Project vision and regional care needs",
+            "Concept development and business planning",
+            "Scope, budget and schedule development",
+            "Design management",
+            "Executive and government approvals"
+        ]
+    },
+    {
+        "id": "nanaimo-cancer-centre",
+        "methodologyStages": [
+            "vision",
+            "roadmap"
+        ],
+        "title": "Nanaimo Cancer Centre",
+        "categories": [
+            "infrastructure"
+        ],
+        "year": "2028",
+        "client": "Provincial Health Services Authority",
+        "city": "Nanaimo",
+        "country": "Canada",
+        "short_description": "Planning and development of a new cancer centre in Nanaimo, aligning regional care needs with safe, purpose-built infrastructure.",
+        "long_description": [
+            "The new Nanaimo Cancer Centre will be designed to meet the needs of the public while adhering to radiation safety requirements that protect patients, staff and the surrounding community.",
+            "The centre is part of B.C.’s 10-Year Cancer Action Plan, which sets out immediate steps to prevent, detect and treat cancer. It will help improve care for people facing cancer today while preparing for growing future needs.",
+            "J in Motion directed project planning and development, aligning regional service delivery objectives with the facility’s infrastructure requirements. We led business case and facility concept development, defined the project scope, capital budget and schedule, and guided design management and the executive and government approval processes."
+        ],
+        "image": "/bc-cancer/nanaimo.jpg",
+        "galleryImages": [
+            "/bc-cancer/nanaimo2.jpg",
+            "/bc-cancer/nanaimo3.jpg"
+        ],
+        "features": [
+            "Purpose-built cancer care facility",
+            "Radiation safety for patients, staff and the community",
+            "Part of B.C.’s 10-Year Cancer Action Plan"
+        ],
+        "scopeElements": [
+            "Regional service and infrastructure planning",
+            "Business case and facility concept development",
+            "Project scope, capital budget and schedule",
+            "Design management",
+            "Executive and government approvals"
+        ]
+    },
+    {
+        "id": "surrey-cancer-centre",
+        "methodologyStages": [
+            "vision",
+            "roadmap"
+        ],
+        "title": "Surrey Cancer Centre",
+        "categories": [
+            "infrastructure"
+        ],
+        "year": "2028",
+        "client": "Provincial Health Services Authority",
+        "city": "Surrey",
+        "country": "Canada",
+        "short_description": "A comprehensive, integrated cancer centre at the new Surrey hospital, expanding access to treatment and support for a growing community.",
+        "long_description": [
+            "BC Cancer and the Provincial Health Services Authority, in partnership with Fraser Health Authority, are building a comprehensive, integrated cancer centre as part of the new Surrey hospital.",
+            "Complementing the hospital’s services, the centre will provide radiation and systemic treatment, molecular imaging and therapy, supportive care, research and education. Innovative technologies, including virtual health, will support the delivery of care.",
+            "The new site is expected to accommodate 105,000 ambulatory oncology care visits, 50,000 radiation therapy visits and 22,000 chemotherapy visits each year, helping meet the needs of Surrey’s growing community.",
+            "J in Motion led planning and business development, shaping the strategic vision and infrastructure approach to support growing regional cancer care demands. We defined the project scope, developed the concept and business plans, established the capital budget and schedule, managed design development, and secured executive and government approvals."
+        ],
+        "image": "/bc-cancer/cloverdale-2.avif",
+        "galleryImages": [
+            "/bc-cancer/cloverdale.webp",
+            "/bc-cancer/cloverdale-1.jpeg"
+        ],
+        "features": [
+            "Integrated with the new Surrey hospital",
+            "Radiation and systemic treatment",
+            "Molecular imaging and therapy",
+            "Supportive care, research and education",
+            "Virtual health technologies",
+            "105,000 ambulatory oncology visits annually (projected)",
+            "50,000 radiation therapy visits annually (projected)",
+            "22,000 chemotherapy visits annually (projected)"
+        ],
+        "scopeElements": [
+            "Strategic vision and infrastructure planning",
+            "Project scope, concept and business plans",
+            "Capital budget and schedule development",
+            "Design management",
+            "Executive and government approvals"
+        ]
+    },
+    {
+        "id": "burnaby-cancer-centre",
+        "methodologyStages": [
+            "vision",
+            "roadmap"
+        ],
+        "title": "Burnaby Cancer Centre",
+        "categories": [
+            "infrastructure"
+        ],
+        "year": "Re-paced",
+        "client": "Provincial Health Services Authority",
+        "city": "Burnaby",
+        "country": "Canada",
+        "short_description": "Strategic and project leadership for an integrated BC Cancer centre within phase two of the Burnaby Hospital redevelopment.",
+        "long_description": [
+            "Burnaby Hospital is a community hospital providing acute, emergency and critical care, general and internal medicine, surgery, neonatal intensive care, palliative care, adult mental health and substance use services, ambulatory care and other outpatient services.",
+            "A multi-phase redevelopment will transform the hospital into a modernized medical and surgical healthcare campus. Phase two includes a new 160-bed inpatient tower, an integrated BC Cancer centre and a new medical imaging department.",
+            "The phase-two scope also includes a spiritual care suite, education spaces, staff facilities, an equipment depot, a morgue and autopsy suite, and parking. Renovations to the emergency and endoscopy departments and demolition of the West Wing building form part of the wider redevelopment work.",
+            "J in Motion provided strategic and project leadership for the BC Cancer Burnaby initiative, guiding development from the initial vision through formal project approvals and design. We led business and concept planning, investment and budget development, scope definition, scheduling and design management, keeping the initiative aligned with organizational priorities and provincial healthcare objectives."
+        ],
+        "image": "/bc-cancer/burnaby.avif",
+        "galleryImages": [],
+        "features": [
+            "Integrated BC Cancer centre",
+            "Part of Burnaby Hospital redevelopment phase two",
+            "New 160-bed inpatient tower within phase two",
+            "New medical imaging department",
+            "Spiritual care, education and staff spaces",
+            "Emergency and endoscopy department renovations",
+            "Parking and support facilities",
+            "West Wing demolition"
+        ],
+        "scopeElements": [
+            "Strategic vision and project leadership",
+            "Business and concept planning",
+            "Investment and budget development",
+            "Scope definition and scheduling",
+            "Design management and project approvals",
+            "Alignment with provincial healthcare objectives"
         ]
     },
     {
         id: 'provincial-radiology-pacs',
-        methodologyStages: [],
-        title: 'Provincial Radiology Imaging: PACS Connecting DI & Stabilization',
-        categories: ['digital', 'advisory'],
-        client: 'Participating health regions',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
+        title: 'Provincial Radiology Imaging',
+        categories: ['digital'],
+        year: '2019',
+        client: 'Provincial Health Services Authority\nVancouver Coastal Health Authority\nProvidence Healthcare',
         city: 'Vancouver',
         country: 'Canada',
         short_description: 'Restoring control, transparency and momentum across two at-risk radiology technology programs.',
@@ -267,7 +402,13 @@ export const projects = [
             'Radiology roadmap and health-region Board approval',
             'Oversight of mission-critical system stability and readiness'
         ],
-        galleryImages: ['/radiology/radiologist.jpg', '/radiology/radiologist.jpg']
+        galleryLayout: 'logos',
+        galleryImages: [
+            '/radiology/intelerad-logo.png',
+            '/radiology/960px-Agfa_logo.svg.webp',
+            '/radiology/philips-logo.png'
+        ],
+        galleryImageAlts: ['Intelerad', 'Agfa', 'Philips']
     },
     {
         id: 'csrc',
@@ -286,7 +427,8 @@ export const projects = [
             'We translated Providence’s clinical, research and innovation objectives into an integrated facility concept, aligned stakeholder needs with organizational priorities, and developed the planning and business framework to support project approval and implementation. This foundation supports closer integration of research, innovation and patient care.'
         ],
         // Replace with a CSRC project image when available.
-        image: '/vancouver.webp',
+        image: '/CSRC/CSRC-wide.jpeg',
+        galleryImages: ['/CSRC/CSRC-day.jpg', '/CSRC/CSRC.jpg'],
         features: [
             '12-storey research, technology and medical complex',
             '34,400 m² / 370,000 sq. ft.',
@@ -302,6 +444,58 @@ export const projects = [
             'Scope',
             'Funding strategies',
             'City engagement'
+        ]
+    },
+    {
+        id: 'electronic-medical-record',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
+        title: 'Electronic Medical Record',
+        categories: ['digital'],
+        year: '2011',
+        client: 'Fraser Health Authority',
+        country: 'Canada',
+        short_description: 'Digital project and change leadership for the transition from paper charts to an integrated electronic medical record at the Jim Pattison Outpatient Care and Surgery Centre.',
+        long_description: [
+            "The Jim Pattison Outpatient Care and Surgery Centre was the first facility of its kind in Fraser Health and opened in summer 2011. The centre brought together a comprehensive range of scheduled outpatient services, including day surgery, diagnostic services and specialized health clinics.",
+            "As part of the facility opening, clinical programs transitioned from paper medical charts to a fully electronic medical record integrated with the hospital Admission, Discharge and Transfer system. This significant clinical and operational change required thoughtful leadership and collaboration across technology, physician workflows, patient care processes, new facility design and organizational readiness.",
+            "J in Motion provided digital project and change leadership from early planning through implementation, supporting clinical teams as they prepared for a fully electronic medical record at their new clinic and a new way of delivering care.",
+            "**Project and change leadership included:**\n- In collaboration with physician, facility and technology leadership, developed the end-to-end approach for technology implementation, including stakeholder engagement, requirements gathering, business case development, planning, testing, training, piloting and go-live.\n- Led complex project delivery and managed an integrated schedule connecting technology, clinical operations, facility readiness, training and implementation activities.\n- Designed and led patient and provider journey mapping to identify workflow challenges, dependencies and opportunities in collaboration with clinical leaders and key stakeholders.\n- Directed the transition from paper medical charts to a fully electronic medical record integrated with the hospital Admission, Discharge and Transfer system.\n- Applied structured project and change management methods to assess operational impacts, evaluate readiness, identify key stakeholders and support adoption across clinical programs.\n- Partnered with leadership to build visible sponsorship, strengthen staff engagement and prepare teams for new technology, workflows and models of care."
+        ],
+        image: '/emr/emr.jpg',
+        // galleryImages: [
+        //     '/emr/emr-2.jpg',
+        //     '/emr/emr-3.svg'
+        // ],
+        features: [],
+        scopeElements: [
+            'Electronic Medical Record',
+            'Complex Integrations',
+            'Patient Journey Mapping'
+        ]
+    },
+    {
+        id: 'provincial-emr-identity-management',
+        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
+        title: 'Provincial Electronic Medical Record and Identity Management',
+        categories: ['digital'],
+        year: '2012',
+        client: 'Provincial Health Services Authority',
+        country: 'Canada',
+        short_description: 'Provincial project leadership for electronic medical record implementation and a single, reliable source of user identity across hospital and ambulatory clinical records.',
+        long_description: [
+            "Provincial Health Services Authority prioritized the digitization of clinical records to improve the quality, consistency and safety of care across its hospitals, clinics and specialized programs.",
+            "The organization selected Oracle Cerner as its electronic medical record platform. Successful implementation required a single, reliable source of user identity to provide secure and consistent access across hospital health records and ambulatory clinic medical records.",
+            "J in Motion provided project leadership to establish the provincial approach and implementation structure for this complex technology initiative.",
+            "**Project leadership included:**\n- Reported to the Chief Information Officer and Technology Directors, providing leadership and direction throughout planning and delivery.\n- Developed the end-to-end implementation approach, including stakeholder engagement, requirements gathering, business case development, planning, testing, training, piloting and implementation.\n- Led complex project delivery and managed an integrated schedule connecting technology, clinical operations, security, identity management, training and organizational readiness.\n- Established a provincial approach for EMR implementation, creating consistency across sites while addressing the operational requirements of diverse clinical programs.\n- Coordinated the development of a single source of technical user identity to support secure access across hospital and ambulatory clinical records.\n- Aligned clinical, operational and technology stakeholders around shared requirements, key decisions and implementation priorities."
+        ],
+        image: '/emr/emr-2.jpg',
+        galleryImages: [],
+        features: [],
+        scopeElements: [
+            'Electronic Medical Record',
+            'Hospital Medical Record',
+            'Complex Integrations',
+            'Patient Journey Mapping'
         ]
     },
     /* Temporarily hidden from the site. Uncomment to restore BC Hydro.
@@ -529,12 +723,38 @@ export const aboutPage = {
         bgAlt: 'About Background'
     },
     content: {
-        heading: 'Driving Momentum Across Canada',
-        paragraphs: [
-        'We bring vision to life across infrastructure, enterprise technology and organizational transformation through achievable roadmaps, focused execution, measurable results and outcomes worth celebrating.',
-        'Backed by more than 20 years of proven leadership experience, we have contributed to major public-sector programs representing more than $40 billion in capital investment across Canada. The firm works alongside health authorities, governments and leadership teams to advance complex initiatives from early vision and planning through implementation, activation and stabilization.',
-        'Known for stepping into complex environments and moving the work forward, we establish clear direction, strengthen governance, align people and priorities, resolve issues and maintain momentum when the pressure is high.',
-        ]
+        "heading": "Driving Momentum Across Canada",
+        "paragraphs": [
+            "J in Motion is a collective of senior consultants who work on the owner’s side of complex capital projects. We help health authorities, governments and public-sector organizations move from first idea to opening day: shaping the vision and early plans, building the business case, leading procurement, managing delivery, and preparing people, technology and facilities to open.",
+            "Our consultants have held senior roles on owner teams for some of Western Canada’s largest healthcare redevelopments, including the New St. Paul’s Hospital, Women’s and Children’s Hospital, and four BC Cancer facilities. Together, we bring expertise across the full project lifecycle:"
+        ],
+        "lifecycle": [
+            {
+                "title": "Early planning",
+                "description": "Service and capacity planning, facility needs assessments, master planning and concept plans"
+            },
+            {
+                "title": "Business case",
+                "description": "Options analysis, cost and risk, and government approval"
+            },
+            {
+                "title": "Procurement",
+                "description": "Design-build, alliance, contract management, P3 — from readiness to financial close"
+            },
+            {
+                "title": "Delivery",
+                "description": "Contract management, project management and PMO leadership"
+            },
+            {
+                "title": "Technology",
+                "description": "IMIT strategy and leadership, from early digital planning through implementation"
+            },
+            {
+                "title": "Opening",
+                "description": "Activation, go-live readiness and handover to operations"
+            }
+        ],
+        "closing": "Because we have been the owner, we understand what’s at stake. We establish clear direction, strengthen governance, align people and priorities, resolve issues and maintain momentum when the pressure is high, and we give owners the full picture along the way."
     },
     stats: [
         { value: '20+', label: 'Years of Leadership Experience' },
@@ -543,22 +763,22 @@ export const aboutPage = {
         { value: '$450M', label: 'Technology Portfolio Led' }
     ],
     guidingPrinciples: {
-        heading: 'Guiding Principles',
-        principles: [
+        "heading": "Guiding Principles",
+        "principles": [
             {
-                title: 'Respect.',
-                description: 'Listen carefully, value every contribution and build relationships grounded in trust, honesty and accountability.'
+                "title": "Lead with Honesty.",
+                "description": "We give owners the full picture, good news and bad, as soon as we know it. Honest advice and open reporting are how we earn trust and keep projects on course."
             },
             {
-                title: 'Whatever It Takes.',
-                description: 'Stay committed, solve problems and step forward wherever leadership is needed to move the work ahead.'
+                "title": "Drive It Together.",
+                "description": "We bring energy and persistence to complex work, side by side with our clients, partners and project teams. Progress comes from shared ownership, not working in silos."
             },
             {
-                title: 'Have Fun.',
-                description: 'Bring energy, humanity and celebration to demanding work. Strong teams achieve more when people feel connected, valued and proud of what they accomplish together.'
+                "title": "Be Kind. Celebrate Often.",
+                "description": "We treat people with care, especially when the pressure is on. Major projects take years, we recognize the people and milestones along the way, right through to opening day."
             }
         ],
-        closing: 'The result is more than a completed project. It is infrastructure that works, technology that enables people, teams that are ready and lasting value that organizations and communities can see.'
+        "closing": "The result is owners who trust what they’re told, teams that pull together, and projects that reach their full intended vision, with people proud of what they built together."
     },
     team: {
         heading: 'Meet the Team',
@@ -611,23 +831,6 @@ export const aboutPage = {
                     'Prosci Change Management',
                     'Value-Based Health Care Training, UT Austin'
                 ],
-                conferences: [
-                    {
-                        event: 'Healthcare Infrastructure East',
-                        date: 'October 2022',
-                        topic: 'Future Proofing Hospitals'
-                    },
-                    {
-                        event: 'Canadian Healthcare Innovation Summit',
-                        date: 'October 2023',
-                        topic: 'Digital Innovation & Marginalized Populations'
-                    },
-                    {
-                        event: 'Healthcare Infrastructure East',
-                        date: 'November 2023',
-                        topic: 'Delivering Care in the Future Hospital'
-                    }
-                ],
                 profilePdf: '/resumes/jeannie-resume.pdf'
             },
             {
@@ -655,20 +858,10 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Kamloops Cancer Centre',
-                        linkProjectId: 'bc-cancer'
+                        projectId: 'kamloops-cancer-centre'
                     },
                     {
-                        project: 'Nanaimo Cancer Centre',
-                        linkProjectId: 'bc-cancer'
-                    },
-                    {
-                        project: 'Surrey Cancer Centre',
-                        linkProjectId: 'bc-cancer'
-                    },
-                    {
-                        project: 'Burnaby Cancer Centre',
-                        linkProjectId: 'bc-cancer'
+                        projectId: 'nanaimo-cancer-centre'
                     },
                     {
 
@@ -708,20 +901,10 @@ export const aboutPage = {
                 ],
                 experience: [
                     {
-                        project: 'Kamloops Cancer Centre',
-                        linkProjectId: 'bc-cancer'
+                        projectId: 'nanaimo-cancer-centre'
                     },
                     {
-                        project: 'Nanaimo Cancer Centre',
-                        linkProjectId: 'bc-cancer'
-                    },
-                    {
-                        project: 'Surrey Cancer Centre',
-                        linkProjectId: 'bc-cancer'
-                    },
-                    {
-                        project: 'Burnaby Cancer Centre',
-                        linkProjectId: 'bc-cancer'
+                        projectId: 'burnaby-cancer-centre'
                     },
                     {
                         projectId: 'st-pauls',

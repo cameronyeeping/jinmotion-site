@@ -21,7 +21,7 @@ experience: [
 ]
 ```
 
-Standalone highlights appear only on the bio page. If both fields are supplied, a matching website project's title takes precedence; `project` also acts as a fallback if that project is later removed. Project Highlights display project names only in the bio sidebar. Entries with a valid `projectId` link to their project detail page; standalone entries stay as plain text unless `linkProjectId` supplies a listed project to link to while retaining the standalone name. The four BC Cancer locations use individual titles linked to the combined BC Cancer project via `linkProjectId`; the Projects page keeps its combined BC Cancer entry.
+Standalone highlights appear only on the bio page. If both fields are supplied, a matching website project's title takes precedence; `project` also acts as a fallback if that project is later removed. Project Highlights display project names only in the bio sidebar. Entries with a valid `projectId` link to their project detail page; standalone entries stay as plain text unless `linkProjectId` supplies a listed project to link to while retaining the standalone name. The four cancer centres have separate project entries. Bio highlights use each centre’s `projectId` to inherit its title and link to its detail page.
 
 ### Project categories
 

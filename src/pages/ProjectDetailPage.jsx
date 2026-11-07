@@ -174,7 +174,7 @@ export default function ProjectDetailPage({ onContactClick }) {
 
               {/* Gallery Images */}
               {Array.isArray(project.galleryImages) && project.galleryImages.length > 0 && (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px', marginBottom: '40px' }}>
+                <div className={`project-gallery${project.galleryLayout === 'logos' ? ' project-gallery--logos' : ''}`}>
                   {project.galleryImages.map((imgUrl, idx) => (
                     <div
                       key={idx}
@@ -189,12 +189,14 @@ export default function ProjectDetailPage({ onContactClick }) {
                     >
                       <img
                         src={getAssetUrl(imgUrl)}
-                        alt={`${project.title} detail ${idx + 1}`}
+                        alt={project.galleryImageAlts?.[idx] || `${project.title} detail ${idx + 1}`}
                         style={{
                           width: '100%',
                           height: '100%',
                           display: 'block',
-                          objectFit: 'cover'
+                          objectFit: project.galleryLayout === 'logos' ? 'contain' : 'cover',
+                          padding: project.galleryLayout === 'logos' ? 'clamp(8px, 2vw, 24px)' : undefined,
+                          backgroundColor: project.galleryLayout === 'logos' ? '#FFFFFF' : undefined
                         }}
                       />
                     </div>
@@ -245,7 +247,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                   Client
                 </div>
                 <ul className="project-detail-list" role="list">
-                  <li>{project.client}</li>
+                  <li style={project.client?.includes('\n') ? { whiteSpace: 'pre-line' } : undefined}>{project.client}</li>
                   {(project.city || project.country) && <li>{[project.city, project.country].filter(Boolean).join(', ')}</li>}
                 </ul>
               </div>

@@ -51,6 +51,15 @@ const AboutPage = ({ onContactClick }) => {
                                 </p>
                             ))}
                         </div>
+                        <dl className="about-lifecycle">
+                            {aboutPage.content.lifecycle.map((area) => (
+                                <div key={area.title}>
+                                    <dt>{area.title}</dt>
+                                    <dd>{area.description}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                        <p className="about-content-closing">{aboutPage.content.closing}</p>
                     </div>
 
                     {/* Stats Section */}
@@ -81,64 +90,15 @@ const AboutPage = ({ onContactClick }) => {
                             </h2>
                         </div>
 
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                            gap: '28px',
-                            marginBottom: '48px'
-                        }}>
-                            {aboutPage.guidingPrinciples.principles.map((principle, idx) => (
-                                <div key={idx} style={{
-                                    backgroundColor: '#FFFFFF',
-                                    borderRadius: 'var(--radius-lg, 16px)',
-                                    padding: '40px 36px',
-                                    border: '1px solid var(--border-light)',
-                                    boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)',
-                                    display: 'flex',
-                                    flexDirection: 'column'
-                                }}>
-                                    <h3 style={{
-                                        fontFamily: 'var(--font-heading)',
-                                        fontSize: '1.35rem',
-                                        color: 'var(--accent-green)',
-                                        margin: '0 0 12px 0',
-                                        fontWeight: 700
-                                    }}>
-                                        {principle.title}
-                                    </h3>
-                                    <p style={{
-                                        color: 'var(--text-dark-secondary)',
-                                        fontSize: '1rem',
-                                        lineHeight: 1.7,
-                                        margin: 0
-                                    }}>
-                                        {principle.description}
-                                    </p>
-                                </div>
+                        <div className="about-principles-grid">
+                            {aboutPage.guidingPrinciples.principles.map((principle) => (
+                                <article className="about-principle" key={principle.title}>
+                                    <h3>{principle.title}</h3>
+                                    <p>{principle.description}</p>
+                                </article>
                             ))}
                         </div>
-
-                        {/* Closing Statement */}
-                        <div style={{
-                            maxWidth: '800px',
-                            margin: '0 auto',
-                            textAlign: 'center',
-                            padding: '32px 36px',
-                            backgroundColor: '#FFFFFF',
-                            borderRadius: 'var(--radius-lg, 16px)',
-                            border: '1px solid var(--border-light)',
-                            boxShadow: '0 2px 8px rgba(35, 24, 21, 0.03)'
-                        }}>
-                            <p style={{
-                                color: 'var(--text-dark-primary)',
-                                fontSize: '1.1rem',
-                                lineHeight: 1.7,
-                                fontWeight: 500,
-                                margin: 0
-                            }}>
-                                {aboutPage.guidingPrinciples.closing}
-                            </p>
-                        </div>
+                        <p className="about-principles-closing">{aboutPage.guidingPrinciples.closing}</p>
                     </div>
                 </section>
             )}

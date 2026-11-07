@@ -26,7 +26,7 @@ const ProjectCard = ({ project, activeCategory }) => {
         >
             <div style={{ position: 'relative', overflow: 'hidden' }}>
                 <img
-                    src={project.image}
+                    src={project.thumbnailImage || project.image}
                     alt={project.title}
                     style={{
                         width: '100%',

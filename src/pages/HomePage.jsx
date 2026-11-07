@@ -100,7 +100,7 @@ const HomePage = ({ onContactClick }) => {
                             >
                                 <div style={{ overflow: 'hidden' }}>
                                     <img
-                                        src={project.image}
+                                        src={project.thumbnailImage || project.image}
                                         alt={project.title}
                                         style={{
                                             width: '100%',
