@@ -76,22 +76,20 @@ export const projects = [
             "/nsph/nsph-2.jpg"
         ],
         "features": [
+            "$2.17B project value",
             "548 beds",
             "Single patient rooms",
             "Command centre",
-            "$450M technology portfolio"
         ],
         "scopeElements": [
+            "Design Build Finance (DBF)",
             "Business case and government approval",
             "DBF procurement through financial close",
             "Owner's-side project and PMO leadership",
             "$450M IMIT portfolio with 50+ projects",
             "Activation and go-live readiness"
         ],
-        "deliveryModel": "Design-Build-Finance (DBF)",
-        "projectValue": "$2.17B",
-        "yearLabel": "First Patients",
-        "perspective": "Owner's side"
+        "yearLabel": "Opening year",
     },
     {
         id: 'dawson-creek',
