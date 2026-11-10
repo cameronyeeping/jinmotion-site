@@ -252,6 +252,18 @@ export default function ProjectDetailPage({ onContactClick }) {
                 </ul>
               </div>
 
+              {[
+                ['Our Perspective', project.perspective],
+                ['Delivery Model', project.deliveryModel],
+                ['Total Project Value', project.projectValue],
+                ['Status', project.status]
+              ].filter(([, value]) => value).map(([label, value]) => (
+                <div key={label}>
+                  <div className="project-fact-label">{label}</div>
+                  <p className="project-fact-value">{value}</p>
+                </div>
+              ))}
+
               {/* Year */}
               {project.year && (<div>
                 <div style={{
@@ -262,7 +274,7 @@ export default function ProjectDetailPage({ onContactClick }) {
                   letterSpacing: '0.06em',
                   marginBottom: '6px'
                 }}>
-                  Opening Year
+                  {project.yearLabel || 'Opening Year'}
                 </div>
                 <div style={{ fontSize: '0.875rem', color: 'var(--text-dark-secondary)', lineHeight: 1.5, whiteSpace: 'pre-line' }}>
                   {project.year.split(/(re-paced)/i).map((part, index) => (

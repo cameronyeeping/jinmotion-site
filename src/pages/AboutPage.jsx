@@ -105,12 +105,13 @@ const AboutPage = ({ onContactClick }) => {
 
             {/* Meet the Team Section */}
             <section style={{ backgroundColor: 'var(--accent-green)', padding: '80px 0' }}>
-                <div className="container" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center' }}>
+                <div className="container about-team-feature" style={{ padding: '0 24px', maxWidth: '1200px', margin: '0 auto' }}>
+                    <img className="about-team-photo" src={aboutPage.team.image} alt={aboutPage.team.imageAlt} width="3213" height="2142" loading="lazy" decoding="async" />
+                    <div>
                         <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', color: '#FFFFFF', margin: '0 0 16px 0' }}>
                             {aboutPage.team.heading}
                         </h2>
-                        <p style={{ color: '#FFFFFF', opacity: 0.85, fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto 36px auto', lineHeight: 1.6 }}>
+                        <p style={{ color: '#FFFFFF', opacity: 0.85, fontSize: '1.125rem', maxWidth: '600px', margin: '0 0 36px', lineHeight: 1.6 }}>
                             {aboutPage.team.subtitle}
                         </p>
                         <Link

@@ -12,7 +12,11 @@ const textFields = {
     client: 'Client name',
     city: 'City or region; displayed together with country beneath the client',
     country: 'Country; displayed together with city beneath the client',
-    year: 'Opening year; leave unspecified if unknown',
+    year: 'Opening year or first-patient year; leave unspecified if unknown',
+    perspective: 'Our perspective on the project, when specified',
+    deliveryModel: 'Procurement or delivery model',
+    projectValue: 'Total project value, including any phase qualification',
+    status: 'Project status; use when an opening year is not established',
 };
 const listFields = {
     long_description: { separator: '\n\n', notes: 'Full description. Separate paragraphs with a blank line inside this cell.' },

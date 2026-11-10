@@ -28,7 +28,7 @@ test('includes optional fields, readable settings, and every paragraph and sideb
     projects.forEach((project, index) => {
         const reference = `projects[${index}]`;
         const find = (field) => rows.find((row) => row[3] === `${reference}.${field}`);
-        for (const field of ['title', 'short_description', 'client', 'city', 'country', 'year']) {
+        for (const field of ['title', 'short_description', 'client', 'city', 'country', 'year', 'perspective', 'deliveryModel', 'projectValue', 'status']) {
             assert.equal(find(field)[4], project[field] ?? '');
             assert.equal(find(field)[1], project.id);
         }

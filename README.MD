@@ -44,3 +44,5 @@ Return the edited workbook to the site maintainer, who applies approved changes 
 Excel export uses the installed Codex workspace spreadsheet runtime and does not add dependencies to the website. On another machine, set `PROJECT_EXPORT_RUNTIME` to the Codex Node runtime directory if it cannot be found automatically. CSV export uses Node alone.
 
 Check the exporter with `node --test scripts/export-content.test.mjs`. Run `npm run build` after applying site changes. Community content and comments are unaffected by the exporter.
+
+Project sidebars can also display `perspective`, `deliveryModel`, `projectValue`, and `status`. These optional text fields are included in project exports. Use `yearLabel: 'First Patients'` when the year refers to first-patient opening; omit `year` when a project has no established opening date and supply `status` instead.

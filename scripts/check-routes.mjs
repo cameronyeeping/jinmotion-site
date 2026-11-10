@@ -42,8 +42,8 @@ try {
     }
   }
   const stPaulsHtml = render('/projects/st-pauls');
-  assert.ok(stPaulsHtml.includes('<strong>Procurement readiness:</strong>'));
-  assert.ok(stPaulsHtml.includes('<strong>Financial close:</strong>'));
+  assert.ok(stPaulsHtml.includes('<strong>Business planning and procurement:</strong>'));
+  assert.ok(stPaulsHtml.includes('<strong>Project management:</strong>'));
   assert.ok(!stPaulsHtml.includes('**'));
   assert.ok(stPaulsHtml.includes('<em>Our team'));
   for (const { id: category } of projectCategories) {
@@ -105,15 +105,29 @@ try {
   ]) {
     const html = render(`/team/${id}`);
     for (const city of ['Kamloops', 'Nanaimo', 'Surrey', 'Burnaby']) {
-      assert.equal(html.includes(`<h3><a href="/projects/${city.toLowerCase()}-cancer-centre">${city} Cancer Centre</a></h3>`), cities.includes(city));
+      const project = getProjectData(`${city.toLowerCase()}-cancer-centre`);
+      const heading = renderToString(createElement('h3', null, createElement('a', { href: `/projects/${project.id}` }, project.title)));
+      assert.equal(html.includes(heading), cities.includes(city));
     }
     assert.ok(!getTeamMember(id).experience.some((entry) => entry.projectId === 'bc-cancer'));
   }
   assert.equal(getProjectData('bc-cancer'), undefined);
   for (const city of ['Kamloops', 'Nanaimo', 'Surrey', 'Burnaby']) {
     const project = getProjectData(`${city.toLowerCase()}-cancer-centre`);
-    assert.equal(project.title, `${city} Cancer Centre`);
+    assert.deepEqual(project.categories, ['infrastructure']);
+    assert.ok(project.deliveryModel && project.projectValue);
+    assert.ok(project.long_description.some((paragraph) => paragraph.includes('**IMIT leadership:**')));
     assert.ok(render(`/projects/${project.id}`).includes(renderToString(createElement('p', null, project.long_description[0]))));
+  }
+  assert.equal(getProjectData('surrey-cancer-centre').year, '2030');
+  const burnabyHtml = render('/projects/burnaby-cancer-centre');
+  assert.ok(burnabyHtml.includes('BC Cancer scope not yet approved'));
+  assert.ok(!burnabyHtml.includes('Opening Year'));
+  for (const id of ['st-pauls', 'surrey-cancer-centre', 'kamloops-cancer-centre', 'nanaimo-cancer-centre', 'burnaby-cancer-centre']) {
+    const project = getProjectData(id);
+    const html = render(`/projects/${id}`);
+    assert.ok(html.includes(renderToString(createElement('p', { className: 'project-fact-value' }, project.projectValue))));
+    assert.ok(!html.includes('**'));
   }
   // Standalone highlights never need entries in the public projects collection.
   const member = aboutPage.team.members[0];

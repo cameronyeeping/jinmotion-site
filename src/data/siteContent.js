@@ -43,47 +43,55 @@ export const getProjectCategory = (id) => projectCategories.find((category) => c
 // An empty list leaves all stages grey until participation is configured.
 export const projects = [
     {
-        id: 'st-pauls',
-        methodologyStages: ['vision', 'roadmap', 'implement', 'realize', 'celebrate'],
-        title: 'New St. Paul\'s Hospital',
-        categories: ['infrastructure', 'digital', 'advisory'],
-        year: '2027',
-        client: 'Providence Health Care',
-        city: 'Vancouver',
-        country: 'Canada',
-        short_description: 'Owner-side leadership from business case and DBF procurement through project delivery, technology integration and opening-day readiness.',
-        long_description: [
-            "The New St. Paul's Hospital and Health Campus replaces Providence Health Care's St. Paul's Hospital with a 548-bed, $2.17 billion facility in Vancouver's False Creek Flats, on the traditional, ancestral and unceded territories of the Musqueam, Squamish and Tsleil-Waututh Nations. Procured as a Design-Build-Finance (DBF) project and built around an ambitious digital vision, it is scheduled to welcome its first patients in 2027.",
-            "J in Motion consultants held senior leadership roles on the owner's team, representing the project's interests from the earliest stages through delivery.",
-            "**Business case:** developed the owner's business case through to government approval.",
-            "**DBF procurement:**\n- **Procurement readiness:** defined the owner's requirements, risk allocation and evaluation framework before going to market\n- **Request for Qualifications:** ran market engagement, evaluated submissions and shortlisted qualified teams\n- **Request for Proposals:** issued the RFP and draft Project Agreement, led collaborative meetings with proponents, and reviewed their designs against the owner's requirements\n- **Evaluation and selection:** led technical and financial evaluations, under the oversight of an independent fairness advisor, to select the preferred proponent\n- **Negotiations, legal and finance:** negotiated the Project Agreement, coordinated legal review, security and insurance, and supported financing and lenders' due diligence\n- **Financial close:** secured final approvals, executed the agreements and handed over to the delivery team",
-            "**Project management:** led Integrated Project Delivery (the PMO) portfolio, and reported to executives on governance, scope, schedule, budget and risk.",
-            "**IMIT leadership:** $450 million technology portfolio, overseeing more than 50 concurrent projects, including command centres, security networks, enterprise IT and the Cerner EHR, and leading activation and go-live readiness for opening day.",
+        "id": "st-pauls",
+        "methodologyStages": [
+            "vision",
+            "roadmap",
+            "implement",
+            "realize",
+            "celebrate"
+        ],
+        "title": "New St. Paul's Hospital",
+        "categories": [
+            "infrastructure",
+            "digital",
+            "advisory"
+        ],
+        "year": "2027",
+        "client": "Providence Health Care",
+        "city": "Vancouver",
+        "country": "Canada",
+        "short_description": "Owner's-side leadership from business case and DBF procurement through project delivery, technology integration and opening-day readiness",
+        "long_description": [
+            "The New St. Paul's Hospital and Health Campus replaces Providence Health Care's St. Paul's Hospital with a 548-bed, $2.17 billion facility in Vancouver's False Creek Flats. It sits within the traditional, ancestral and unceded territories of the Musqueam, Squamish and Tsleil-Waututh Nations. Procured as a Design-Build-Finance (DBF) project and built around an ambitious digital vision, it is scheduled to welcome its first patients in 2027.",
+            "J in Motion consultants held senior leadership roles on the owner's team, from business planning and procurement through delivery and opening-day readiness.",
+            "**Business planning and procurement:** led business planning and the executive and government approval process, including procurement strategy and delivery model development. Led the owner's DBF procurement from readiness through RFQ, RFP and evaluation, under an independent fairness advisor, and directed contract negotiations and commercial execution through to financial close.",
+            "**Project management:** directed design management and led Integrated Project Delivery and the PMO, ensuring alignment between strategic objectives, clinical requirements, project scope and implementation. Oversaw critical planning and decision-making, with executive reporting on governance, scope, schedule, budget and risk.",
+            "**IMIT leadership:** directed the owner's $450 million technology portfolio of more than 50 concurrent projects, including command centres, security networks, enterprise IT and the Cerner EHR, leading activation and go-live readiness for opening day.",
             "*Our team's experience on New St. Paul's reflects what we do best: helping owners see large, complex capital programs through to their full intended vision.*"
         ],
-
-        image: '/nsph/nsph.jpeg',
-        galleryImages: [
-            '/nsph/nsph-1.avif',
-            '/nsph/nsph-2.jpg'
+        "image": "/nsph/nsph.jpeg",
+        "galleryImages": [
+            "/nsph/nsph-1.avif",
+            "/nsph/nsph-2.jpg"
         ],
-        features: [
-            '1.7 million ft2',
-            '$2.17B budget',
-            '548 inpatient beds',
-            'Design-Build-Finance delivery',
-            'Single patient rooms',
-            'Command centre',
-            'Opening 2027'
-
+        "features": [
+            "548 beds",
+            "Single patient rooms",
+            "Command centre",
+            "$450M technology portfolio"
         ],
-        scopeElements: [
-            'Business case and government approval',
-            'DBF procurement through financial close',
-            'Owner-side project and PMO leadership',
-            '$450M IMIT portfolio with 50+ projects',
-            'Activation and go-live readiness'
-        ]
+        "scopeElements": [
+            "Business case and government approval",
+            "DBF procurement through financial close",
+            "Owner's-side project and PMO leadership",
+            "$450M IMIT portfolio with 50+ projects",
+            "Activation and go-live readiness"
+        ],
+        "deliveryModel": "Design-Build-Finance (DBF)",
+        "projectValue": "$2.17B",
+        "yearLabel": "First Patients",
+        "perspective": "Owner's side"
     },
     {
         id: 'dawson-creek',
@@ -210,20 +218,21 @@ export const projects = [
             "vision",
             "roadmap"
         ],
-        "title": "Kamloops Cancer Centre",
+        "title": "BC Cancer Kamloops",
         "categories": [
             "infrastructure"
         ],
         "year": "2028",
-        "client": "Provincial Health Services Authority",
+        "client": "BC Cancer (PHSA), with Interior Health",
         "city": "Kamloops",
         "country": "Canada",
-        "short_description": "A new BC Cancer centre at Royal Inland Hospital, bringing radiation treatment closer to home for Kamloops and surrounding communities.",
+        "short_description": "Owner's-side leadership turning regional cancer care needs into a new cancer centre for the BC Interior",
         "long_description": [
-            "Targeted to open in 2028, the new BC Cancer centre at the Royal Inland Hospital campus will bring radiation treatment closer to home for people in Kamloops and surrounding areas.",
-            "Alongside the new cancer centre, upgrades to the community oncology clinic will modernize and increase the number of cancer treatment spaces and exam rooms at Royal Inland Hospital. Renovation and expansion of the existing pharmacy will improve functionality, with improved dispensing facilities, an automated dispensing replenishment area and storage.",
-            "The centre is part of BC’s 10-Year Cancer Action Plan, which outlines immediate steps to prevent, detect and treat cancer. The plan aims to improve care for people facing cancer today while preparing for growing future needs.",
-            "J in Motion provided strategic leadership for the Kamloops Cancer Centre, translating regional cancer care needs into a clear project vision and infrastructure plan. We guided concept development, business planning and design management, defined the scope, budget and schedule, and secured the executive and government approvals needed to advance the project."
+            "The new $386 million BC Cancer centre at Royal Inland Hospital in Kamloops brings radiation therapy closer to home for patients across the Interior. It sits within the traditional, ancestral and unceded territory of the Tk̓emlúps te Secwépemc. It includes three linear accelerators, radiation therapy planning with a CT simulator, diagnostic MRI and an outpatient oncology unit. Operated by BC Cancer in partnership with Interior Health, it is scheduled to open to patients in 2028.",
+            "J in Motion consultants held senior leadership roles on the owner's team for the BC Cancer Centre, from early planning through design and into construction.",
+            "**Planning and business development:** led the strategic development of the BC Cancer Kamloops project, translating regional cancer care needs into a defined infrastructure solution: establishing the vision, directing concept development and business planning, defining the scope, capital budget and schedule, managing design on the owner's behalf, and securing executive and government approvals.",
+            "**IMIT leadership:** led the owner's BC Cancer technology planning and delivery from business case through design and into construction, leading a $25 million IMIT program: defining technology scope and budget, integrating IMIT and clinical technology requirements, including radiation therapy systems, into design, and aligning technology procurement with the construction schedule.",
+            "*Our work on Kamloops reflects what we bring to every owner: turning a regional need into an approved, buildable plan, and seeing it through to construction.*"
         ],
         "image": "/bc-cancer/kamloops.png",
         "galleryImages": [
@@ -231,20 +240,22 @@ export const projects = [
             "/bc-cancer/kamloops3.png"
         ],
         "features": [
-            "Royal Inland Hospital campus",
-            "Radiation treatment closer to home",
-            "Modernized oncology treatment spaces and exam rooms",
-            "Expanded pharmacy and improved dispensing facilities",
-            "Part of BC’s 10-Year Cancer Action Plan",
-            "Targeted opening 2028"
+            "3 linear accelerators",
+            "CT simulator",
+            "MRI",
+            "Oncology ambulatory care"
         ],
         "scopeElements": [
-            "Project vision and regional care needs",
-            "Concept development and business planning",
-            "Scope, budget and schedule development",
+            "Project vision and concept",
+            "Business plan and government approval",
+            "Scope, budget and schedule",
             "Design management",
-            "Executive and government approvals"
-        ]
+            "IMIT from business case through construction"
+        ],
+        "deliveryModel": "Design-build",
+        "projectValue": "$386M",
+        "yearLabel": "First Patients",
+        "perspective": "Owner's side"
     },
     {
         "id": "nanaimo-cancer-centre",
@@ -252,19 +263,21 @@ export const projects = [
             "vision",
             "roadmap"
         ],
-        "title": "Nanaimo Cancer Centre",
+        "title": "BC Cancer Nanaimo",
         "categories": [
             "infrastructure"
         ],
         "year": "2028",
-        "client": "Provincial Health Services Authority",
+        "client": "BC Cancer (PHSA), with Island Health",
         "city": "Nanaimo",
         "country": "Canada",
-        "short_description": "Planning and development of a new cancer centre in Nanaimo, aligning regional care needs with safe, purpose-built infrastructure.",
+        "short_description": "Owner's-side leadership for a new regional cancer centre bringing radiation therapy and chemotherapy together on central Vancouver Island",
         "long_description": [
-            "The new Nanaimo Cancer Centre will be designed to meet the needs of the public while adhering to radiation safety requirements that protect patients, staff and the surrounding community.",
-            "The centre is part of B.C.’s 10-Year Cancer Action Plan, which sets out immediate steps to prevent, detect and treat cancer. It will help improve care for people facing cancer today while preparing for growing future needs.",
-            "J in Motion directed project planning and development, aligning regional service delivery objectives with the facility’s infrastructure requirements. We led business case and facility concept development, defined the project scope, capital budget and schedule, and guided design management and the executive and government approval processes."
+            "The new $311 million BC Cancer centre at Nanaimo Regional General Hospital brings radiation therapy and chemotherapy together in one location for patients on central Vancouver Island. It sits within the traditional territory of the Snuneymuxw First Nation. It includes four linear accelerator vaults, 16 systemic therapy bays, CT and PET/CT scanners, an oncology ambulatory care unit and an oncology pharmacy. Operated by BC Cancer in partnership with Island Health, it is scheduled to open in 2028.",
+            "J in Motion consultants held senior leadership roles on the owner's team for the BC Cancer Centre, from early planning through design and into construction.",
+            "**Planning and business development:** directed planning and development of the BC Cancer Nanaimo project, aligning regional service delivery objectives with infrastructure requirements: leading the business case and facility concept, defining the scope, capital budget and schedule, managing design on the owner's behalf, and leading executive and government approvals.",
+            "**IMIT leadership:** led the owner's BC Cancer technology planning and delivery from business case through design and into construction, leading a $25 million IMIT program: defining technology scope and budget, integrating IMIT and clinical technology requirements, including radiation therapy and imaging systems, into design, and aligning technology procurement with the construction schedule.",
+            "*Our work on Nanaimo reflects what we bring to every owner: aligning service goals, infrastructure and technology so care can be delivered closer to home.*"
         ],
         "image": "/bc-cancer/nanaimo.jpg",
         "galleryImages": [
@@ -272,17 +285,22 @@ export const projects = [
             "/bc-cancer/nanaimo3.jpg"
         ],
         "features": [
-            "Purpose-built cancer care facility",
-            "Radiation safety for patients, staff and the community",
-            "Part of B.C.’s 10-Year Cancer Action Plan"
+            "4 linear accelerator vaults",
+            "16 systemic therapy bays",
+            "CT and PET/CT scanners",
+            "Oncology pharmacy"
         ],
         "scopeElements": [
-            "Regional service and infrastructure planning",
-            "Business case and facility concept development",
-            "Project scope, capital budget and schedule",
+            "Business case and facility concept",
+            "Regional service alignment",
+            "Scope, budget and schedule",
             "Design management",
-            "Executive and government approvals"
-        ]
+            "IMIT from business case through construction"
+        ],
+        "deliveryModel": "Construction management",
+        "projectValue": "$311M",
+        "yearLabel": "First Patients",
+        "perspective": "Owner's side"
     },
     {
         "id": "surrey-cancer-centre",
@@ -290,20 +308,21 @@ export const projects = [
             "vision",
             "roadmap"
         ],
-        "title": "Surrey Cancer Centre",
+        "title": "New Surrey Hospital and BC Cancer Centre",
         "categories": [
             "infrastructure"
         ],
-        "year": "2028",
-        "client": "Provincial Health Services Authority",
+        "year": "2030",
+        "client": "BC Cancer (PHSA), with Fraser Health",
         "city": "Surrey",
         "country": "Canada",
-        "short_description": "A comprehensive, integrated cancer centre at the new Surrey hospital, expanding access to treatment and support for a growing community.",
+        "short_description": "Owner's-side leadership for a new hospital and regional cancer centre serving one of BC's fastest-growing communities",
         "long_description": [
-            "BC Cancer and the Provincial Health Services Authority, in partnership with Fraser Health Authority, are building a comprehensive, integrated cancer centre as part of the new Surrey hospital.",
-            "Complementing the hospital’s services, the centre will provide radiation and systemic treatment, molecular imaging and therapy, supportive care, research and education. Innovative technologies, including virtual health, will support the delivery of care.",
-            "The new site is expected to accommodate 105,000 ambulatory oncology care visits, 50,000 radiation therapy visits and 22,000 chemotherapy visits each year, helping meet the needs of Surrey’s growing community.",
-            "J in Motion led planning and business development, shaping the strategic vision and infrastructure approach to support growing regional cancer care demands. We defined the project scope, developed the concept and business plans, established the capital budget and schedule, managed design development, and secured executive and government approvals."
+            "The new Surrey hospital and BC Cancer Centre in Cloverdale is a $2.88 billion, 168-bed acute care hospital with an integrated regional cancer centre. It sits within the traditional, ancestral and unceded shared territories of the Kwantlen, Katzie and Semiahmoo First Nations. Procured by Fraser Health as a design-build project, it is designed as a fully digital, all-electric facility, with construction completion expected in 2029 and first patients in 2030.",
+            "J in Motion consultants held senior leadership roles on the owner's team for the BC Cancer Centre, from early planning through design and into construction.",
+            "**Planning and business development:** led the planning and business development of the BC Cancer Surrey project to meet growing regional cancer care demand: shaping the strategic vision, infrastructure approach and concept, developing the business plan, scope, capital budget and schedule, managing design on the owner's behalf, and securing executive and government approvals.",
+            "**IMIT leadership:** led the owner's BC Cancer technology planning and delivery from business case through design and into construction, leading a $30+ million IMIT program: defining technology scope and budget, integrating IMIT and clinical technology requirements into design, and aligning technology procurement with the construction schedule.",
+            "*Our work on the Surrey project reflects what we bring to every owner: a clear, approved plan, from first concept through construction, for care that keeps pace with a growing region.*"
         ],
         "image": "/bc-cancer/cloverdale-2.avif",
         "galleryImages": [
@@ -311,22 +330,24 @@ export const projects = [
             "/bc-cancer/cloverdale-1.jpeg"
         ],
         "features": [
-            "Integrated with the new Surrey hospital",
-            "Radiation and systemic treatment",
-            "Molecular imaging and therapy",
-            "Supportive care, research and education",
-            "Virtual health technologies",
-            "105,000 ambulatory oncology visits annually (projected)",
-            "50,000 radiation therapy visits annually (projected)",
-            "22,000 chemotherapy visits annually (projected)"
+            "5 linear accelerators",
+            "2 PET/CT scanners",
+            "Cyclotron",
+            "MRI",
+            "Chemotherapy treatment spaces",
+            "Research and clinical trials space"
         ],
         "scopeElements": [
-            "Strategic vision and infrastructure planning",
-            "Project scope, concept and business plans",
-            "Capital budget and schedule development",
+            "Strategic vision and concept plan",
+            "Business plan and government approval",
+            "Capital budget and schedule",
             "Design management",
-            "Executive and government approvals"
-        ]
+            "IMIT from business case through construction"
+        ],
+        "deliveryModel": "Design-build",
+        "projectValue": "$2.88B",
+        "yearLabel": "First Patients",
+        "perspective": "Owner's side"
     },
     {
         "id": "burnaby-cancer-centre",
@@ -334,41 +355,39 @@ export const projects = [
             "vision",
             "roadmap"
         ],
-        "title": "Burnaby Cancer Centre",
+        "title": "Burnaby Hospital and BC Cancer Centre (Phase 2)",
         "categories": [
             "infrastructure"
         ],
-        "year": "Re-paced",
-        "client": "Provincial Health Services Authority",
+        "client": "BC Cancer (PHSA), with Fraser Health",
         "city": "Burnaby",
         "country": "Canada",
-        "short_description": "Strategic and project leadership for an integrated BC Cancer centre within phase two of the Burnaby Hospital redevelopment.",
+        "short_description": "Owner's-side leadership taking an integrated hospital and cancer centre expansion from vision to approval and design",
         "long_description": [
-            "Burnaby Hospital is a community hospital providing acute, emergency and critical care, general and internal medicine, surgery, neonatal intensive care, palliative care, adult mental health and substance use services, ambulatory care and other outpatient services.",
-            "A multi-phase redevelopment will transform the hospital into a modernized medical and surgical healthcare campus. Phase two includes a new 160-bed inpatient tower, an integrated BC Cancer centre and a new medical imaging department.",
-            "The phase-two scope also includes a spiritual care suite, education spaces, staff facilities, an equipment depot, a morgue and autopsy suite, and parking. Renovations to the emergency and endoscopy departments and demolition of the West Wing building form part of the wider redevelopment work.",
-            "J in Motion provided strategic and project leadership for the BC Cancer Burnaby initiative, guiding development from the initial vision through formal project approvals and design. We led business and concept planning, investment and budget development, scope definition, scheduling and design management, keeping the initiative aligned with organizational priorities and provincial healthcare objectives."
+            "Phase 2 of the Burnaby Hospital redevelopment is a $1.7 billion expansion, procured through an alliance model, combining a new inpatient tower with a new BC Cancer Centre. It sits within the traditional, ancestral and unceded territories of the Musqueam, Squamish and Tsleil-Waututh First Nations. The cancer centre was designed with 54 ambulatory care rooms, 31 chemotherapy chairs, space for five linear accelerators and two PET/CT scanners, an oncology pharmacy and research space. In 2026, the province re-paced the project into phases. The first phase, emergency and surgical upgrades, is funded; the BC Cancer Centre scope has not yet been approved under the new phasing.",
+            "J in Motion consultants held senior leadership roles on the owner's team for the BC Cancer Centre, from initial vision through formal project approvals (2023) and design.",
+            "**Planning and business development:** provided overall strategic and project leadership for the BC Cancer Burnaby initiative, ensuring alignment with organizational priorities and provincial healthcare objectives: leading business and concept planning, developing the investment case and capital budget, defining the scope and schedule, managing design on the owner's behalf, and overseeing formal project approvals.",
+            "**IMIT leadership:** led the owner's BC Cancer technology planning from business case through design and procurement, leading a $30 million IMIT program: defining technology scope and budget, and integrating IMIT and clinical technology requirements, including radiation therapy and imaging systems, into design.",
+            "*Our work on Burnaby reflects what we bring to every owner: a strong, well-defined foundation that can adapt as priorities change.*"
         ],
         "image": "/bc-cancer/burnaby.avif",
         "galleryImages": [],
         "features": [
-            "Integrated BC Cancer centre",
-            "Part of Burnaby Hospital redevelopment phase two",
-            "New 160-bed inpatient tower within phase two",
-            "New medical imaging department",
-            "Spiritual care, education and staff spaces",
-            "Emergency and endoscopy department renovations",
-            "Parking and support facilities",
-            "West Wing demolition"
+            "5 linear accelerator spaces",
+            "31 chemotherapy chairs",
+            "2 PET/CT scanners"
         ],
         "scopeElements": [
-            "Strategic vision and project leadership",
+            "Vision to formal approval",
             "Business and concept planning",
-            "Investment and budget development",
-            "Scope definition and scheduling",
-            "Design management and project approvals",
-            "Alignment with provincial healthcare objectives"
-        ]
+            "Investment case and budget",
+            "Design management",
+            "IMIT from business case through design"
+        ],
+        "deliveryModel": "Alliance",
+        "projectValue": "$1.7B (Phase 2)",
+        "status": "Re-paced in 2026; BC Cancer scope not yet approved",
+        "perspective": "Owner's side"
     },
     {
         id: 'provincial-radiology-pacs',
@@ -619,7 +638,7 @@ export const homePage = {
             'J in Motion is an infrastructure and technology advising firm with a proven track record, contributing to major public-sector programs representing more than $40B in capital infrastructure and enterprise technology portfolios across Canada.',
             'For over 20 years, we\'ve worked closely with health authorities, municipal bodies, and provincial governments, delivering clarity and momentum to infrastructure, enterprise technology, and organizational transformation landscapes.',
         ],
-        image: '/HOSPITAL1.jpg',
+        image: '/CanadaHealthcareInnovationSummit2023-3.jpg',
         imageAlt: 'Studio Approach'
     },
     values: {
@@ -783,6 +802,8 @@ export const aboutPage = {
     team: {
         heading: 'Meet the Team',
         subtitle: 'The people behind J in Motion',
+        image: '/CanadaHealthcareInnovationSummit-4.jpg',
+        imageAlt: 'Two attendees at the Canada Healthcare Innovation Summit',
         members: [
             {
                 id: 'jeannie-gandham',
