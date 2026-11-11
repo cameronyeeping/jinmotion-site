@@ -868,12 +868,13 @@ export const aboutPage = {
 
                 expertise: [
                     'Executive leadership & governance',
-                    'IMIT strategy & capital planning',
-                    'Healthcare infrastructure redevelopment',
-                    'Operational readiness',
-                    'Clinical technology',
-                    'Operational readiness & activation',
-                    'Multidisciplinary program delivery',
+                    'Digital Strategy & Transformation',
+                    'Operational Readiness & Facility Activation',
+                    'Multidisciplinary Program & Team Leadership',
+                    'Business Case Development',
+                    'PMO Leadership & Integrated Project Delivery',
+                    'Clinical & Technology Alignment',
+                    'Stakeholder Engagement & Change Management',
                 ],
                 experience: [
                     {
@@ -891,8 +892,10 @@ export const aboutPage = {
                     },
                 ],
                 credentials: [
-                    'Computer Information Systems Diploma, Langara College',
                     'Healthcare Facilities Planning and Design: Focus on Leadership Certificate, Cornell University',
+                    'San\'yas Indigenous Cultural Safety Training, Core and Advanced, Provincial Health Services Authority',
+                    'PMP exam preparation complete (eligible to sit the exam)',
+                    'Computer Information Systems Diploma, Langara College',
                 ],
                 profilePdf: '/resumes/gina-resume.pdf'
             },
