@@ -1097,7 +1097,7 @@ export const outreachPage = {
         {
             id: 'icat',
             title: 'From Vision to Roadmap: Planning ICAT for Healthcare Infrastructure',
-            image: '/outreach/infrastructure.jpeg',
+            image: '/outreach/infrastructure-crop.jpeg',
             imageAlt: 'Jeannie Gandham and Nancy Nguyen',
             description: [
                 'Join Jeannie Gandham and Nancy Nguyen of Providence Health Care for an interactive workshop using the New St. Paul’s Hospital journey as a real-world example.',
@@ -1112,7 +1112,7 @@ export const outreachPage = {
         {
             id: 'women-in-healthcare-infrastructure',
             title: 'Women in Healthcare Infrastructure Insight Series: Leadership & Networking Reception',
-            image: '/outreach/women-in-leadership.jpeg',
+            image: '/outreach/women-in-leadership-crop.jpeg',
             imageAlt: 'Women in Healthcare Infrastructure leadership and networking reception',
             description: [
                 'Levelling Up, Leading Change and Building High-Performing Healthcare Organizations for the Future. An evening of connection with fellow women leaders in healthcare infrastructure to exchange ideas, foster collaboration, and shape the future of healthcare facilities in Canada.',
